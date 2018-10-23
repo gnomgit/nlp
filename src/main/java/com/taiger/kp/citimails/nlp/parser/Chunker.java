@@ -1,0 +1,51 @@
+package com.taiger.kp.citimails.nlp.parser;
+
+import java.io.IOException;
+
+import org.springframework.util.Assert;
+
+import com.taiger.kp.citimails.model.Constants;
+import com.taiger.kp.citimails.model.Sentence;
+
+import lombok.extern.log4j.Log4j2;
+import opennlp.tools.postag.POSModel;
+import opennlp.tools.postag.POSTaggerME;
+
+@Log4j2
+public class Chunker implements SyntaxParser {
+
+	private POSTaggerME tagger;
+	
+	public Chunker () {
+		initialize  ();
+	}
+
+	public Chunker initialize () {
+		try {
+			POSModel model = new POSModel (Chunker.class.getClassLoader().getResourceAsStream(Constants.TAGGER_EN));
+			this.tagger = new POSTaggerME (model);
+		} 	catch (IOException e) {
+			log.error(e.getMessage());
+		}
+		
+		return this;
+	}
+	
+	@Override
+	public Sentence annotate(Sentence sentence) {
+		Assert.notNull(sentence, "sentence shouldn't be null");
+		Assert.notNull(sentence.getS(), "sentence content shouldn't be null");
+		String[] tokens = new String[sentence.getS().size()];
+		for (int i = 0; i < sentence.getS().size(); i++) {
+			tokens[i] = sentence.getS().get(i).getW();
+		}
+		
+		String[] tags = tagger.tag(tokens);
+        for (int i = 0; i < tokens.length; i++) {
+        	sentence.getS().get(i).setPosTag(tags[i]);
+        }
+		
+		return sentence;
+	}
+
+}
