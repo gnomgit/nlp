@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.taiger.kp.citimails.controller.extractors.MailDataExtractor;
 import com.taiger.kp.citimails.controller.extractors.SubjectExtractor;
 import com.taiger.kp.citimails.controller.parsers.SimpleEmlParser;
 import com.taiger.kp.citimails.controller.parsers.SimpleMsgParser;
@@ -13,7 +14,9 @@ import com.taiger.kp.citimails.model.Attachment;
 import com.taiger.kp.citimails.model.Document;
 import com.taiger.kp.citimails.model.Mail;
 import com.taiger.kp.citimails.model.Sentence;
+import com.taiger.kp.citimails.nlp.ner.CUSIPFinderNER;
 import com.taiger.kp.citimails.nlp.ner.DateFinderNER;
+import com.taiger.kp.citimails.nlp.ner.ISINFinderNER;
 import com.taiger.kp.citimails.nlp.ner.LocationFinderNER;
 import com.taiger.kp.citimails.nlp.ner.MoneyFinderNER;
 import com.taiger.kp.citimails.nlp.ner.NER;
@@ -21,15 +24,18 @@ import com.taiger.kp.citimails.nlp.ner.OrganizationFinderNER;
 import com.taiger.kp.citimails.nlp.ner.PercentageFinderNER;
 import com.taiger.kp.citimails.nlp.ner.PersonFinderNER;
 import com.taiger.kp.citimails.nlp.ner.TimeFinderNER;
+import com.taiger.kp.citimails.nlp.oer.CitiWordsFinderOER;
 import com.taiger.kp.citimails.nlp.parser.DeepParser;
 import com.taiger.kp.citimails.nlp.parser.DependencyParser;
 import com.taiger.kp.citimails.nlp.parser.SyntaxParser;
 import com.taiger.kp.citimails.nlp.splitter.MESplitter;
 import com.taiger.kp.citimails.nlp.splitter.SentenceSplitter;
+import com.taiger.kp.citimails.nlp.splitter.SmileSentenceSplitter;
 import com.taiger.kp.citimails.nlp.tagger.METagger;
 import com.taiger.kp.citimails.nlp.tagger.POSTagger;
 import com.taiger.kp.citimails.nlp.tagger.PerceptronTagger;
 import com.taiger.kp.citimails.nlp.tokenizer.METokenizer;
+import com.taiger.kp.citimails.nlp.tokenizer.SmileSimpleTokenizer;
 import com.taiger.kp.citimails.nlp.tokenizer.Tokenizer;
 import com.taiger.kp.citimails.utils.FileTools;
 
@@ -45,11 +51,17 @@ public class App {
 	public static void main(String[] args) {
 		
 		NER ner = new LocationFinderNER();
-		SentenceSplitter splitter = new MESplitter();
-		Tokenizer tokenizer = new METokenizer();
+		//SentenceSplitter splitter = new MESplitter();
+		SentenceSplitter splitter = new SmileSentenceSplitter();
+		//Tokenizer tokenizer = new METokenizer();
+		Tokenizer tokenizer = new SmileSimpleTokenizer();
 		//POSTagger tagger = new PerceptronTagger();
 		POSTagger tagger = new METagger();
 		SyntaxParser parser = new DeepParser();
+		CitiWordsFinderOER oer = new CitiWordsFinderOER();
+		
+		boolean outy = true;
+		//if (outy) return;
 		
 		String path = "/Users/jorge.rios/eclipse-workspace/citimails/docs/";
 		String i_name = "Notification of Margin Call 2.msg";
@@ -102,17 +114,18 @@ public class App {
 			Document doc = new Document();
 			doc.setMail(mail);
 			doc.setPath(fullpath);
-			//List<String> text = null;
-			log.info("\nSUBJECT: {}", doc.getMail().getSubject());
+			List<String> text = null;
 			
 			SubjectExtractor.extract(doc);
+			MailDataExtractor.extract(doc);
 			log.info("{} - {} ", doc.getDatapoints().keySet(), doc.getDatapoints().values());
+			//log.info("doc {}", doc);
 			
 			//mail.setContent("Jorge Rios and Stephen Hawkings from IBM owe me 120.00 euros at 3:00pm the 30% and also 30.00 dollars at 2:59 every monday on 2000/september/28 or maybe 10/09/18 or maybe 05 September 2018 and can be today or even can try on september 30th.");
-			//mail.setContent("You should fully accept the refund of 200.00 dollars.");
+			mail.setContent("I pay 123 123.00 USD and see.");
 			//mail.setAttachments(new ArrayList<>());
 			
-			/* splitter
+			//* splitter
 			text = splitter.detect(mail.getContent());
 			for (Attachment a : mail.getAttachments()) {
 				for (String s : splitter.detect(a.getTextcontent())) {
@@ -121,7 +134,7 @@ public class App {
 			} //*/
 			
 			
-			/* tokenizer
+			//* tokenizer
 			List<Sentence> sentences = new ArrayList<>();
 			for (String s : text) {
 				sentences.add(tokenizer.tokenize(s));
@@ -129,7 +142,7 @@ public class App {
 			doc.getText().setSentences(sentences); //*/
 			
 			
-			/* pos tagger
+			//* pos tagger
 			sentences = new ArrayList<>();
 			for (Sentence s : doc.getText().getSentences()) {
 				sentences.add(tagger.annotate(s));
@@ -137,7 +150,7 @@ public class App {
 			doc.getText().setSentences(sentences); //*/
 			
 			
-			/* ner org
+			//* ner org
 			sentences = new ArrayList<>();
 			ner = new OrganizationFinderNER();
 			for (Sentence s : doc.getText().getSentences()) {
@@ -146,7 +159,7 @@ public class App {
 			doc.getText().setSentences(sentences); //*/
 			
 			
-			/* ner per
+			//* ner per
 			sentences = new ArrayList<>();
 			ner = new PersonFinderNER();
 			for (Sentence s : doc.getText().getSentences()) {
@@ -155,7 +168,7 @@ public class App {
 			doc.getText().setSentences(sentences); //*/
 			
 			
-			/* ner date
+			//* ner date
 			sentences = new ArrayList<>();
 			ner = new DateFinderNER();
 			for (Sentence s : doc.getText().getSentences()) {
@@ -164,7 +177,7 @@ public class App {
 			doc.getText().setSentences(sentences); //*/
 			
 			
-			/* ner time
+			//* ner time
 			sentences = new ArrayList<>();
 			ner = new TimeFinderNER();
 			for (Sentence s : doc.getText().getSentences()) {
@@ -173,7 +186,7 @@ public class App {
 			doc.getText().setSentences(sentences); //*/
 			
 			
-			/* ner perc
+			//* ner perc
 			sentences = new ArrayList<>();
 			ner = new PercentageFinderNER();
 			for (Sentence s : doc.getText().getSentences()) {
@@ -182,11 +195,34 @@ public class App {
 			doc.getText().setSentences(sentences); //*/
 			
 			
-			/* ner money
+			//* ner money
 			sentences = new ArrayList<>();
 			ner = new MoneyFinderNER();
 			for (Sentence s : doc.getText().getSentences()) {
 				sentences.add(ner.annotate(s));
+			}
+			doc.getText().setSentences(sentences); //*/
+			
+			//* ner isin
+			sentences = new ArrayList<>();
+			ner = new ISINFinderNER();
+			for (Sentence s : doc.getText().getSentences()) {
+				sentences.add(ner.annotate(s));
+			}
+			doc.getText().setSentences(sentences); //*/
+			
+			//* ner cusip
+			sentences = new ArrayList<>();
+			ner = new CUSIPFinderNER();
+			for (Sentence s : doc.getText().getSentences()) {
+				sentences.add(ner.annotate(s));
+			}
+			doc.getText().setSentences(sentences); //*/
+			
+			//* oer
+			sentences = new ArrayList<>();
+			for (Sentence s : doc.getText().getSentences()) {
+				sentences.add(oer.annotate(s));
 			}
 			doc.getText().setSentences(sentences); //*/
 			
@@ -209,9 +245,9 @@ public class App {
 			doc.getText().setSentences(sentences); //*/
 			
 			
-			/*
+			//*
 			doc.getText().getSentences().forEach(s -> {
-				s.getS().forEach(System.out::println);
+				s.getS().forEach(log::info);
 				System.out.println();
 			});
 			//*/
@@ -245,62 +281,62 @@ public class App {
 
 	private static void fillList(List<String> list) {
 		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  MC from Dealer 4 to CITIBKLDN.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ [EXTERN] 19687-Bank 6 Vs. CBNA.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ [External] 148705-Bank 3 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 14107- BANK 1  Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104009- BANK 10 Vs. CITIBKLDN.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104606-Broker 8 Vs. CBNA.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104607-Broker 9 Vs. CBNA.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 118684-Dealer 5 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 132447-Fund 7. Vs. CBNA.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 134878-Dealer 6 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 135682- Fund 4 Vs. CIP.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 145023-Bank 2 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 146746- HF1 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 146889-Bank 5 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 148882-Dealer 7 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 152407-Fund 6Vs. CGML .eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 152810- HF 4 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156463-Dealer 8 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156463-Insurance 3 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156464-Dealer 9 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156464-Insurance 4 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156466-Dealer 10 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 172638-Bank 4 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 181449- HF 6 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/2018.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/Client JHK - Margin Call Notice Citigroup xlsx.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/file.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/Margin Call Notice from (Client GEF - CITIGROUP GLOBAL MARKETS EUROPE ) COB date  14-Sep-2018.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/Margin Notice - Variation Demand Client DEF Citigroup Global Markets Limited COB 2018-Sep-14.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/Notification of Margin Call 2.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/OTC Margin Call Notice from Client ABS to CGGM Ltd .msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE   203612-Fund 3 Vs  CBNA.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  13966-Bank 7 Vs  CGML.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  102444 -  Type 4  Pension Fund 2 SA vs  CBNA   Margin Notice  Portfolio Statement.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  114229 -  Type 1  Fund 1 vs  CEP   Portfolio Statement  Margin Notice.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  118768-HF 3 Vs  CGML.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  120288 -  Type 2  Pension Fund 4 vs  CBNA   Portfolio Statement  Margin Notice.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  135366- Broker 1 Vs  CGML.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  135366- Broker 2 Vs  CGML.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  143796 -  Type 2  Insurance 1 vs  CGML   Portfolio Statement  Margin Notice.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  143802 -  Type 1  Insurance 2 vs  CGML   Margin Notice  Portfolio Statement.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  148974 -  Type 2  Broker 3 vs  CGML   Margin Notice  Portfolio Statement.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  148975 -  Type 3  Broker 4 vs  CGML   Margin Notice  Portfolio Statement.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  150435 -  Type 2  Insurance 7 vs  CGML   Portfolio Statement  Margin Notice.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  150436 -  Type 2  Insurance 8 vs  CGML   Portfolio Statement  Margin Notice.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  150772 -   TYPE 2   Fund 8 vs  CGML   Margin Notice  Portfolio Statement.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  152204-Pension Fund 6 Vs  CGML.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  152205-Pension Fund 7 Vs  CGML.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  162166-Dealer 1 Vs  CBNA  External .msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  162179-Dealer 2 Vs  CBNA  External .msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  171674 -  Type 3  Fund 6 vs  CGML   Portfolio Statement  Margin Notice.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  172580 -  Type 4  (Secure) Broker 6 vs  CBNA   Portfolio Statement  Margin Notice.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  172970 -  Type 4  Broker 5 vs  CBNA   Portfolio Statement  Margin Notice.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  178470-HF 9 Vs  CGML.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  179299 -  Type 3  Insurance 5 vs  CBNA   Portfolio Statement  Margin Notice.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  188735-HF 8 Vs  CGML.msg");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  MC from Dealer 3 to CITIBKLDN.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ [EXTERN] 19687-Bank 6 Vs. CBNA.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ [External] 148705-Bank 3 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 14107- BANK 1  Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104009- BANK 10 Vs. CITIBKLDN.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104606-Broker 8 Vs. CBNA.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104607-Broker 9 Vs. CBNA.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 118684-Dealer 5 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 132447-Fund 7. Vs. CBNA.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 134878-Dealer 6 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 135682- Fund 4 Vs. CIP.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 145023-Bank 2 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 146746- HF1 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 146889-Bank 5 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 148882-Dealer 7 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 152407-Fund 6Vs. CGML .eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 152810- HF 4 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156463-Dealer 8 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156463-Insurance 3 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156464-Dealer 9 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156464-Insurance 4 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156466-Dealer 10 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 172638-Bank 4 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 181449- HF 6 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/2018.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/Client JHK - Margin Call Notice Citigroup xlsx.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/file.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/Margin Call Notice from (Client GEF - CITIGROUP GLOBAL MARKETS EUROPE ) COB date  14-Sep-2018.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/Margin Notice - Variation Demand Client DEF Citigroup Global Markets Limited COB 2018-Sep-14.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/Notification of Margin Call 2.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/OTC Margin Call Notice from Client ABS to CGGM Ltd .msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE   203612-Fund 3 Vs  CBNA.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  13966-Bank 7 Vs  CGML.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  102444 -  Type 4  Pension Fund 2 SA vs  CBNA   Margin Notice  Portfolio Statement.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  114229 -  Type 1  Fund 1 vs  CEP   Portfolio Statement  Margin Notice.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  118768-HF 3 Vs  CGML.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  120288 -  Type 2  Pension Fund 4 vs  CBNA   Portfolio Statement  Margin Notice.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  135366- Broker 1 Vs  CGML.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  135366- Broker 2 Vs  CGML.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  143796 -  Type 2  Insurance 1 vs  CGML   Portfolio Statement  Margin Notice.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  143802 -  Type 1  Insurance 2 vs  CGML   Margin Notice  Portfolio Statement.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  148974 -  Type 2  Broker 3 vs  CGML   Margin Notice  Portfolio Statement.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  148975 -  Type 3  Broker 4 vs  CGML   Margin Notice  Portfolio Statement.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  150435 -  Type 2  Insurance 7 vs  CGML   Portfolio Statement  Margin Notice.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  150436 -  Type 2  Insurance 8 vs  CGML   Portfolio Statement  Margin Notice.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  150772 -   TYPE 2   Fund 8 vs  CGML   Margin Notice  Portfolio Statement.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  152204-Pension Fund 6 Vs  CGML.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  152205-Pension Fund 7 Vs  CGML.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  162166-Dealer 1 Vs  CBNA  External .msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  162179-Dealer 2 Vs  CBNA  External .msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  171674 -  Type 3  Fund 6 vs  CGML   Portfolio Statement  Margin Notice.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  172580 -  Type 4  (Secure) Broker 6 vs  CBNA   Portfolio Statement  Margin Notice.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  172970 -  Type 4  Broker 5 vs  CBNA   Portfolio Statement  Margin Notice.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  178470-HF 9 Vs  CGML.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  179299 -  Type 3  Insurance 5 vs  CBNA   Portfolio Statement  Margin Notice.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  188735-HF 8 Vs  CGML.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  MC from Dealer 3 to CITIBKLDN.msg");
 	}
 
 }

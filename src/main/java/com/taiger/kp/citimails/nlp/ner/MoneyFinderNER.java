@@ -1,6 +1,7 @@
 package com.taiger.kp.citimails.nlp.ner;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.util.Assert;
@@ -26,7 +27,7 @@ public class MoneyFinderNER implements NER {
 	private NameFinderME nameFinderEn;
 	
 	private Pattern AMOUNT_PATTERN = Pattern.compile(
-			Constants.amount
+			Constants.amount4
 	      );
 	
 	private Pattern CURRENCY_PATTERN = Pattern.compile(
@@ -81,7 +82,9 @@ public class MoneyFinderNER implements NER {
 		Assert.notNull(sentence, "sentence shouldn't be null");
 		
 		for (Word w : sentence.getS()) {
-			if (AMOUNT_PATTERN.matcher(w.getW()).matches()) {
+			Matcher matcher = AMOUNT_PATTERN.matcher(w.getW());
+			if (matcher.matches()) {
+				log.info(matcher.toString());
 				w.setNerTag(Constants.B + Constants.AMOUNT);
 			}
 			if (CURRENCY_PATTERN.matcher(w.getW().toLowerCase()).matches()) {
@@ -92,12 +95,41 @@ public class MoneyFinderNER implements NER {
 		for (int i = 0; i < sentence.getS().size() - 1; i++) {
 			Word current = sentence.getS().get(i);
 			Word next = sentence.getS().get(i+1);
+			
+			if ((current.getNerTag().equals(Constants.B + Constants.AMOUNT) && next.getNerTag().equals(Constants.B + Constants.AMOUNT))
+					|| (current.getNerTag().equals(Constants.I + Constants.AMOUNT) && next.getNerTag().equals(Constants.B + Constants.AMOUNT))) {
+				next.setNerTag(Constants.I + Constants.AMOUNT);
+			}
 			if ((current.getNerTag().equals(Constants.B + Constants.AMOUNT) && next.getNerTag().equals(Constants.B + Constants.CURRENCY))
 					|| (current.getNerTag().equals(Constants.B + Constants.CURRENCY) && next.getNerTag().equals(Constants.B + Constants.AMOUNT))) {
 				current.setNerTag(Constants.B + Constants.MONEY);
 				next.setNerTag(Constants.I + Constants.MONEY);
 			}	
+			if ((current.getNerTag().equals(Constants.I + Constants.AMOUNT) && next.getNerTag().equals(Constants.B + Constants.CURRENCY))
+					|| (current.getNerTag().contains(Constants.AMOUNT) && next.getNerTag().equals(Constants.B + Constants.MONEY))) {
+				for (int j = i; j >= 0 && sentence.getS().get(j).getNerTag().contains(Constants.AMOUNT); j--) {
+					sentence.getS().get(j).setNerTag(sentence.getS().get(j).getNerTag().replace(Constants.AMOUNT, Constants.MONEY));
+				}
+				next.setNerTag(Constants.I + Constants.MONEY);
+			}	
+			if ((current.getNerTag().equals(Constants.B + Constants.MONEY) && next.getNerTag().equals(Constants.B + Constants.AMOUNT))
+					|| (current.getNerTag().equals(Constants.I + Constants.MONEY) && next.getNerTag().equals(Constants.B + Constants.AMOUNT))) {
+				next.setNerTag(Constants.I + Constants.MONEY);
+			}
 		}
+		
+		/*for (int i = 0; i < sentence.getS().size() - 1; i++) {
+			Word current = sentence.getS().get(i);
+			Word next = sentence.getS().get(i+1);
+			
+				
+			if ((current.getNerTag().contains(Constants.AMOUNT) && next.getNerTag().equals(Constants.B + Constants.MONEY))) {
+				for (int j = i; j >= 0 && sentence.getS().get(j).getNerTag().contains(Constants.AMOUNT); j--) {
+					sentence.getS().get(j).setNerTag(sentence.getS().get(j).getNerTag().replace(Constants.AMOUNT, Constants.MONEY));
+				}
+				next.setNerTag(Constants.I + Constants.MONEY);
+			}
+		}*/
 		
 		return sentence;
 	}

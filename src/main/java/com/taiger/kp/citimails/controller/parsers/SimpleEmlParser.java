@@ -1,18 +1,13 @@
 package com.taiger.kp.citimails.controller.parsers;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Address;
 import javax.mail.BodyPart;
-import javax.mail.Session;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
@@ -21,9 +16,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.util.Assert;
 
-import com.taiger.kp.citimails.App;
 import com.taiger.kp.citimails.model.Mail;
-import com.taiger.kp.citimails.utils.StringTools;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -48,17 +41,15 @@ public class SimpleEmlParser implements SimpleParser {
         //String from = parser.getFrom();
         for (Address from : mime.getFrom()) {
         	mail.setFrom(mail.getFrom() + from.toString() + ";");
-        	log.info("EXTRACTED FROM: {}", from);
         }
-        for (Address to : mime.getReplyTo()) {
-        	log.info("EXTRACTED TOLIST: {}", to);
+        for (Address to : mime.getAllRecipients()) {
+        	mail.setFrom(mail.getFrom() + to.toString() + ";");
         }
         mail.setSubject(parser.getSubject());
         String htmlContent = parser.parse().getHtmlContent();
         mail.setContent(parseHtml(htmlContent));
         
-        List<Address> to = parser.getTo();
-        log.info("EXTRACTED TO: {}", to);
+        //List<Address> to = parser.getTo();
         List<Address> cc = parser.getCc();
         List<Address> bcc = parser.getBcc();
         

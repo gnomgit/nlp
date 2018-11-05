@@ -34,13 +34,10 @@ public class SimpleMsgParser implements SimpleParser {
 		try {
 			MsgParser msgp = new MsgParser();
 			Message msg = msgp.parseMsg(path + name);
-			String from_email = msg.getFromEmail();
-			String from_name = msg.getFromName();
+			String fromEmail = msg.getFromEmail();
+			String fromName = msg.getFromName();
 			String subject = msg.getSubject();
 			String body = msg.getBodyText();
-			String to_list = msg.getDisplayTo();
-			String cc_list = msg.getDisplayCc();
-			String bcc_list = msg.getDisplayBcc();
 			List<Attachment> list = msg.getAttachments();
 			//System.out.println("Attachments (" + list.size() + ")");
 			
@@ -74,7 +71,8 @@ public class SimpleMsgParser implements SimpleParser {
 			
 			mail.setContent(body);
 			mail.setSubject(subject);
-			mail.setFrom(from_email + " " + from_name);
+			mail.setFrom(fromEmail + " " + fromName);
+			mail.setTo(msg.getToRecipient().toString());
 			
 		} 	catch (Exception e) {
 			log.error(e.getMessage());

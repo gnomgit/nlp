@@ -9,6 +9,7 @@ public class Constants {
 	public static final String B = "B-";
 	public static final String I = "I-";
 	public static final String O = "O";
+	public static final String AT = "@";
 	
 	// ner tags
 	public static final String LOCATION = "LOCATION";
@@ -20,6 +21,8 @@ public class Constants {
 	public static final String PERCENTAGE = "PERCENTAGE";
 	public static final String AMOUNT = "AMOUNT";
 	public static final String CURRENCY = "CURRENCY";
+	public static final String ISIN = "ISIN";
+	public static final String CUSIP = "CUSIP";
 	
 	// opennlp models
 	public static final String NER_ES_DATE = "es-ner-misc.bin";
@@ -38,6 +41,16 @@ public class Constants {
 	public static final String CHUNKER_EN = "en-chunker.bin";
 	public static final String PARSER_EN = "en-parser-chunking.bin";
 	public static final String MALTPARSER_ARGS = "-c espmalt-1.0 -m parse -w ./models -lfi parser.log";
+	
+	// ontologies
+	public static final String CITI_ONTOLOGY_TTL = "CitibankOnto.ttl";   
+	public static final String CITI_ONTOLOGY_TTL_new = "CitiBankOnto_1031.ttl";
+	public static final String LEXIS_ONTOLOGY_TTL = "lexis.ttl";
+	public static final String CITI_ONTOLOGY_OBDA = "CitibankOnto.obda";
+	public static final String CITI_ONTOLOGY_JSON = "CitibankOnto1.obda";
+	public static final String CITI_ONTOLOGY_OWL = "citibankNew.owl";
+	public static final String CITI_ONTOLOGY_OWL_old = "CitibankOnto3.owl";
+	public static final String BIRRA_ONTOLOGY_OWL = "birra.owl";
 	
 	// dbpedia
 	public static final String DBPEDIA_EN_URL = "https://api.dbpedia-spotlight.org/en/annotate?";
@@ -88,7 +101,12 @@ public class Constants {
 	public static final String days = "^((mon|tues|wed(nes)?|thur(s)?|fri|sat(ur)?|sun)(day)?)$";
 	
 	// money regexp
-	public static final String amount = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9]))?$";
+	//public static final String amount = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9]))?$";
+	public static final String amount = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9])?)?$";
+	public static final String amount2 = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9]|(\\.-))?)?$";
+	public static final String amount3 = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3}\\.([0-9]{3}\\.)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9]|(\\.-))?)?$";
+	public static final String amount4 = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3}( |,|\\.)([0-9]{3}( |,|\\.))*[0-9]{3}|[0-9]+)((\\.|,)[0-9][0-9]|((\\.|,)-))?)?$";
+	public static final String amount5 = "^$";
 	public static final String currency = "^(euro(s)?|eur|dollar(s)?|pound(s)?|\\$|\\€|\\£|\\¥|yen(s)?|yuan(s)?|usd|cad|gbp|jpy|cny|hkd)$";
 	
 	// subject regexp
@@ -97,6 +115,8 @@ public class Constants {
 	public static final String subject_extra = "^((R|r)(E|e):( )*)?(.*)(( )+(F|f)(R|r)(O|o)(M|m)( )+)(.*)(( )*(T|t)(O|o)( )*)(.*)$";
 	public static final String subject_from = "^((R|r)(E|e):( )*)?(.*)(( )*(F|f)(R|r)(O|o)(M|m)( )*)(.*)$";
 	
+	// ISIN regexp
+	public static final String isin_regexp = "^[A-Z]{2}[A-Z0-9]{9}\\d$";
 	
 	// penntreebanck POS tags
 	public static final String hash = "#";
@@ -173,6 +193,8 @@ public class Constants {
 	public static final String SUBJECT_TO = "SUBJECT_TO";
 	public static final String SUBJECT_REASON = "SUBJECT_REASON";
 	public static final String OTHER = "OTHER";
+	public static final String FROM = "FROM";
+	public static final String TO = "TO";
 	
 	
 	

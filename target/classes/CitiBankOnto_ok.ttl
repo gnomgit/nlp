@@ -1,0 +1,157 @@
+@prefix : <http://www.taiger.com/ontology/citibank#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.taiger.com/ontology/citibank> .
+
+<http://www.taiger.com/ontology/citibank> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.taiger.com/ontology/Amount_Action
+<http://www.taiger.com/ontology/Amount_Action> rdf:type owl:Class ;
+                                               rdfs:label "Amount_Action"@en .
+
+
+###  http://www.taiger.com/ontology/Date
+<http://www.taiger.com/ontology/Date> rdf:type owl:Class ;
+                                      rdfs:label "Date"@en .
+
+
+###  http://www.taiger.com/ontology/Dispute_Action
+<http://www.taiger.com/ontology/Dispute_Action> rdf:type owl:Class .
+
+
+###  http://www.taiger.com/ontology/Dispute_Object
+<http://www.taiger.com/ontology/Dispute_Object> rdf:type owl:Class ;
+                                                rdfs:label "Dispute_Object"@en .
+
+
+###  http://www.taiger.com/ontology/ISN_Action
+<http://www.taiger.com/ontology/ISN_Action> rdf:type owl:Class ;
+                                            rdfs:label "ISN_Action"@en .
+
+
+###  http://www.taiger.com/ontology/Value_Date
+<http://www.taiger.com/ontology/Value_Date> rdf:type owl:Class ;
+                                            rdfs:label "Value_Date"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.taiger.com/ontology/citibankagree
+<http://www.taiger.com/ontology/citibankagree> rdf:type owl:NamedIndividual ,
+                                                        <http://www.taiger.com/ontology/Dispute_Action> ;
+                                               rdfs:label "agree" ;
+                                               <http://www.w3.org/2004/02/skos/core#altLabel> "Agree"@en ,
+                                                                                              "Agreed"@en ,
+                                                                                              "Fully agreed"@en ,
+                                                                                              "Margin agreed"@en ,
+                                                                                              "agreed"@en ,
+                                                                                              "confirm"@en ,
+                                                                                              "fully agree"@en ,
+                                                                                              "partially agreed"@en ,
+                                                                                              "partyally agreed"@en .
+
+
+###  http://www.taiger.com/ontology/citibankbooked
+<http://www.taiger.com/ontology/citibankbooked> rdf:type owl:NamedIndividual ,
+                                                         <http://www.taiger.com/ontology/ISN_Action> ;
+                                                rdfs:label "booked" ;
+                                                <http://www.w3.org/2004/02/skos/core#altLabel> "booked to deliver"@en ,
+                                                                                               "booked to return"@en .
+
+
+###  http://www.taiger.com/ontology/citibankbooked_ISIN_value
+<http://www.taiger.com/ontology/citibankbooked_ISIN_value> rdf:type owl:NamedIndividual ,
+                                                                    <http://www.taiger.com/ontology/ISN_Action> ;
+                                                           rdfs:label "booked @ISIN @money"@en ;
+                                                           <http://www.w3.org/2004/02/skos/core#altLabel> "booked to deliver @ISIN @money"@en ,
+                                                                                                          "booked to return @ISIN @money"@en .
+
+
+###  http://www.taiger.com/ontology/citibankbooked_to_pay
+<http://www.taiger.com/ontology/citibankbooked_to_pay> rdf:type owl:NamedIndividual ,
+                                                                <http://www.taiger.com/ontology/Amount_Action> ;
+                                                       rdfs:label "booked to pay @money"@en ;
+                                                       <http://www.w3.org/2004/02/skos/core#altLabel> "are calling @money"@en ,
+                                                                                                      "deliver @money"@en ,
+                                                                                                      "pay @money"@en ,
+                                                                                                      "return @money"@en ,
+                                                                                                      "to deliver @money"@en ,
+                                                                                                      "to pay @money"@en ,
+                                                                                                      "to receive @money"@en ,
+                                                                                                      "to send you @money"@en ,
+                                                                                                      "will deliver @money"@en ,
+                                                                                                      "will make payment to you @money"@en ,
+                                                                                                      "will transfer @money"@en ,
+                                                                                                      "would like to recall @money"@en .
+
+
+###  http://www.taiger.com/ontology/citibankdispute
+<http://www.taiger.com/ontology/citibankdispute> rdf:type owl:NamedIndividual ,
+                                                          <http://www.taiger.com/ontology/Dispute_Action> ;
+                                                 rdfs:label "dispute"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#altLabel> "Dispute"@en ,
+                                                                                                "Full dispute"@en ,
+                                                                                                "full dispute"@en ,
+                                                                                                "fully dispute"@en .
+
+
+###  http://www.taiger.com/ontology/citibanksee
+<http://www.taiger.com/ontology/citibanksee> rdf:type owl:NamedIndividual ,
+                                                      <http://www.taiger.com/ontology/Dispute_Action> ;
+                                             rdfs:label "see"@en .
+
+
+###  http://www.taiger.com/ontology/citibanktoday
+<http://www.taiger.com/ontology/citibanktoday> rdf:type owl:NamedIndividual ,
+                                                        <http://www.taiger.com/ontology/Date> ;
+                                               rdfs:label "today" .
+
+
+###  http://www.taiger.com/ontology/citibanktomorrow
+<http://www.taiger.com/ontology/citibanktomorrow> rdf:type owl:NamedIndividual ,
+                                                           <http://www.taiger.com/ontology/Date> ;
+                                                  rdfs:label "tomorrow" .
+
+
+###  http://www.taiger.com/ontology/citibankvalue
+<http://www.taiger.com/ontology/citibankvalue> rdf:type owl:NamedIndividual ,
+                                                        <http://www.taiger.com/ontology/Value_Date> ;
+                                               rdfs:label "value"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#altLabel> "v/d @date"@en ,
+                                                                                              "val @date"@en ,
+                                                                                              "value @date"@en ,
+                                                                                              "value date @date"@en ,
+                                                                                              "vd @date"@en .
+
+
+###  http://www.taiger.com/ontology/citibankyour_call
+<http://www.taiger.com/ontology/citibankyour_call> rdf:type owl:NamedIndividual ,
+                                                            <http://www.taiger.com/ontology/Dispute_Object> ;
+                                                   rdfs:label "call"@en ;
+                                                   <http://www.w3.org/2004/02/skos/core#altLabel> "margin call"@en ,
+                                                                                                  "margin call request"@en .
+
+
+###  http://www.taiger.com/ontology/citibank#date
+:date rdf:type owl:NamedIndividual ,
+               <http://www.taiger.com/ontology/Date> .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

@@ -1,0 +1,4883 @@
+# baseURI: http://www.taiger.com/ontology/iconverse/lexis
+
+@prefix : <http://www.taiger.com/ontology/iconverse/lexis#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.taiger.com/ontology/iconverse/lexis>
+  a owl:Ontology ;
+.
+:Term
+  a owl:Class ;
+  rdfs:label "Term"@en ;
+.
+:entails
+  a owl:ObjectProperty ;
+.
+:accident
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Accident"@en ;
+.
+:add
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Add"@en ;
+  skos:altLabel "add"@en ;
+  skos:altLabel "include"@en ;
+.
+:adminfee
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Adminfee"@en ;
+  skos:altLabel "admin charge"@en ;
+  skos:altLabel "admin charges"@en ;
+  skos:altLabel "admin cost"@en ;
+  skos:altLabel "admin costs"@en ;
+  skos:altLabel "admin fee"@en ;
+  skos:altLabel "admin fees"@en ;
+  skos:altLabel "admin"@en ;
+  skos:altLabel "administration charge"@en ;
+  skos:altLabel "administration cost"@en ;
+  skos:altLabel "administration costs"@en ;
+  skos:altLabel "administration fee"@en ;
+  skos:altLabel "administrative charge"@en ;
+  skos:altLabel "administrative charges"@en ;
+  skos:altLabel "administrative cost"@en ;
+  skos:altLabel "administrative costs"@en ;
+  skos:altLabel "administrative fee"@en ;
+  skos:altLabel "administrative fees"@en ;
+  skos:altLabel "processing charge"@en ;
+  skos:altLabel "processing charges"@en ;
+  skos:altLabel "processing cost"@en ;
+  skos:altLabel "processing costs"@en ;
+  skos:altLabel "processing fee"@en ;
+  skos:altLabel "processing fees"@en ;
+.
+:advantage
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Advantage"@en ;
+  skos:altLabel "advantage"@en ;
+  skos:altLabel "advantageous"@en ;
+  skos:altLabel "beneficial"@en ;
+  skos:altLabel "benefit"@en ;
+  skos:altLabel "better"@en ;
+  skos:altLabel "competitive"@en ;
+  skos:altLabel "convenient"@en ;
+  skos:altLabel "profit"@en ;
+.
+:again
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Again"@en ;
+  skos:altLabel "again"@en ;
+  skos:altLabel "another time"@en ;
+  skos:altLabel "once again"@en ;
+  skos:altLabel "one more time"@en ;
+.
+:all
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "All"@en ;
+  skos:altLabel "all"@en ;
+  skos:altLabel "completely"@en ;
+  skos:altLabel "entirely"@en ;
+  skos:altLabel "fully"@en ;
+  skos:altLabel "full"@en ;
+  skos:altLabel "outright"@en ;
+.
+:already
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Already"@en ;
+  skos:altLabel "already"@en ;
+.
+:anymore
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Anymore"@en ;
+  skos:altLabel "any longer"@en ;
+  skos:altLabel "anymore"@en ;
+  skos:altLabel "nevermore"@en ;
+  skos:altLabel "no longer"@en ;
+.
+:appeal
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Appeal"@en ;
+  skos:altLabel "appeal"@en ;
+.
+:applicantcircumstance
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Applicantcircumstance"@en ;
+  skos:altLabel "married person"@en ;
+  skos:altLabel "married"@en ;
+  skos:altLabel "non-citizen spouse"@en ;
+  skos:altLabel "non-citizen"@en ;
+  skos:altLabel "permanent resident"@en ;
+  skos:altLabel "pr"@en ;
+  skos:altLabel "singapore permanent residence"@en ;
+  skos:altLabel "singapore permanent resident"@en ;
+  skos:altLabel "singapore permanent"@en ;
+  skos:altLabel "single mummy"@en ;
+  skos:altLabel "single person"@en ;
+  skos:altLabel "single"@en ;
+  skos:altLabel "singles"@en ;
+  skos:altLabel "spr"@en ;
+  skos:altLabel "with mother"@en ;
+  skos:altLabel "with mum"@en ;
+  skos:altLabel "with my mother"@en ;
+  skos:altLabel "with my mum"@en ;
+.
+:acquire
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "acquire"@en ;
+  skos:altLabel "acquire"@en ;
+  skos:altLabel "buy"@en ;
+  skos:altLabel "obtain"@en ;
+  skos:altLabel "purchase"@en ;
+  skos:altLabel "apply"@en ;
+  skos:altLabel "application for"@en ;
+  skos:altLabel "application procedure"@en ;
+  skos:altLabel "application process"@en ;
+  skos:altLabel "application processing"@en ;
+  skos:altLabel "application"@en ;
+  skos:altLabel "apply for"@en ;
+  skos:altLabel "apply"@en ;
+  skos:altLabel "get"@en ;
+  skos:altLabel "request"@en ;
+  skos:altLabel "application request"@en ;
+  skos:altLabel "how can I request"@en ;
+  skos:altLabel "ballot"@en ;
+  skos:altLabel "join" ;
+  skos:altLabel "enter"@en ;
+  skos:altLabel "enlist"@en ;
+  skos:altLabel "enroll"@en ;
+  skos:altLabel "sign up"@en ;
+  skos:altLabel "book"@en ;
+  skos:altLabel "booked"@en ;
+  skos:altLabel "booking"@en ;
+  skos:altLabel "reservation"@en ;
+  skos:altLabel "reserve"@en ;
+  skos:altLabel "register"@en ;
+  skos:altLabel "registration"@en ;
+  skos:altLabel "entry"@en ;
+  skos:altLabel "enrolment"@en ;
+  skos:altLabel "admit"@en ;
+.
+:appointment
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Appointment"@en ;
+  skos:altLabel "appoint"@en ;
+  skos:altLabel "appointment"@en ;
+  skos:altLabel "appt"@en ;
+  skos:altLabel "meeting"@en ;
+.
+:approve
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Approve"@en ;
+  skos:altLabel "accept"@en ;
+  skos:altLabel "go through"@en ;
+  skos:altLabel "approve"@en ;
+  skos:altLabel "admit"@en ;
+  skos:altLabel "approval"@en ;
+  skos:altLabel "license"@en ;
+  skos:altLabel "take effect"@en ;
+  skos:altLabel "clearance"@en ;
+.
+:assess
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Assess"@en ;
+  skos:altLabel "assess"@en ;
+  skos:altLabel "assessment"@en ;
+  skos:altLabel "calculate"@en ;
+  skos:altLabel "calculator"@en ;
+  skos:altLabel "calculation"@en ;
+  skos:altLabel "consider"@en ;
+  skos:altLabel "evaluate"@en ;
+  skos:altLabel "evaluation"@en ;
+  skos:altLabel "review"@en ;
+  skos:altLabel "revision"@en ;
+  skos:altLabel "examination"@en ;
+  skos:altLabel "test"@en ;
+  skos:altLabel "exam"@en ;
+  skos:altLabel "examine"@en ;
+  skos:altLabel "grading"@en ;
+  skos:altLabel "graded"@en ;
+  skos:altLabel "grade"@en ;
+.
+:attend
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Attend"@en ;
+  skos:altLabel "attend"@en ;
+  skos:altLabel "be present"@en ;
+  skos:altLabel "go down"@en ;
+  skos:altLabel "go there"@en ;
+  skos:altLabel "go to"@en ;
+  skos:altLabel "show up"@en ;
+  skos:altLabel "turn up"@en ;
+  skos:altLabel "respond"@en ;
+  skos:altLabel "presence"@en ;
+.
+:automatic
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Automatic"@en ;
+  skos:altLabel "automatic"@en ;
+  skos:altLabel "automatically"@en ;
+.
+:available
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Available"@en ;
+  skos:altLabel "availability"@en ;
+  skos:altLabel "available"@en ;
+  skos:altLabel "free"@en ;
+  skos:altLabel "vacant"@en ;
+.
+:bank
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Bank"@en ;
+  skos:altLabel "bank"@en ;
+  skos:altLabel "financial institution"@en ;
+.
+:before
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Before"@en ;
+  skos:altLabel "before"@en ;
+  skos:altLabel "in the past"@en ;
+  skos:altLabel "past"@en ;
+  skos:altLabel "previously"@en ;
+.
+:bereavement
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Bereavement"@en ;
+  skos:altLabel "bereave"@en ;
+  skos:altLabel "bereaved"@en ;
+  skos:altLabel "bereavement"@en ;
+  skos:altLabel "breavement"@en ;
+  skos:altLabel "dead"@en ;
+  skos:altLabel "death"@en ;
+  skos:altLabel "deathwatch"@en ;
+  skos:altLabel "decease"@en ;
+  skos:altLabel "deceased"@en ;
+  skos:altLabel "depart"@en ;
+  skos:altLabel "die"@en ;
+  skos:altLabel "duel"@en ;
+  skos:altLabel "funeral"@en ;
+  skos:altLabel "mourning"@en ;
+  skos:altLabel "pass away"@en ;
+  skos:altLabel "vigil"@en ;
+  skos:altLabel "wake"@en ;
+.
+:big
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Big"@en ;
+  skos:altLabel "big"@en ;
+  skos:altLabel "bigger"@en ;
+  skos:altLabel "high"@en ;
+  skos:altLabel "higher"@en ;
+  skos:altLabel "large"@en ;
+  skos:altLabel "larger"@en ;
+  skos:altLabel "tall"@en ;
+  skos:altLabel "taller"@en ;
+  skos:altLabel "heavier"@en ;
+  skos:altLabel "heavy"@en ;
+  skos:altLabel "heavy"@en ;
+  skos:altLabel "more weight"@en ;
+  skos:altLabel "more length"@en ;
+  skos:altLabel "more height"@en ;
+.
+:block
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Block"@en ;
+  skos:altLabel "blk"@en ;
+  skos:altLabel "block"@en ;
+.
+:borrow
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Borrow"@en ;
+  skos:altLabel "borrow"@en ;
+.
+:break
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Break"@en ;
+  skos:altLabel "break"@en ;
+  skos:altLabel "broke"@en ;
+  skos:altLabel "broken"@en ;
+  skos:altLabel "damage"@en ;
+  skos:altLabel "destroy"@en ;
+  skos:altLabel "spoil"@en ;
+.
+:build
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Build"@en ;
+  skos:altLabel "build"@en ;
+  skos:altLabel "building"@en ;
+  skos:altLabel "complete"@en ;
+  skos:altLabel "completion"@en ;
+  skos:altLabel "construct"@en ;
+  skos:altLabel "construction"@en ;
+  skos:altLabel "reconstruct"@en ;
+  skos:altLabel "furnish"@en ;
+  skos:altLabel "modernize"@en ;
+.
+:buyer
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Buyer"@en ;
+  skos:altLabel "buyer"@en ;
+  skos:altLabel "purchaser"@en ;
+.
+:seller
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Seller"@en ;
+  skos:altLabel "sellers"@en ;
+.
+:bye
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Bye"@en ;
+  skos:altLabel "adios"@en ;
+  skos:altLabel "afternoon"@en ;
+  skos:altLabel "all the best"@en ;
+  skos:altLabel "appreciate"@en ;
+  skos:altLabel "au revoir"@en ;
+  skos:altLabel "best of luck"@en ;
+  skos:altLabel "best regards"@en ;
+  skos:altLabel "bye bye"@en ;
+  skos:altLabel "bye"@en ;
+  skos:altLabel "c u l8r"@en ;
+  skos:altLabel "c u"@en ;
+  skos:altLabel "cheers"@en ;
+  skos:altLabel "ciao"@en ;
+  skos:altLabel "cu l8r"@en ;
+  skos:altLabel "cu"@en ;
+  skos:altLabel "cya l8r"@en ;
+  skos:altLabel "cya"@en ;
+  skos:altLabel "evening"@en ;
+  skos:altLabel "farewell"@en ;
+  skos:altLabel "good eve"@en ;
+  skos:altLabel "good evening"@en ;
+  skos:altLabel "good ni8"@en ;
+  skos:altLabel "good night"@en ;
+  skos:altLabel "good nite"@en ;
+  skos:altLabel "goodbye"@en ;
+  skos:altLabel "goodnight"@en ;
+  skos:altLabel "goodnite"@en ;
+  skos:altLabel "grateful"@en ;
+  skos:altLabel "gratitude"@en ;
+  skos:altLabel "greetings"@en ;
+  skos:altLabel "have a good day"@en ;
+  skos:altLabel "kind regards"@en ;
+  skos:altLabel "regards"@en ;
+  skos:altLabel "sayonara"@en ;
+  skos:altLabel "see u l8r"@en ;
+  skos:altLabel "see u"@en ;
+  skos:altLabel "see ya"@en ;
+  skos:altLabel "see you l8r"@en ;
+  skos:altLabel "see you"@en ;
+  skos:altLabel "take care"@en ;
+  skos:altLabel "talk to u l8r"@en ;
+  skos:altLabel "talk to you l8r"@en ;
+  skos:altLabel "talk to you later"@en ;
+  skos:altLabel "ttyl"@en ;
+.
+:calculate
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Calculate"@en ;
+  skos:altLabel "calculate"@en ;
+  skos:altLabel "calculator"@en ;
+  skos:altLabel "calculated"@en ;
+  skos:altLabel "calculation"@en ;
+  skos:altLabel "computation"@en ;
+  skos:altLabel "compute"@en ;
+  skos:altLabel "computed"@en ;
+  skos:altLabel "estimate"@en ;
+  skos:altLabel "estimated"@en ;
+.
+#:cancel
+#  a :Term ;
+#  a owl:NamedIndividual ;
+#  rdfs:label "Cancel"@en ;
+#  skos:altLabel "annul"@en ;
+#  skos:altLabel "annulment"@en ;
+#  skos:altLabel "cancel"@en ;
+#  skos:altLabel "cancelate"@en ;
+#  skos:altLabel "cancellation"@en ;
+#  skos:altLabel "cancelled"@en ;
+#  skos:altLabel "cancelling"@en ;
+#  skos:altLabel "delete"@en ;
+#  skos:altLabel "eliminate"@en ;
+#  skos:altLabel "elimination"@en ;
+#  skos:altLabel "give up"@en ;
+#  skos:altLabel "invalidate"@en ;
+#  skos:altLabel "invalidation"@en ;
+#  skos:altLabel "removal"@en ;
+#  skos:altLabel "remove"@en ;
+#  skos:altLabel "renounce"@en ;
+#  skos:altLabel "renouncement"@en ;
+#  skos:altLabel "rescind"@en ;
+#  skos:altLabel "waiver"@en ;
+#  skos:altLabel "withdraw"@en ;
+#  skos:altLabel "removal"@en ;
+#.
+:can
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Can"@en ;
+  skos:altLabel "could"@en ;
+#  skos:altLabel "should"@en ;
+.
+:should
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "should"@en ;
+  skos:altLabel "must"@en ;
+.
+:may
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "May"@en ;
+.
+#:cani
+#  a :Term ;
+#  a owl:NamedIndividual ;
+#  rdfs:label "Cani"@en ;
+#  skos:altLabel "can"@en ;
+#  skos:altLabel "am i able"@en ;
+#  skos:altLabel "am i allow"@en ;
+#  skos:altLabel "am i allowed"@en ;
+#  skos:altLabel "am i entitle"@en ;
+#  skos:altLabel "am i entitled"@en ;
+#  skos:altLabel "can I"@en ;
+#  skos:altLabel "could I"@en ;
+#  skos:altLabel "how can i know if i can"@en ;
+#  skos:altLabel "how do i know i can"@en ;
+#  skos:altLabel "how do i know if i can"@en ;
+#  skos:altLabel "how to know i can"@en ;
+#  skos:altLabel "how to know if i can"@en ;
+#  skos:altLabel "is it allow"@en ;
+#  skos:altLabel "is it allowed"@en ;
+#  skos:altLabel "is it possible"@en ;
+#  skos:altLabel "is possible"@en ;
+#  skos:altLabel "may I"@en ;
+#.
+#:cannot
+#  a :Term ;
+#  a owl:NamedIndividual ;
+#  rdfs:label "Cannot"@en ;
+#  skos:altLabel "can not"@en ;
+#  skos:altLabel "can't"@en ;
+#  skos:altLabel "cannot"@en ;
+#  skos:altLabel "cant"@en ;
+#.
+:cash
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Cash"@en ;
+  skos:altLabel "cash"@en ;
+.
+:cashier
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Cashier"@en ;
+  skos:altLabel "cashier"@en ;
+.
+:charge
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Charge"@en ;
+  skos:altLabel "charge"@en ;
+  skos:altLabel "free"@en ;
+  skos:altLabel "commission"@en ;
+  skos:altLabel "cost"@en ;
+  skos:altLabel "expensive"@en ;
+  skos:altLabel "fee"@en ;
+  skos:altLabel "forfeit"@en ;
+  skos:altLabel "money"@en ;
+  skos:altLabel "dollar"@en ;
+  skos:altLabel "dollars"@en ;
+  skos:altLabel "$"@en ;
+  skos:altLabel "SG$"@en ;
+  skos:altLabel "SGD"@en ;
+  skos:altLabel "SG $"@en ;
+  skos:altLabel "pay"@en ;
+  skos:altLabel "payable"@en ;
+  skos:altLabel "need to pay"@en ;
+  skos:altLabel "needed to pay"@en ;
+  skos:altLabel "payment"@en ;
+  skos:altLabel "make any payment"@en ;
+  skos:altLabel "make payment"@en ;
+  skos:altLabel "make a payment"@en ;
+  skos:altLabel "chargeable"@en ;
+  skos:altLabel "penalty"@en ;
+  skos:altLabel "price"@en ;
+  skos:altLabel "rate"@en ;
+  skos:altLabel "finance"@en ;
+  skos:altLabel "financially"@en ;
+  skos:altLabel "paid"@en ;
+  skos:altLabel "expenses"@en ;
+.
+:collect
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Collect"@en ;
+  skos:altLabel "collect"@en ;
+  skos:altLabel "collection"@en ;
+  skos:altLabel "obtain"@en ;
+  skos:altLabel "pick up"@en ;
+  skos:altLabel "receive"@en ;
+  skos:altLabel "earn"@en ;
+  skos:altLabel "retrieve"@en ;
+.
+:colours
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Colours"@en ;
+  skos:altLabel "aqua"@en ;
+  skos:altLabel "beige"@en ;
+  skos:altLabel "black"@en ;
+  skos:altLabel "blue"@en ;
+  skos:altLabel "brown"@en ;
+  skos:altLabel "crimson"@en ;
+  skos:altLabel "cyan"@en ;
+  skos:altLabel "gray"@en ;
+  skos:altLabel "green"@en ;
+  skos:altLabel "grey"@en ;
+  skos:altLabel "indigo"@en ;
+  skos:altLabel "khaki"@en ;
+  skos:altLabel "maroon"@en ;
+  skos:altLabel "pink"@en ;
+  skos:altLabel "purple"@en ;
+  skos:altLabel "red"@en ;
+  skos:altLabel "white"@en ;
+  skos:altLabel "yellow"@en ;
+.
+:commercial
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Commercial"@en ;
+  skos:altLabel "commercial"@en ;
+.
+:complain
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Complain"@en ;
+  skos:altLabel "complain"@en ;
+  skos:altLabel "complaint"@en ;
+  skos:altLabel "denounce"@en ;
+  skos:altLabel "dispute"@en ;
+  skos:altLabel "case"@en ;
+  skos:altLabel "protest"@en ;
+  skos:altLabel "clash"@en ;
+  skos:altLabel "disagreement"@en ;
+  skos:altLabel "problem"@en ;
+  skos:altLabel "issue"@en ;
+.
+:compliment
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Compliment"@en ;
+.
+:concessionary
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Concessionary"@en ;
+  skos:altLabel "concessionary"@en ;
+.
+:contact
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Contact"@en ;
+  skos:altLabel "contact"@en ;
+  skos:altLabel "approach"@en ;
+  skos:altLabel "reach out"@en ;
+.
+:contactmethods
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Contactmethods"@en ;
+  skos:altLabel "email"@en ;
+  skos:altLabel "fax"@en ;
+  skos:altLabel "phone"@en ;
+  skos:altLabel "telephone"@en ;
+.
+:conversational
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Conversational"@en ;
+  #skos:altLabel "I see"@en ;
+  skos:altLabel "I understand"@en ;
+  skos:altLabel "forgive me"@en ;
+  skos:altLabel "incorrect"@en ;
+  skos:altLabel "nonsense"@en ;
+  skos:altLabel "not correct"@en ;
+  skos:altLabel "not right"@en ;
+  skos:altLabel "oh I see"@en ;
+  skos:altLabel "oh, I see"@en ;
+  skos:altLabel "oic"@en ;
+  skos:altLabel "what's up"@en ;
+  skos:altLabel "wrong"@en ;
+.
+:cover
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "cover"@en ;
+  skos:altLabel "include"@en ;
+  skos:altLabel "inclusion"@en ;
+  skos:altLabel "listed"@en ;
+.
+:cpf
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Cpf"@en ;
+  skos:altLabel "central pf"@en ;
+  skos:altLabel "central provicent fund"@en ;
+  skos:altLabel "central provident funds"@en ;
+  skos:altLabel "cpf funds"@en ;
+  skos:altLabel "cpf"@en ;
+.
+:crm
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Crm"@en ;
+  skos:altLabel "crm"@en ;
+  skos:altLabel "customer relation manager"@en ;
+  skos:altLabel "customer relations manager"@en ;
+.
+:date
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Date"@en ;
+  skos:altLabel "date"@en ;
+  skos:altLabel "deadline"@en ;
+.
+:define
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Define"@en ;
+  skos:altLabel "define"@en ;
+  skos:altLabel "definition"@en ;
+  skos:altLabel "describe"@en ;
+  skos:altLabel "description"@en ;
+  skos:altLabel "explain"@en ;
+  skos:altLabel "mean"@en ;
+  skos:altLabel "what do you mean by"@en ;
+  skos:altLabel "what is the meaning of"@en ;
+.
+:delegate
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Delegate"@en ;
+  skos:altLabel "accredit"@en ;
+  skos:altLabel "appoint"@en ;
+  skos:altLabel "authorise"@en ;
+  skos:altLabel "authorize"@en ;
+  skos:altLabel "delegate"@en ;
+  skos:altLabel "designate"@en ;
+  skos:altLabel "empower"@en ;
+  skos:altLabel "entitle"@en ;
+.
+:different
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Different"@en ;
+  skos:altLabel "another"@en ;
+  skos:altLabel "different"@en ;
+  skos:altLabel "extra"@en ;
+  skos:altLabel "new"@en ;
+  skos:altLabel "other"@en ;
+  skos:altLabel "separate"@en ;
+  skos:altLabel "alternate"@en ;
+  skos:altLabel "alternative"@en ;
+  skos:altLabel "difference"@en ;
+  skos:altLabel "diff"@en ;
+  skos:altLabel "second"@en ;
+  skos:altLabel "third"@en ;
+  skos:altLabel "2nd"@en ;
+  skos:altLabel "3rd"@en ;
+.
+:dimension
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Dimension"@en ;
+  skos:altLabel "dimension"@en ;
+  skos:altLabel "height"@en ;
+  skos:altLabel "how big"@en ;
+  skos:altLabel "length"@en ;
+  skos:altLabel "measurement"@en ;
+  skos:altLabel "size"@en ;
+  skos:altLabel "width"@en ;
+.
+:discount
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Discount"@en ;
+  skos:altLabel "bonus"@en ;
+  skos:altLabel "cheap"@en ;
+  skos:altLabel "cheaper"@en ;
+  skos:altLabel "promotion"@en ;
+  skos:altLabel "cheaper price"@en ;
+  skos:altLabel "cheaper rate"@en ;
+  skos:altLabel "cheaper cost"@en ;
+  skos:altLabel "lower rate"@en ;
+  skos:altLabel "lower price"@en ;
+  skos:altLabel "lower cost"@en ;
+  skos:altLabel "lesser rate"@en ;
+  skos:altLabel "lesser price"@en ;
+  skos:altLabel "lesser cost"@en ;
+  skos:altLabel "less rate"@en ;
+  skos:altLabel "less price"@en ;
+  skos:altLabel "less cost"@en ;
+  skos:altLabel "cut price"@en ;
+  skos:altLabel "deduction"@en ;
+  skos:altLabel "reduction"@en ;
+  skos:altLabel "reduced cost"@en ;
+  skos:altLabel "discount"@en ;
+  skos:altLabel "less expensive"@en ;
+  skos:altLabel "price reduction"@en ;
+  skos:altLabel "rebate"@en ;
+  skos:altLabel "refund"@en ;
+  skos:altLabel "reimburse"@en ;
+  skos:altLabel "reimbursement"@en ;
+.
+:divorce
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Divorce"@en ;
+  skos:altLabel "divorce"@en ;
+  skos:altLabel "divorced"@en ;
+.
+:document
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Document"@en ;
+  skos:altLabel "accreditation"@en ;
+  skos:altLabel "cert"@en ;
+  skos:altLabel "certificate"@en ;
+  skos:altLabel "company letter"@en ;
+  skos:altLabel "credential"@en ;
+  skos:altLabel "doc"@en ;
+  skos:altLabel "document"@en ;
+  skos:altLabel "documentation"@en ;
+  skos:altLabel "evidence"@en ;
+  skos:altLabel "ic"@en ;
+  skos:altLabel "paper"@en ;
+  skos:altLabel "papers"@en ;
+  skos:altLabel "paperwork"@en ;
+  skos:altLabel "proof"@en ;
+  skos:altLabel "documentary proof"@en ;
+  skos:altLabel "receipt"@en ;
+  skos:altLabel "report"@en ;
+.
+:downpayment
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Downpayment"@en ;
+  skos:altLabel "deposit"@en ;
+  skos:altLabel "donw payment"@en ;
+  skos:altLabel "down payment"@en ;
+  skos:altLabel "down-payment"@en ;
+  skos:altLabel "downpayment"@en ;
+  skos:altLabel "initial deposit"@en ;
+  skos:altLabel "initial payment"@en ;
+.
+:duration
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Duration"@en ;
+  skos:altLabel "daily"@en ;
+  skos:altLabel "day"@en ;
+  skos:altLabel "duration"@en ;
+  skos:altLabel "length"@en ;
+  skos:altLabel "long term"@en ;
+  skos:altLabel "long-term"@en ;
+  skos:altLabel "month"@en ;
+  skos:altLabel "hours"@en ;
+  skos:altLabel "period"@en ;
+  skos:altLabel "short term"@en ;
+  skos:altLabel "short-term"@en ;
+  skos:altLabel "shorter"@en ;
+  skos:altLabel "term"@en ;
+  skos:altLabel "timespan"@en ;
+  skos:altLabel "week"@en ;
+  skos:altLabel "weekly"@en ;
+  skos:altLabel "year"@en ;
+  skos:altLabel "yr"@en ;
+  skos:altLabel "how long"@en ;
+  skos:altLabel "how much time"@en ;
+  skos:altLabel "how soon"@en ;
+  skos:altLabel "processing time"@en ;
+  skos:altLabel "process time"@en ;
+  skos:altLabel "time to process"@en ;
+  skos:altLabel "timeline"@en ;
+  skos:altLabel "time line"@en ;
+.
+#:eligible
+#  a :Term ;
+#  a owl:NamedIndividual ;
+#  rdfs:label "Eligible"@en ;
+#  skos:altLabel "conditions"@en ;
+#  skos:altLabel "criteria"@en ;
+#  skos:altLabel "eligibility"@en ;
+#  skos:altLabel "eligible"@en ;
+#  skos:altLabel "entitled"@en ;
+#  skos:altLabel "qualify"@en ;
+#  skos:altLabel "elig"@en ;
+#.
+:estates
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Estates"@en ;
+  skos:altLabel "Admiralty Link"@en ;
+  skos:altLabel "Admiralty"@en ;
+  skos:altLabel "Ang Mo Kio"@en ;
+  skos:altLabel "Bedok"@en ;
+  skos:altLabel "Bishan"@en ;
+  skos:altLabel "Boon Lay"@en ;
+  skos:altLabel "Bukit Batok"@en ;
+  skos:altLabel "Bukit Merah"@en ;
+  skos:altLabel "Bukit Panjang"@en ;
+  skos:altLabel "Bukit Timah"@en ;
+  skos:altLabel "Central Water Catchment"@en ;
+  skos:altLabel "Changi Bay"@en ;
+  skos:altLabel "Changi East"@en ;
+  skos:altLabel "Changi Village"@en ;
+  skos:altLabel "Changi"@en ;
+  skos:altLabel "Choa Chu Kang"@en ;
+  skos:altLabel "Clementi"@en ;
+  skos:altLabel "Downtown Core"@en ;
+  skos:altLabel "Geylang"@en ;
+  skos:altLabel "Hong Kah"@en ;
+  skos:altLabel "Hougang"@en ;
+  skos:altLabel "Joo Koon"@en ;
+  skos:altLabel "Jurong East"@en ;
+  skos:altLabel "Jurong Lake"@en ;
+  skos:altLabel "Jurong West Central"@en ;
+  skos:altLabel "Jurong West"@en ;
+  skos:altLabel "Kallang Bahru"@en ;
+  skos:altLabel "Kallang"@en ;
+  skos:altLabel "Katong"@en ;
+  skos:altLabel "Lim Chu Kang"@en ;
+  skos:altLabel "Mandai"@en ;
+  skos:altLabel "Marina Centre"@en ;
+  skos:altLabel "Marina East"@en ;
+  skos:altLabel "Marina South"@en ;
+  skos:altLabel "Marine Parade"@en ;
+  skos:altLabel "Museum"@en ;
+  skos:altLabel "Newton"@en ;
+  skos:altLabel "North-eastern Islands"@en ;
+  skos:altLabel "Novena"@en ;
+  skos:altLabel "Orchard"@en ;
+  skos:altLabel "Outram"@en ;
+  skos:altLabel "Pasir Ris"@en ;
+  skos:altLabel "Paya Lebar"@en ;
+  skos:altLabel "Potong Pasir"@en ;
+  skos:altLabel "Punggol"@en ;
+  skos:altLabel "Queenstown"@en ;
+  skos:altLabel "River Valley"@en ;
+  skos:altLabel "Rochor"@en ;
+  skos:altLabel "Seletar"@en ;
+  skos:altLabel "Sembawang"@en ;
+  skos:altLabel "Sengkang"@en ;
+  skos:altLabel "Senoko"@en ;
+  skos:altLabel "Serangoon Gardens"@en ;
+  skos:altLabel "Serangoon North"@en ;
+  skos:altLabel "Serangoon"@en ;
+  skos:altLabel "Siglap"@en ;
+  skos:altLabel "Simpang"@en ;
+  skos:altLabel "Singapore River"@en ;
+  skos:altLabel "Southern Islands"@en ;
+  skos:altLabel "Straits View"@en ;
+  skos:altLabel "Sungei Kadut"@en ;
+  skos:altLabel "Tampines North"@en ;
+  skos:altLabel "Tampines"@en ;
+  skos:altLabel "Tanglin"@en ;
+  skos:altLabel "Tengah"@en ;
+  skos:altLabel "Toa Payoh"@en ;
+  skos:altLabel "Toh Guan"@en ;
+  skos:altLabel "Tuas South"@en ;
+  skos:altLabel "Tuas"@en ;
+  skos:altLabel "Ubi"@en ;
+  skos:altLabel "Wenya"@en ;
+  skos:altLabel "Western Islands"@en ;
+  skos:altLabel "Western Water Catchment"@en ;
+  skos:altLabel "Woodlands"@en ;
+  skos:altLabel "Yishun"@en ;
+  skos:altLabel "Yuhua"@en ;
+  skos:altLabel "Yunnan"@en ;
+.
+:exceed
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Exceed"@en ;
+  skos:altLabel "above"@en ;
+  skos:altLabel "exceed"@en ;
+  skos:altLabel "higher"@en ;
+  skos:altLabel "increase"@en ;
+  skos:altLabel "more than"@en ;
+  skos:altLabel "surpass"@en ;
+  skos:altLabel "bigger"@en ;
+  skos:altLabel "heavier"@en ;
+  skos:altLabel "heavy"@en ;
+  skos:altLabel "more"@en ;
+  skos:altLabel "much more"@en ;
+  skos:altLabel "too much"@en ;
+.
+:exclude
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "exclude"@en ;
+.
+:exercise
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Exercise"@en ;
+  skos:altLabel "exercise"@en ;
+  skos:altLabel "launch"@en ;
+  skos:altLabel "round"@en ;
+.
+:expressions
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Expressions"@en ;
+  skos:altLabel "postal code"@en ;
+  skos:altLabel "postalcode"@en ;
+.
+:family
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Family"@en ;
+  skos:altLabel "familiy"@en ;
+  skos:altLabel "family"@en ;
+.
+#:fee
+#  a :Term ;
+#  a owl:NamedIndividual ;
+#  rdfs:label "Fee"@en ;
+#.
+:finance
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Finance"@en ;
+  skos:altLabel "finance"@en ;
+.
+:finished
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Finished"@en ;
+  skos:altLabel "complete"@en ;
+  skos:altLabel "completion"@en ;
+  skos:altLabel "finished"@en ;
+  skos:altLabel "ready"@en ;
+  skos:altLabel "attain"@en ;
+.
+:firsttimer
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Firsttimer"@en ;
+  skos:altLabel "first timer"@en ;
+  skos:altLabel "first-timer"@en ;
+  skos:altLabel "firsttimer"@en ;
+.
+:fit
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Fit"@en ;
+  skos:altLabel "accommodate"@en ;
+  skos:altLabel "conform"@en ;
+  skos:altLabel "fit"@en ;
+  skos:altLabel "suit"@en ;
+  skos:altLabel "capacity"@en ;
+.
+:flat
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Flat"@en ;
+  skos:altLabel "//flat misspelling"@en ;
+  skos:altLabel "apartment"@en ;
+  skos:altLabel "chalet"@en ;
+  skos:altLabel "condominium"@en ;
+  skos:altLabel "cottage"@en ;
+  skos:altLabel "dwelling"@en ;
+  skos:altLabel "flat"@en ;
+  skos:altLabel "home"@en ;
+  skos:altLabel "house"@en ;
+  skos:altLabel "housing"@en ;
+  skos:altLabel "hoz"@en ;
+  skos:altLabel "property"@en ;
+  skos:altLabel "sa"@en ;
+  skos:altLabel "studio"@en ;
+  skos:altLabel "unit"@en ;
+.
+:floorplan
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Floorplan"@en ;
+  skos:altLabel "floor plan"@en ;
+  skos:altLabel "floorplan"@en ;
+  skos:altLabel "layout drawing"@en ;
+  skos:altLabel "layout"@en ;
+.
+:forme
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Forme"@en ;
+  skos:altLabel "for me"@en ;
+  skos:altLabel "in my name"@en ;
+  skos:altLabel "in my place"@en ;
+  skos:altLabel "instead of me"@en ;
+  skos:altLabel "on my behalf"@en ;
+  skos:altLabel "on my name"@en ;
+.
+:former
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Former"@en ;
+  skos:altLabel "former"@en ;
+  skos:altLabel "previous"@en ;
+  skos:altLabel "earlier"@en ;
+  skos:altLabel "old"@en ;
+  skos:altLabel "older"@en ;
+  skos:altLabel "past"@en ;
+.
+#:fsp
+#  a :Term ;
+#  a owl:NamedIndividual ;
+#  rdfs:label "Fsp"@en ;
+#  skos:altLabel "family season p"@en ;
+#  skos:altLabel "family sp"@en ;
+#  skos:altLabel "fsp"@en ;
+#  skos:altLabel "fspt"@en ;
+#.
+:giro
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Giro"@en ;
+  skos:altLabel "giro"@en ;
+.
+:grant
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Grant"@en ;
+  skos:altLabel "aid"@en ;
+  skos:altLabel "allowance"@en ;
+  skos:altLabel "endowment"@en ;
+  skos:altLabel "grant"@en ;
+  skos:altLabel "stipend"@en ;
+  skos:altLabel "subsidy"@en ;
+.
+:hello
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Hello"@en ;
+  skos:altLabel "good day"@en ;
+  skos:altLabel "good morn"@en ;
+  skos:altLabel "good morning"@en ;
+  skos:altLabel "hallo"@en ;
+  skos:altLabel "hello"@en ;
+  skos:altLabel "helo"@en ;
+  skos:altLabel "hey"@en ;
+  skos:altLabel "hi"@en ;
+  skos:altLabel "morning"@en ;
+  skos:altLabel "sup"@en ;
+.
+:help
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Help"@en ;
+  skos:altLabel "assit"@en ;
+  skos:altLabel "assistance"@en ;
+.
+:holder
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Holder"@en ;
+  skos:altLabel "bearer"@en ;
+  skos:altLabel "got"@en ;
+  skos:altLabel "hold"@en ;
+  skos:altLabel "holder"@en ;
+  skos:altLabel "own"@en ;
+  skos:altLabel "ownership"@en ;
+  skos:altLabel "possess"@en ;
+  skos:altLabel "possessor"@en ;
+  skos:altLabel "proprietor"@en ;
+  skos:altLabel "purchaser"@en ;
+  skos:altLabel "take"@en ;
+.
+:how
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "How"@en ;
+  skos:altLabel "how"@en ;
+.
+:procedure
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Procedure"@en ;
+  skos:altLabel "process"@en ;
+  skos:altLabel "proceed"@en ;
+  skos:altLabel "formality"@en ;
+  skos:altLabel "formalities"@en ;
+  skos:altLabel "guideline"@en ;
+  skos:altLabel "mechanism"@en ;
+  :entails :info ;
+.
+:howmanytimes
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Howmanytimes"@en ;
+  skos:altLabel "how many time"@en ;
+  skos:altLabel "how many times"@en ;
+  skos:altLabel "how often"@en ;
+  skos:altLabel "how oftenly"@en ;
+  skos:altLabel "how frequent"@en ;
+  skos:altLabel "how frequently"@en ;
+  skos:altLabel "what is frequency"@en ;
+.
+:inability
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "inability"@en ;
+  skos:altLabel "i am not able"@en ;
+  skos:altLabel "i am unable"@en ;
+  skos:altLabel "i can not"@en ;
+  skos:altLabel "i can't"@en ;
+  skos:altLabel "i cannot"@en ;
+  skos:altLabel "i cant"@en ;
+  skos:altLabel "i will be unable"@en ;
+  skos:altLabel "i will not be able"@en ;
+  skos:altLabel "i won't be able"@en ;
+  skos:altLabel "i'll be unable"@en ;
+  skos:altLabel "i'll not be able"@en ;
+  skos:altLabel "i'm not able"@en ;
+  skos:altLabel "i'm unable"@en ;
+  skos:altLabel "im not able"@en ;
+  skos:altLabel "im unable"@en ;
+  skos:altLabel "inability"@en ;
+  skos:altLabel "unable"@en ;
+  skos:altLabel "cannot"@en ;
+  skos:altLabel "can not"@en ;
+  skos:altLabel "can't"@en ;
+  skos:altLabel "can't i"@en ;
+  skos:altLabel "cant"@en ;
+.
+:immediate
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Immediate"@en ;
+  skos:altLabel "immediate"@en ;
+  skos:altLabel "immediately"@en ;
+.
+:impact
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Impact"@en ;
+  skos:altLabel "affect"@en ;
+  skos:altLabel "impact"@en ;
+  skos:altLabel "problem"@en ;
+  skos:altLabel "problematic"@en ;
+.
+:income
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Income"@en ;
+  skos:altLabel "gross income"@en ;
+  skos:altLabel "household income"@en ;
+  skos:altLabel "income"@en ;
+.
+:tell
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Tell"@en ;
+  skos:altLabel "announce"@en ;
+  skos:altLabel "let me know"@en ;
+  skos:altLabel "make me know"@en ;
+  skos:altLabel "say"@en ;
+  skos:altLabel "tell"@en ;
+.
+:notify
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Notify"@en ;
+  skos:altLabel "notified"@en ;
+  skos:altLabel "notification"@en ;
+  skos:altLabel "remind"@en ;
+  skos:altLabel "reminder"@en ;
+  skos:altLabel "invitation"@en ;
+  skos:altLabel "invite"@en ;
+  skos:altLabel "communicate"@en ;
+  skos:altLabel "inform"@en ;
+.
+ :information
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Information"@en ;
+  skos:altLabel "details"@en ;
+  skos:altLabel "info"@en ;
+  skos:altLabel "information"@en ;
+.
+:instalment
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Instalment"@en ;
+  skos:altLabel "installment"@en ;
+  skos:altLabel "instalment"@en ;
+  skos:altLabel "install"@en ;
+  skos:altLabel "installation"@en ;
+  skos:altLabel "installing"@en ;
+  skos:altLabel "lay"@en ;
+  skos:altLabel "laying"@en ;
+.
+:insurance
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Insurance"@en ;
+  skos:altLabel "insurance premium"@en ;
+  skos:altLabel "insurance"@en ;
+  skos:altLabel "premium"@en ;
+  skos:altLabel "policy"@en ;
+  skos:altLabel "policies"@en ;
+.
+:interestrate
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Interestrate"@en ;
+  skos:altLabel "interest rate"@en ;
+  skos:altLabel "interest rates"@en ;
+  skos:altLabel "interest"@en ;
+  skos:altLabel "rate interest"@en ;
+  skos:altLabel "rate of interest"@en ;
+  skos:altLabel "rate"@en ;
+  skos:altLabel "rates of interest"@en ;
+.
+:keep
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Keep"@en ;
+  skos:altLabel "keep"@en ;
+  skos:altLabel "maintain"@en ;
+  skos:altLabel "preserve"@en ;
+  skos:altLabel "store"@en ;
+  skos:altLabel "storage"@en ;
+  skos:altLabel "storing"@en ;
+  skos:altLabel "retain"@en ;
+  skos:altLabel "stay"@en ;
+.
+:key
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Key"@en ;
+  skos:altLabel "key"@en ;
+.
+:know
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Know"@en ;
+  skos:altLabel "check"@en ;
+  skos:altLabel "find out"@en ;
+  skos:altLabel "find"@en ;
+  skos:altLabel "know"@en ;
+  skos:altLabel "see"@en ;
+  skos:altLabel "verify"@en ;
+  skos:altLabel "aware"@en ;
+  skos:altLabel "enquire"@en ;
+  skos:altLabel "ensure"@en ;
+  skos:altLabel "confirm"@en ;
+  skos:altLabel "confirmation"@en ;
+  skos:altLabel "search"@en ;
+.
+:languages
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Languages"@en ;
+  skos:altLabel "Albanian"@en ;
+  skos:altLabel "Arabic"@en ;
+  skos:altLabel "Bahasa Malaysia"@en ;
+  skos:altLabel "Bahasa Melayu"@en ;
+  skos:altLabel "Bengal"@en ;
+  skos:altLabel "Burmese"@en ;
+  skos:altLabel "Chinese"@en ;
+  skos:altLabel "Chinook"@en ;
+  skos:altLabel "Czech"@en ;
+  skos:altLabel "Dutch"@en ;
+  skos:altLabel "English"@en ;
+  skos:altLabel "Fijian"@en ;
+  skos:altLabel "Finnish"@en ;
+  skos:altLabel "French"@en ;
+  skos:altLabel "German"@en ;
+  skos:altLabel "Greek"@en ;
+  skos:altLabel "Hebrew"@en ;
+  skos:altLabel "Hindi"@en ;
+  skos:altLabel "Hungarian"@en ;
+  skos:altLabel "Indonesian"@en ;
+  skos:altLabel "Italian"@en ;
+  skos:altLabel "Japanese"@en ;
+  skos:altLabel "Korean"@en ;
+  skos:altLabel "Malay"@en ;
+  skos:altLabel "Maori"@en ;
+  skos:altLabel "Panjabi"@en ;
+  skos:altLabel "Polish"@en ;
+  skos:altLabel "Portuguese"@en ;
+  skos:altLabel "Punjabi"@en ;
+  skos:altLabel "Russian"@en ;
+  skos:altLabel "Samoan"@en ;
+  skos:altLabel "Singlish"@en ;
+  skos:altLabel "Slovak"@en ;
+  skos:altLabel "Spanish"@en ;
+  skos:altLabel "Sranan"@en ;
+  skos:altLabel "Swahili"@en ;
+  skos:altLabel "Swedish"@en ;
+  skos:altLabel "Tagalog"@en ;
+  skos:altLabel "Tahitian"@en ;
+  skos:altLabel "Tamil"@en ;
+  skos:altLabel "Thai"@en ;
+  skos:altLabel "Tongan"@en ;
+  skos:altLabel "Turkish"@en ;
+  skos:altLabel "Ukranian"@en ;
+  skos:altLabel "Urdu"@en ;
+  skos:altLabel "Vietnamese"@en ;
+  skos:altLabel "Yoruba"@en ;
+  skos:altLabel "Zulu"@en ;
+  skos:altLabel "language"@en ;
+.
+:letter
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Letter"@en ;
+  skos:altLabel "letter"@en ;
+.
+:limit
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Limit"@en ;
+  skos:altLabel "constrain"@en ;
+  skos:altLabel "constraint"@en ;
+  skos:altLabel "cut-off point"@en ;
+  skos:altLabel "cut-off"@en ;
+  skos:altLabel "cutoff point"@en ;
+  skos:altLabel "cutoff"@en ;
+  skos:altLabel "limit"@en ;
+  skos:altLabel "limitation"@en ;
+  skos:altLabel "limited"@en ;
+  skos:altLabel "max"@en ;
+  skos:altLabel "maximum"@en ;
+  skos:altLabel "maximum limit"@en ;
+  skos:altLabel "minimum"@en ;
+  skos:altLabel "restraint"@en ;
+  skos:altLabel "restrict"@en ;
+  skos:altLabel "restriction"@en ;
+  skos:altLabel "threshold"@en ;
+.
+:list
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "List"@en ;
+  skos:altLabel "list of"@en ;
+  skos:altLabel "list"@en ;
+  skos:altLabel "checklist"@en ;
+  skos:altLabel "check-list"@en ;
+.
+:live
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Live"@en ;
+  skos:altLabel "live"@en ;
+  skos:altLabel "reside"@en ;
+  skos:altLabel "stay"@en ;
+.
+:loan
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Loan"@en ;
+  skos:altLabel "loan"@en ;
+  skos:altLabel "mortgage loan"@en ;
+  skos:altLabel "mortgage"@en ;
+.
+:location
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Location"@en ;
+  skos:altLabel "address"@en ;
+  skos:altLabel "area"@en ;
+  skos:altLabel "block"@en ;
+  skos:altLabel "district"@en ;
+  skos:altLabel "estate"@en ;
+  skos:altLabel "group"@en ;
+  skos:altLabel "location"@en ;
+  skos:altLabel "place"@en ;
+  skos:altLabel "precinct"@en ;
+  skos:altLabel "sector"@en ;
+  skos:altLabel "street"@en ;
+  skos:altLabel "town"@en ;
+  skos:altLabel "zone"@en ;
+  skos:altLabel "code"@en ;
+.
+:long
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Long"@en ;
+  skos:altLabel "long"@en ;
+.
+:loss
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Loss"@en ;
+  skos:altLabel "can't find"@en ;
+  skos:altLabel "don't find"@en ;
+  skos:altLabel "lose"@en ;
+  skos:altLabel "mislay"@en ;
+  skos:altLabel "misplace"@en ;
+  skos:altLabel "not find"@en ;
+  skos:altLabel "missing"@en ;
+  :entails :need ;
+.
+:make
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Make"@en ;
+  skos:altLabel "make"@en ;
+.
+:malaysia
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Malaysia"@en ;
+  skos:altLabel "malay"@en ;
+  skos:altLabel "malaysia"@en ;
+  skos:altLabel "malaysian"@en ;
+.
+:marriage
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Marriage"@en ;
+  skos:altLabel "espousal"@en ;
+  skos:altLabel "marriage"@en ;
+  skos:altLabel "matrimony"@en ;
+  skos:altLabel "nuptials"@en ;
+  skos:altLabel "wedding"@en ;
+.
+:mode
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Mode"@en ;
+  skos:altLabel "method"@en ;
+  skos:altLabel "mode"@en ;
+  skos:altLabel "way"@en ;
+.
+:mop
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Mop"@en ;
+  skos:altLabel "minimum holding period"@en ;
+  skos:altLabel "minimum occupation period"@en ;
+  skos:altLabel "minimum occupation"@en ;
+  skos:altLabel "minimum period of occupation"@en ;
+  skos:altLabel "mop"@en ;
+.
+:multiple
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Multiple"@en ;
+  skos:altLabel "additional"@en ;
+  skos:altLabel "again"@en ;
+  skos:altLabel "many times"@en ;
+  skos:altLabel "more than 1"@en ;
+  skos:altLabel "more than once"@en ;
+  skos:altLabel "more than one"@en ;
+  skos:altLabel "or more"@en ;
+  skos:altLabel "multiple"@en ;
+  skos:altLabel "second-time"@en ;
+  skos:altLabel "several"@en ;
+  skos:altLabel "unlimited"@en ;
+  skos:altLabel "frequently"@en ;
+  skos:altLabel "frequent"@en ;
+  skos:altLabel "frequency"@en ;
+  skos:altLabel "regularly"@en ;
+  skos:altLabel "2"@en ;
+  skos:altLabel "two"@en ;
+  skos:altLabel "how many"@en ;
+  skos:altLabel "how many times"@en ;
+.
+:nationalservice
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Nationalservice"@en ;
+  skos:altLabel "military service allowance"@en ;
+  skos:altLabel "military service"@en ;
+  skos:altLabel "national service allowance"@en ;
+  skos:altLabel "national service"@en ;
+  skos:altLabel "ns allowance"@en ;
+  skos:altLabel "ns"@en ;
+.
+:near
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Near"@en ;
+  skos:altLabel "near"@en ;
+  skos:altLabel "nearby"@en ;
+  skos:altLabel "nearer"@en ;
+  skos:altLabel "nearest"@en ;
+  skos:altLabel "closest"@en ; 
+.
+:next
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Next"@en ;
+  skos:altLabel "following"@en ;
+  skos:altLabel "nearest"@en ;
+  skos:altLabel "next"@en ;
+  skos:altLabel "upcoming"@en ;
+.
+:no
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "No"@en ;
+  skos:altLabel "n"@en ;
+  skos:altLabel "non"@en ;
+  skos:altLabel "can not"@en ;
+  skos:altLabel "can't"@en ;
+  skos:altLabel "cannot"@en ;
+  skos:altLabel "didn't"@en ;
+  skos:altLabel "do not"@en ;
+  skos:altLabel "don"@en ;
+  skos:altLabel "don't"@en ;
+  skos:altLabel "dont"@en ;
+  skos:altLabel "has not"@en ;
+  skos:altLabel "hasn't"@en ;
+  skos:altLabel "have not"@en ;
+  skos:altLabel "haven't"@en ;
+  skos:altLabel "lack of"@en ;
+  skos:altLabel "never"@en ;
+  skos:altLabel "no way"@en ;
+  skos:altLabel "no"@en ;
+  skos:altLabel "nobody"@en ;
+  skos:altLabel "nop"@en ;
+  skos:altLabel "nope"@en ;
+  skos:altLabel "not"@en ;
+  skos:altLabel "nothing"@en ;
+  skos:altLabel "without"@en ;
+.
+#:numbers
+#  a :Term ;
+#  a owl:NamedIndividual ;
+#  rdfs:label "Numbers"@en ;
+#  skos:altLabel "eight"@en ;
+#  skos:altLabel "eighteen"@en ;
+#  skos:altLabel "eighty"@en ;
+#  skos:altLabel "eleven"@en ;
+#  skos:altLabel "fifteen"@en ;
+#  skos:altLabel "fifty"@en ;
+#  skos:altLabel "five"@en ;
+#  skos:altLabel "four"@en ;
+#  skos:altLabel "fourteen"@en ;
+#  skos:altLabel "fourty"@en ;
+#  skos:altLabel "hundred"@en ;
+#  skos:altLabel "nine"@en ;
+#  skos:altLabel "nineteen"@en ;
+#  skos:altLabel "ninety"@en ;
+#  skos:altLabel "one"@en ;
+#  skos:altLabel "seven"@en ;
+#  skos:altLabel "seventeen"@en ;
+#  skos:altLabel "seventy"@en ;
+#  skos:altLabel "six"@en ;
+#  skos:altLabel "sixteen"@en ;
+#  skos:altLabel "sixty"@en ;
+#  skos:altLabel "ten"@en ;
+#  skos:altLabel "thirteen"@en ;
+#  skos:altLabel "thirty"@en ;
+#  skos:altLabel "three"@en ;
+#  skos:altLabel "twelve"@en ;
+#  skos:altLabel "twenty"@en ;
+#  skos:altLabel "two"@en ;
+#.
+:offence
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Offence"@en ;
+  skos:altLabel "fine"@en ;
+  skos:altLabel "illegal"@en ;
+  skos:altLabel "illegal parking"@en ;
+  skos:altLabel "offence"@en ;
+  skos:altLabel "offense"@en ;
+  skos:altLabel "summon"@en ;
+.
+:offer
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Offer"@en ;
+  skos:altLabel "give"@en ;
+  skos:altLabel "offer"@en ;
+  skos:altLabel "send"@en ;
+  skos:altLabel "submit"@en ;
+  skos:altLabel "provide"@en ;
+  skos:altLabel "submission"@en ;
+.
+:one
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "One"@en ;
+  skos:altLabel "1"@en ;
+  skos:altLabel "one"@en ;
+.
+#:optionfee
+#  a :Term ;
+#  a owl:NamedIndividual ;
+#  rdfs:label "Optionfee"@en ;
+#  skos:altLabel "booking charge"@en ;
+#  skos:altLabel "booking fee"@en ;
+#  skos:altLabel "booking pay"@en ;
+#  skos:altLabel "booking payment"@en ;
+#  skos:altLabel "option charge"@en ;
+#  skos:altLabel "option fee"@en ;
+#  skos:altLabel "option pay"@en ;
+#  skos:altLabel "option payment"@en ;
+#.
+:order
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Order"@en ;
+  skos:altLabel "order"@en ;
+  skos:altLabel "sequence"@en ;
+.
+:ordinal
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Ordinal"@en ;
+  skos:altLabel "0th"@en ;
+  skos:altLabel "1,000,000,000,000th"@en ;
+  skos:altLabel "1,000,000,000th"@en ;
+  skos:altLabel "1,000,000th"@en ;
+  skos:altLabel "1,000th"@en ;
+  skos:altLabel "100th"@en ;
+  skos:altLabel "101st"@en ;
+  skos:altLabel "10th"@en ;
+  skos:altLabel "11th"@en ;
+  skos:altLabel "12th"@en ;
+  skos:altLabel "13th"@en ;
+  skos:altLabel "14th"@en ;
+  skos:altLabel "152nd"@en ;
+  skos:altLabel "15th"@en ;
+  skos:altLabel "16th"@en ;
+  skos:altLabel "17th"@en ;
+  skos:altLabel "18th"@en ;
+  skos:altLabel "19th"@en ;
+  skos:altLabel "1st"@en ;
+  skos:altLabel "200th"@en ;
+  skos:altLabel "20th"@en ;
+  skos:altLabel "21st"@en ;
+  skos:altLabel "22nd"@en ;
+  skos:altLabel "23rd"@en ;
+  skos:altLabel "24th"@en ;
+  skos:altLabel "2nd"@en ;
+  skos:altLabel "30th"@en ;
+  skos:altLabel "31st"@en ;
+  skos:altLabel "3rd"@en ;
+  skos:altLabel "40th"@en ;
+  skos:altLabel "4th"@en ;
+  skos:altLabel "50th"@en ;
+  skos:altLabel "5th"@en ;
+  skos:altLabel "60th"@en ;
+  skos:altLabel "6th"@en ;
+  skos:altLabel "70th"@en ;
+  skos:altLabel "7th"@en ;
+  skos:altLabel "80th"@en ;
+  skos:altLabel "8th"@en ;
+  skos:altLabel "90th"@en ;
+  skos:altLabel "9th"@en ;
+  skos:altLabel "billionth"@en ;
+  skos:altLabel "decillionth"@en ;
+  skos:altLabel "dozenth"@en ;
+  skos:altLabel "duodecillionth"@en ;
+  skos:altLabel "duotrigintillionth"@en ;
+  skos:altLabel "eighteenth"@en ;
+  skos:altLabel "eighth"@en ;
+  skos:altLabel "eightieth"@en ;
+  skos:altLabel "eleventh"@en ;
+  skos:altLabel "fift"@en ;
+  skos:altLabel "fifteenth"@en ;
+  skos:altLabel "fifth"@en ;
+  skos:altLabel "fiftieth"@en ;
+  skos:altLabel "first"@en ;
+  skos:altLabel "five-hundredth"@en ;
+  skos:altLabel "fortieth"@en ;
+  skos:altLabel "fourteenth"@en ;
+  skos:altLabel "fourth"@en ;
+  skos:altLabel "gazillionth"@en ;
+  skos:altLabel "googolplexth"@en ;
+  skos:altLabel "googolth"@en ;
+  skos:altLabel "hundredth"@en ;
+  skos:altLabel "millionth"@en ;
+  skos:altLabel "nineteenth"@en ;
+  skos:altLabel "nineth"@en ;
+  skos:altLabel "ninetieth"@en ;
+  skos:altLabel "ninteenth"@en ;
+  skos:altLabel "ninth"@en ;
+  skos:altLabel "nonillionth"@en ;
+  skos:altLabel "octillionth"@en ;
+  skos:altLabel "quadrillionth"@en ;
+  skos:altLabel "quintillionth"@en ;
+  skos:altLabel "second"@en ;
+  skos:altLabel "septillionth"@en ;
+  skos:altLabel "seventeenth"@en ;
+  skos:altLabel "seventh"@en ;
+  skos:altLabel "seventieth"@en ;
+  skos:altLabel "sextillionth"@en ;
+  skos:altLabel "sixteenth"@en ;
+  skos:altLabel "sixth"@en ;
+  skos:altLabel "sixtieth"@en ;
+  skos:altLabel "tenth"@en ;
+  skos:altLabel "third"@en ;
+  skos:altLabel "thirteenth"@en ;
+  skos:altLabel "thirtieth"@en ;
+  skos:altLabel "thirty first"@en ;
+  skos:altLabel "thirty-first"@en ;
+  skos:altLabel "thousandth"@en ;
+  skos:altLabel "trillionth"@en ;
+  skos:altLabel "twelfth"@en ;
+  skos:altLabel "twelveth"@en ;
+  skos:altLabel "twelvth"@en ;
+  skos:altLabel "twentieth"@en ;
+  skos:altLabel "twenty eighth"@en ;
+  skos:altLabel "twenty fifth"@en ;
+  skos:altLabel "twenty first"@en ;
+  skos:altLabel "twenty fourth"@en ;
+  skos:altLabel "twenty ninth"@en ;
+  skos:altLabel "twenty second"@en ;
+  skos:altLabel "twenty seventh"@en ;
+  skos:altLabel "twenty sixth"@en ;
+  skos:altLabel "twenty third"@en ;
+  skos:altLabel "twenty-eighth"@en ;
+  skos:altLabel "twenty-fifth"@en ;
+  skos:altLabel "twenty-first"@en ;
+  skos:altLabel "twenty-fourth"@en ;
+  skos:altLabel "twenty-ninth"@en ;
+  skos:altLabel "twenty-second"@en ;
+  skos:altLabel "twenty-seventh"@en ;
+  skos:altLabel "twenty-sixth"@en ;
+  skos:altLabel "twenty-third"@en ;
+  skos:altLabel "undecillion"@en ;
+  skos:altLabel "vigintillionth"@en ;
+  skos:altLabel "zeroth"@en ;
+.
+:outofscope
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Outofscope"@en ;
+  skos:altLabel "outstanding fine"@en ;
+  skos:altLabel "parking offence"@en ;
+.
+:overseas
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Overseas"@en ;
+  skos:altLabel "oversea"@en ;
+  skos:altLabel "overseas"@en ;
+.
+:own
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Own"@en ;
+  skos:altLabel "own"@en ;
+  skos:altLabel "owned"@en ;
+  skos:altLabel "personal"@en ;
+  skos:altLabel "private"@en ;
+.
+:parking
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Parking"@en ;
+  skos:altLabel "packing"@en ;
+  skos:altLabel "park"@en ;
+  skos:altLabel "parking"@en ;
+.
+:paymentmethods
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Paymentmethods"@en ;
+  skos:altLabel "amex"@en ;
+  skos:altLabel "credit card"@en ;
+  skos:altLabel "debit card"@en ;
+  skos:altLabel "mastercard"@en ;
+  skos:altLabel "visa"@en ;
+.
+:personaldetails
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Personaldetails"@en ;
+  skos:altLabel "correspondence address"@en ;
+  skos:altLabel "correspondence"@en ;
+  skos:altLabel "mailing address"@en ;
+  skos:altLabel "mailing"@en ;
+  skos:altLabel "my address"@en ;
+.
+:phg
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Phg"@en ;
+  skos:altLabel "phg"@en ;
+.
+:phone
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Phone"@en ;
+  skos:altLabel "contact number"@en ;
+  skos:altLabel "phone number"@en ;
+  skos:altLabel "phone"@en ;
+  skos:altLabel "telephone number"@en ;
+  skos:altLabel "telephone"@en ;
+.
+:position
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Position"@en ;
+  skos:altLabel "attach"@en ;
+  skos:altLabel "fix"@en ;
+  skos:altLabel "glue"@en ;
+  skos:altLabel "paste"@en ;
+  skos:altLabel "place"@en ;
+  skos:altLabel "position"@en ;
+  skos:altLabel "put"@en ;
+  skos:altLabel "stick"@en ;
+.
+:postpone
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Postpone"@en ;
+  skos:altLabel "defer"@en ;
+  skos:altLabel "deferment"@en ;
+  skos:altLabel "deferral"@en ;
+  skos:altLabel "delay"@en ;
+  skos:altLabel "postpone"@en ;
+  skos:altLabel "postponement"@en ;
+  skos:altLabel "reschedule"@en ;
+  skos:altLabel "extend"@en ;
+  skos:altLabel "extension"@en ;
+  skos:altLabel "bring forward"@en ;
+.
+:prefer
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Prefer"@en ;
+  skos:altLabel "choose"@en ;
+  skos:altLabel "chose"@en ;
+  skos:altLabel "instead"@en ;
+  skos:altLabel "liked"@en ;
+  skos:altLabel "look into"@en ;
+  skos:altLabel "prefer"@en ;
+  skos:altLabel "preferred"@en ;
+  skos:altLabel "selected"@en ;
+  skos:altLabel "want"@en ;
+  skos:altLabel "wanted"@en ;
+.
+:priority
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Priority"@en ;
+  skos:altLabel "priority"@en ;
+.
+:priornotice
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Priornotice"@en ;
+  skos:altLabel "advance notice"@en ;
+  skos:altLabel "in advance"@en ;
+  skos:altLabel "notice before"@en ;
+  skos:altLabel "notice in advance"@en ;
+  skos:altLabel "notify in advance"@en ;
+  skos:altLabel "previous notice"@en ;
+  skos:altLabel "prior notice"@en ;
+  skos:altLabel "notice period"@en ;
+  skos:altLabel "notice"@en ;
+  skos:altLabel "inform in prior"@en ;
+  skos:altLabel "inform in advance"@en ;
+.
+:procedure
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Procedure"@en ;
+  skos:altLabel "procedure"@en ;
+  skos:altLabel "step"@en ;
+  skos:altLabel "steps"@en ;
+  skos:altLabel "policy"@en ;
+  skos:altLabel "policies"@en ;
+.
+:produce
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Produce"@en ;
+  skos:altLabel "complete"@en ;
+  skos:altLabel "create"@en ;
+  skos:altLabel "generate"@en ;
+  skos:altLabel "prepare"@en ;
+  skos:altLabel "produce"@en ;
+  skos:altLabel "write"@en ;
+.
+:progress
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Progress"@en ;
+  skos:altLabel "evolution"@en ;
+  skos:altLabel "progress"@en ;
+.
+:prorate
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Prorate"@en ;
+  skos:altLabel "apportion"@en ;
+  skos:altLabel "divide"@en ;
+  skos:altLabel "finance"@en ;
+  skos:altLabel "partial"@en ;
+  skos:altLabel "pro rate"@en ;
+  skos:altLabel "pro-rata"@en ;
+  skos:altLabel "pro-rate"@en ;
+  skos:altLabel "pro-rated"@en ;
+  skos:altLabel "prorata"@en ;
+  skos:altLabel "prorate"@en ;
+  skos:altLabel "prorated"@en ;
+.
+:purpose
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Purpose"@en ;
+  skos:altLabel "duty"@en ;
+  skos:altLabel "function"@en ;
+  skos:altLabel "goal"@en ;
+  skos:altLabel "job"@en ;
+  skos:altLabel "mission"@en ;
+  skos:altLabel "objective"@en ;
+  skos:altLabel "purpose"@en ;
+  skos:altLabel "role"@en ;
+  skos:altLabel "task"@en ;
+.
+:queue
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Queue"@en ;
+  skos:altLabel "queue"@en ;
+.
+:reapply
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Reapply"@en ;
+  skos:altLabel "re activate"@en ;
+  skos:altLabel "re apply"@en ;
+  skos:altLabel "re-activate"@en ;
+  skos:altLabel "re-apply"@en ;
+  skos:altLabel "reactivate"@en ;
+  skos:altLabel "reapply"@en ;
+.
+:reassess
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Reassess"@en ;
+  skos:altLabel "re assess"@en ;
+  skos:altLabel "re-assess"@en ;
+  skos:altLabel "re-assessment"@en ;
+  skos:altLabel "re-calculate"@en ;
+  skos:altLabel "re-consider"@en ;
+  skos:altLabel "re-consideration"@en ;
+  skos:altLabel "re-evaluate"@en ;
+  skos:altLabel "reassess"@en ;
+  skos:altLabel "reassessment"@en ;
+  skos:altLabel "recalculate"@en ;
+  skos:altLabel "recalculation"@en ;
+  skos:altLabel "reconsider"@en ;
+  skos:altLabel "reconsideration"@en ;
+  skos:altLabel "revaluate"@en ;
+  skos:altLabel "revaluation"@en ;
+.
+:recommend
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Recommend"@en ;
+  skos:altLabel "Recommendation"@en ;
+  skos:altLabel "Suggest"@en ;
+  skos:altLabel "Suggestion"@en ;
+  skos:altLabel "advice"@en ;
+  skos:altLabel "advise"@en ;
+  skos:altLabel "propose"@en ;
+  skos:altLabel "measures"@en ;
+  skos:altLabel "tips"@en ;
+  skos:altLabel "action"@en ;
+.
+:refund
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Refund"@en ;
+  skos:altLabel "refund"@en ;
+  skos:altLabel "refundable"@en ;
+  skos:altLabel "reimburse"@en ;
+  skos:altLabel "reimbursement"@en ;
+.
+:regno
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Regno"@en ;
+  skos:altLabel "reg no"@en ;
+  skos:altLabel "reg number"@en ;
+  skos:altLabel "registration number"@en ;
+  skos:altLabel "sales registration number"@en ;
+  skos:altLabel "registration no"@en ;
+.
+:relative
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Relative"@en ;
+  skos:altLabel "aunt"@en ;
+  skos:altLabel "auntie"@en ;
+  skos:altLabel "brother"@en ;
+  skos:altLabel "cousin"@en ;
+  skos:altLabel "dad"@en ;
+  skos:altLabel "daddy"@en ;
+  skos:altLabel "daughter"@en ;
+  skos:altLabel "familiy member"@en ;
+  skos:altLabel "familiy"@en ;
+  skos:altLabel "family member"@en ;
+  skos:altLabel "family"@en ;
+  skos:altLabel "father"@en ;
+  skos:altLabel "grandfather"@en ;
+  skos:altLabel "grandma"@en ;
+  skos:altLabel "grandmother"@en ;
+  skos:altLabel "grandpa"@en ;
+  skos:altLabel "grandparents"@en ;
+  skos:altLabel "husband"@en ;
+  skos:altLabel "in law"@en ;
+  skos:altLabel "in law's"@en ;
+  skos:altLabel "in laws"@en ;
+  skos:altLabel "in-law"@en ;
+  skos:altLabel "in-law's"@en ;
+  skos:altLabel "in-laws"@en ;
+  skos:altLabel "mom"@en ;
+  skos:altLabel "mother"@en ;
+  skos:altLabel "mum"@en ;
+  skos:altLabel "mummy"@en ;
+  skos:altLabel "nephew"@en ;
+  skos:altLabel "niece"@en ;
+  skos:altLabel "parent"@en ;
+  skos:altLabel "parents"@en ;
+  skos:altLabel "relative"@en ;
+  skos:altLabel "relatives"@en ;
+  skos:altLabel "sibling"@en ;
+  skos:altLabel "sister"@en ;
+  skos:altLabel "son"@en ;
+  skos:altLabel "uncle"@en ;
+  skos:altLabel "wife"@en ;
+  skos:altLabel "child"@en ;
+  skos:altLabel "children"@en ;
+.
+:renew
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Renew"@en ;
+  skos:altLabel "renew"@en ;
+  skos:altLabel "renewal"@en ;
+  skos:altLabel "reapply"@en ;
+.
+#:replace
+#  a :Term ;
+#  a owl:NamedIndividual ;
+#  rdfs:label "Replace"@en ;
+#  skos:altLabel "replace"@en ;
+#  skos:altLabel "replacement"@en ;
+#  skos:altLabel "substitute"@en ;
+#  skos:altLabel "substitution"@en ;
+#  skos:altLabel "change"@en ;
+#  skos:altLabel "apply for new"@en ;
+#  skos:altLabel "apply for different"@en ;
+#.
+:need
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Need"@en ;
+  skos:altLabel "compulsory"@en ;
+  skos:altLabel "do i have to"@en ;
+  skos:altLabel "do i need to"@en ;
+  skos:altLabel "do we have to"@en ;
+  skos:altLabel "do we need to"@en ;
+  skos:altLabel "mandatory"@en ;
+  skos:altLabel "must i"@en ;
+  skos:altLabel "must we"@en ;
+  skos:altLabel "obligatory"@en ;
+  skos:altLabel "require"@en ;
+  skos:altLabel "need"@en ;
+  skos:altLabel "need to"@en ;
+  skos:altLabel "necessary"@en ;
+  skos:altLabel "necessity"@en ;
+  :entails :wish ;
+.
+:requirement
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Requirement"@en ;
+  skos:altLabel "prerequisite"@en ;
+  skos:altLabel "requirement"@en ;
+  skos:altLabel "requisite"@en ;
+  skos:altLabel "pre requisite"@en ;
+.
+:resident
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Resident"@en ;
+  skos:altLabel "resident"@en ;
+  skos:altLabel "residential"@en ;
+.
+:result
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Result"@en ;
+  skos:altLabel "outcome"@en ;
+  skos:altLabel "result"@en ;
+  skos:altLabel "consequence"@en ;
+.
+:retroactive
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Retroactive"@en ;
+  skos:altLabel "backdate"@en ;
+  skos:altLabel "backdated"@en ;
+  skos:altLabel "retroactive"@en ;
+  skos:altLabel "retroactively"@en ;
+  skos:altLabel "retrospective"@en ;
+.
+:return
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Return"@en ;
+  skos:altLabel "reimburse"@en ;
+  skos:altLabel "remit"@en ;
+  skos:altLabel "repay"@en ;
+  skos:altLabel "return"@en ;
+.
+:revoke
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Revoke"@en ;
+  skos:altLabel "invalid"@en ;
+  skos:altLabel "invalidate"@en ;
+  skos:altLabel "refuse"@en ;
+  skos:altLabel "reject"@en ;
+  skos:altLabel "rejection"@en ;
+  skos:altLabel "revocation"@en ;
+  skos:altLabel "revoke"@en ;
+.
+:scheme
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Scheme"@en ;
+  skos:altLabel "scheme"@en ;
+.
+:season
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Season"@en ;
+  skos:altLabel "season"@en ;
+.
+:secondtimer
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Secondtimer"@en ;
+  skos:altLabel "2n timer"@en ;
+  skos:altLabel "2nd timer"@en ;
+  skos:altLabel "second timer"@en ;
+  skos:altLabel "second-timer"@en ;
+  skos:altLabel "subsequent applicant"@en ;
+  skos:altLabel "upgrader"@en ;
+.
+:selection
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Selection"@en ;
+  skos:altLabel "choose"@en ;
+  skos:altLabel "opt"@en ;
+  skos:altLabel "select"@en ;
+  skos:altLabel "selection"@en ;
+.
+:sell
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Sell"@en ;
+  skos:altLabel "market"@en ;
+  skos:altLabel "sale"@en ;
+  skos:altLabel "sell"@en ;
+.
+:sentimentNeg
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Sentimentneg"@en ;
+  skos:altLabel "a-hole"@en ;
+  skos:altLabel "absolutely stupid"@en ;
+  skos:altLabel "aka any chick flick movie"@en ;
+  skos:altLabel "an idiot"@en ;
+  skos:altLabel "annoyed"@en ;
+  skos:altLabel "annoying"@en ;
+  skos:altLabel "arrogant"@en ;
+  skos:altLabel "arse bandit"@en ;
+  skos:altLabel "as much use as a chocolate teapot"@en ;
+  skos:altLabel "ask me bollix"@en ;
+  skos:altLabel "ass face"@en ;
+  skos:altLabel "ass hole"@en ;
+  skos:altLabel "ass shit"@en ;
+  skos:altLabel "ball licker"@en ;
+  skos:altLabel "balls slapping against her chin"@en ;
+  skos:altLabel "beating the meat"@en ;
+  skos:altLabel "bent dick"@en ;
+  skos:altLabel "bent richard"@en ;
+  skos:altLabel "big dick"@en ;
+  skos:altLabel "big old dick"@en ;
+  skos:altLabel "big richard"@en ;
+  skos:altLabel "big shaking breasts"@en ;
+  skos:altLabel "big tits"@en ;
+  skos:altLabel "big vagina"@en ;
+  skos:altLabel "bish ka don"@en ;
+  skos:altLabel "bitch"@en ;
+  skos:altLabel "blow job"@en ;
+  skos:altLabel "blow me"@en ;
+  skos:altLabel "blow my dick"@en ;
+  skos:altLabel "blow my richard"@en ;
+  skos:altLabel "bok naai"@en ;
+  skos:altLabel "boobs"@en ;
+  skos:altLabel "booger sugar"@en ;
+  skos:altLabel "bopping the bologna"@en ;
+  skos:altLabel "bored"@en ;
+  skos:altLabel "boring"@en ;
+  skos:altLabel "bouncing bozos"@en ;
+  skos:altLabel "bullshit"@en ;
+  skos:altLabel "butt pirate"@en ;
+  skos:altLabel "candle in your asshole"@en ;
+  skos:altLabel "carpet muncher"@en ;
+  skos:altLabel "chimney sweeper"@en ;
+  skos:altLabel "choking your chicken"@en ;
+  skos:altLabel "chutney ferret"@en ;
+  skos:altLabel "cock eyed cunt"@en ;
+  skos:altLabel "cock muncher"@en ;
+  skos:altLabel "cock sucker"@en ;
+  skos:altLabel "cockeye"@en ;
+  skos:altLabel "cocklump"@en ;
+  skos:altLabel "cocksucker"@en ;
+  skos:altLabel "completely drunk"@en ;
+  skos:altLabel "coral stomper"@en ;
+  skos:altLabel "creampie"@en ;
+  skos:altLabel "cretinous cunting fuckhead"@en ;
+  skos:altLabel "crotte"@en ;
+  skos:altLabel "cum dumpster"@en ;
+  skos:altLabel "cum on your face"@en ;
+  skos:altLabel "cum"@en ;
+  skos:altLabel "cunt bitch"@en ;
+  skos:altLabel "cunt fucker"@en ;
+  skos:altLabel "cunt"@en ;
+  skos:altLabel "cuntface"@en ;
+  skos:altLabel "cuntlapper"@en ;
+  skos:altLabel "damned idiot"@en ;
+  skos:altLabel "daughter fucker"@en ;
+  skos:altLabel "derby county fan"@en ;
+  skos:altLabel "dick face"@en ;
+  skos:altLabel "dick fucker"@en ;
+  skos:altLabel "dick head"@en ;
+  skos:altLabel "dick in a box"@en ;
+  skos:altLabel "dick juice"@en ;
+  skos:altLabel "dick"@en ;
+  skos:altLabel "dildo munching gutter slut"@en ;
+  skos:altLabel "dirty bitch"@en ;
+  skos:altLabel "dirty like a bus"@en ;
+  skos:altLabel "don't be a dick"@en ;
+  skos:altLabel "don't be a richard"@en ;
+  skos:altLabel "douchebag egotistical moron"@en ;
+  skos:altLabel "douchebag"@en ;
+  skos:altLabel "dumb cunt"@en ;
+  skos:altLabel "dumb fuck"@en ;
+  skos:altLabel "dumbcunt"@en ;
+  skos:altLabel "dumf"@en ;
+  skos:altLabel "dumpster cunt"@en ;
+  skos:altLabel "dutch bus"@en ;
+  skos:altLabel "dute-n sloboz"@en ;
+  skos:altLabel "dutty bus"@en ;
+  skos:altLabel "eat a dick"@en ;
+  skos:altLabel "eat a richard"@en ;
+  skos:altLabel "eat dick"@en ;
+  skos:altLabel "eat richard"@en ;
+  skos:altLabel "eat shit"@en ;
+  skos:altLabel "eats ejaculation"@en ;
+  skos:altLabel "ejaculate in a girls face"@en ;
+  skos:altLabel "ejaculate into a vagina"@en ;
+  skos:altLabel "ejaculate on a womans breast"@en ;
+  skos:altLabel "ejaculate on your face"@en ;
+  skos:altLabel "eseyin siki"@en ;
+  skos:altLabel "faggot"@en ;
+  skos:altLabel "fat man"@en ;
+  skos:altLabel "father of pubic hair"@en ;
+  skos:altLabel "feces"@en ;
+  skos:altLabel "feck"@en ;
+  skos:altLabel "female masturbation"@en ;
+  skos:altLabel "finger yourself"@en ;
+  skos:altLabel "flamer"@en ;
+  skos:altLabel "foah"@en ;
+  skos:altLabel "froggy cunt"@en ;
+  skos:altLabel "fruitcake"@en ;
+  skos:altLabel "fuck a lady"@en ;
+  skos:altLabel "fuck it"@en ;
+  skos:altLabel "fuck me gently with a chainsaw"@en ;
+  skos:altLabel "fuck me"@en ;
+  skos:altLabel "fuck my back"@en ;
+  skos:altLabel "fuck off"@en ;
+  skos:altLabel "fuck that"@en ;
+  skos:altLabel "fuck you"@en ;
+  skos:altLabel "fuck your asshole"@en ;
+  skos:altLabel "fuck your mom's asshole"@en ;
+  skos:altLabel "fuck"@en ;
+  skos:altLabel "fucked in the ass"@en ;
+  skos:altLabel "fucking animal"@en ;
+  skos:altLabel "fucking idiot"@en ;
+  skos:altLabel "fucking"@en ;
+  skos:altLabel "fucktwat"@en ;
+  skos:altLabel "fuckwit"@en ;
+  skos:altLabel "fudge packer"@en ;
+  skos:altLabel "fudgenuts"@en ;
+  skos:altLabel "gaan skommel jou hond"@en ;
+  skos:altLabel "gang member with facial tattoos"@en ;
+  skos:altLabel "gay guy"@en ;
+  skos:altLabel "gay man that ass fucks"@en ;
+  skos:altLabel "gay man"@en ;
+  skos:altLabel "getting drunk"@en ;
+  skos:altLabel "girls breast"@en ;
+  skos:altLabel "go into sperm"@en ;
+  skos:altLabel "go masturbate your dog"@en ;
+  skos:altLabel "go to hell"@en ;
+  skos:altLabel "goat fucker"@en ;
+  skos:altLabel "gobble the helmet spit"@en ;
+  skos:altLabel "grab my dick"@en ;
+  skos:altLabel "grab my richard"@en ;
+  skos:altLabel "group sex, gang bang"@en ;
+  skos:altLabel "grup seks"@en ;
+  skos:altLabel "gum-chewing fat cunt"@en ;
+  skos:altLabel "guy masturbating"@en ;
+  skos:altLabel "h8 u"@en ;
+  skos:altLabel "h8 you"@en ;
+  skos:altLabel "hairy armed froggy cunt"@en ;
+  skos:altLabel "hard dick"@en ;
+  skos:altLabel "hard oral sex"@en ;
+  skos:altLabel "hard richard"@en ;
+  skos:altLabel "hate u"@en ;
+  skos:altLabel "hate you"@en ;
+  skos:altLabel "having sex"@en ;
+  skos:altLabel "he is a dick"@en ;
+  skos:altLabel "he is a richard"@en ;
+  skos:altLabel "he likes dick; homosexual"@en ;
+  skos:altLabel "he likes richard"@en ;
+  skos:altLabel "he loves dick; homosexual"@en ;
+  skos:altLabel "he loves richard"@en ;
+  skos:altLabel "he's a dick"@en ;
+  skos:altLabel "he's a richard"@en ;
+  skos:altLabel "heiry pussy licker"@en ;
+  skos:altLabel "hell"@en ;
+  skos:altLabel "henwa de cockna"@en ;
+  skos:altLabel "hoer"@en ;
+  skos:altLabel "homesexual male"@en ;
+  skos:altLabel "homosexual female"@en ;
+  skos:altLabel "homosexual man"@en ;
+  skos:altLabel "hooyadda wahaa waye hayewaan"@en ;
+  skos:altLabel "hot bitch"@en ;
+  skos:altLabel "hot cunt"@en ;
+  skos:altLabel "how the fuck"@en ;
+  skos:altLabel "htf"@en ;
+  skos:altLabel "huj zesrany"@en ;
+  skos:altLabel "i bummed your mum"@en ;
+  skos:altLabel "i fuck your mother"@en ;
+  skos:altLabel "i fucked your sister"@en ;
+  skos:altLabel "i messed up"@en ;
+  skos:altLabel "i need dick"@en ;
+  skos:altLabel "i need richard"@en ;
+  skos:altLabel "i want dick"@en ;
+  skos:altLabel "i want richard"@en ;
+  skos:altLabel "i will shag yo ass"@en ;
+  skos:altLabel "i'll be damned"@en ;
+  skos:altLabel "idiot"@en ;
+  skos:altLabel "iri memeli, iri goguslu"@en ;
+  skos:altLabel "jack off"@en ;
+  skos:altLabel "jaggi"@en ;
+  skos:altLabel "je encule ta mere"@en ;
+  skos:altLabel "jebem ti mater"@en ;
+  skos:altLabel "jebi me"@en ;
+  skos:altLabel "jebi to"@en ;
+  skos:altLabel "jerkoff"@en ;
+  skos:altLabel "jij vuile garnaal"@en ;
+  skos:altLabel "jizz"@en ;
+  skos:altLabel "kaka liqui"@en ;
+  skos:altLabel "khareto gayidam"@en ;
+  skos:altLabel "kinikeron"@en ;
+  skos:altLabel "kir baba"@en ;
+  skos:altLabel "kiss"@en ;
+  skos:altLabel "kit fit"@en ;
+  skos:altLabel "knob gobbler"@en ;
+  skos:altLabel "koal khara"@en ;
+  skos:altLabel "kunja"@en ;
+  skos:altLabel "kurijode"@en ;
+  skos:altLabel "kusa"@en ;
+  skos:altLabel "lesbian"@en ;
+  skos:altLabel "lettuce licker"@en ;
+  skos:altLabel "lick my ass"@en ;
+  skos:altLabel "lick my cock"@en ;
+  skos:altLabel "lick my dick"@en ;
+  skos:altLabel "lick my richard"@en ;
+  skos:altLabel "lick ones asshole"@en ;
+  skos:altLabel "lint licker"@en ;
+  skos:altLabel "long dick"@en ;
+  skos:altLabel "long richard"@en ;
+  skos:altLabel "magasika"@en ;
+  skos:altLabel "male masturbation"@en ;
+  skos:altLabel "mamas grande"@en ;
+  skos:altLabel "man-bimbo"@en ;
+  skos:altLabel "mastubater"@en ;
+  skos:altLabel "masturbate from behind"@en ;
+  skos:altLabel "masturbate"@en ;
+  skos:altLabel "mentak"@en ;
+  skos:altLabel "mimbo"@en ;
+  skos:altLabel "mohan lal"@en ;
+  skos:altLabel "mor di gow"@en ;
+  skos:altLabel "mother is a whore"@en ;
+  skos:altLabel "muff diver"@en ;
+  skos:altLabel "muff"@en ;
+  skos:altLabel "my dick is big"@en ;
+  skos:altLabel "my dick is hard"@en ;
+  skos:altLabel "my dick is small"@en ;
+  skos:altLabel "my richard is big"@en ;
+  skos:altLabel "my richard is hard"@en ;
+  skos:altLabel "my richard is small"@en ;
+  skos:altLabel "na gudda lo modda pettu"@en ;
+  skos:altLabel "na modda chapparinchu"@en ;
+  skos:altLabel "na modda meda kurcho"@en ;
+  skos:altLabel "ne godha balishindi"@en ;
+  skos:altLabel "ne godha lo kovu othu"@en ;
+  skos:altLabel "no shit sherlock"@en ;
+  skos:altLabel "nob rot"@en ;
+  skos:altLabel "nosh me off"@en ;
+  skos:altLabel "nuts"@en ;
+  skos:altLabel "obnoxoius person"@en ;
+  skos:altLabel "one who performs fellatio"@en ;
+  skos:altLabel "one-eyed yoghurt lobber"@en ;
+  skos:altLabel "orgasm"@en ;
+  skos:altLabel "orgazm"@en ;
+  skos:altLabel "orospu"@en ;
+  skos:altLabel "pacific islander"@en ;
+  skos:altLabel "palming the pearl"@en ;
+  skos:altLabel "pandi okka"@en ;
+  skos:altLabel "pandi unn kunji la addi"@en ;
+  skos:altLabel "pare to peos mou"@en ;
+  skos:altLabel "peach fish"@en ;
+  skos:altLabel "pearl necklace"@en ;
+  skos:altLabel "penis breath"@en ;
+  skos:altLabel "penis"@en ;
+  skos:altLabel "perpetual loser"@en ;
+  skos:altLabel "piizda"@en ;
+  skos:altLabel "pillow bighter"@en ;
+  skos:altLabel "pipele"@en ;
+  skos:altLabel "piss me off"@en ;
+  skos:altLabel "pissed off"@en ;
+  skos:altLabel "pissprat"@en ;
+  skos:altLabel "playing hide the bologna"@en ;
+  skos:altLabel "please ask my testacles"@en ;
+  skos:altLabel "poesnaaier"@en ;
+  skos:altLabel "poesprop"@en ;
+  skos:altLabel "poesteef"@en ;
+  skos:altLabel "poopuncher"@en ;
+  skos:altLabel "prostitute, whore, harlot."@en ;
+  skos:altLabel "pubical hair"@en ;
+  skos:altLabel "puku vachindhi"@en ;
+  skos:altLabel "pull a dick"@en ;
+  skos:altLabel "pull a richard"@en ;
+  skos:altLabel "purple-headed womb ferret"@en ;
+  skos:altLabel "pusi mi kurac"@en ;
+  skos:altLabel "pussy"@en ;
+  skos:altLabel "pust"@en ;
+  skos:altLabel "randi ko chak"@en ;
+  skos:altLabel "rape with eyes"@en ;
+  skos:altLabel "reach around"@en ;
+  skos:altLabel "redheads anus"@en ;
+  skos:altLabel "richard cranium"@en ;
+  skos:altLabel "richard face"@en ;
+  skos:altLabel "richard fucker"@en ;
+  skos:altLabel "richard head"@en ;
+  skos:altLabel "richard in a box"@en ;
+  skos:altLabel "richard juice"@en ;
+  skos:altLabel "richard sucker"@en ;
+  skos:altLabel "ridiculous"@en ;
+  skos:altLabel "rm job"@en ;
+  skos:altLabel "rug eater"@en ;
+  skos:altLabel "rump ranger"@en ;
+  skos:altLabel "rusty bullethole"@en ;
+  skos:altLabel "s.w.a.g"@en ;
+  skos:altLabel "sa pud"@en ;
+  skos:altLabel "sandler"@en ;
+  skos:altLabel "sanger"@en ;
+  skos:altLabel "sauage"@en ;
+  skos:altLabel "say it to the slut of the group"@en ;
+  skos:altLabel "scoundrel"@en ;
+  skos:altLabel "screwing, fucking"@en ;
+  skos:altLabel "scribble face"@en ;
+  skos:altLabel "seks"@en ;
+  skos:altLabel "semen"@en ;
+  skos:altLabel "senti"@en ;
+  skos:altLabel "sex"@en ;
+  skos:altLabel "sexually transmitted disease"@en ;
+  skos:altLabel "shaatdapne"@en ;
+  skos:altLabel "shabby person"@en ;
+  skos:altLabel "shag"@en ;
+  skos:altLabel "shattya"@en ;
+  skos:altLabel "she is a dick"@en ;
+  skos:altLabel "she is a richard"@en ;
+  skos:altLabel "she's a dick"@en ;
+  skos:altLabel "she's a richard"@en ;
+  skos:altLabel "shirt lifter"@en ;
+  skos:altLabel "shit faced"@en ;
+  skos:altLabel "shit flick"@en ;
+  skos:altLabel "shit"@en ;
+  skos:altLabel "shitfaced"@en ;
+  skos:altLabel "shitfar"@en ;
+  skos:altLabel "shut your cunt"@en ;
+  skos:altLabel "sik"@en ;
+  skos:altLabel "sikimi yala"@en ;
+  skos:altLabel "sikis"@en ;
+  skos:altLabel "sikmek"@en ;
+  skos:altLabel "silly"@en ;
+  skos:altLabel "single white and gay"@en ;
+  skos:altLabel "sit on my dick"@en ;
+  skos:altLabel "sit on my richard"@en ;
+  skos:altLabel "skank"@en ;
+  skos:altLabel "slag"@en ;
+  skos:altLabel "sloshing the bedpost"@en ;
+  skos:altLabel "sluttenous harlet"@en ;
+  skos:altLabel "slutty"@en ;
+  skos:altLabel "small dick"@en ;
+  skos:altLabel "small richard"@en ;
+  skos:altLabel "smelly pussy"@en ;
+  skos:altLabel "snapping the carrot"@en ;
+  skos:altLabel "sod it. forget it. stuff it."@en ;
+  skos:altLabel "someone of no use or ornament."@en ;
+  skos:altLabel "son of a bitch"@en ;
+  skos:altLabel "spanish"@en ;
+  skos:altLabel "spank the monkey"@en ;
+  skos:altLabel "spiceny"@en ;
+  skos:altLabel "spin one off her chin"@en ;
+  skos:altLabel "stank whore"@en ;
+  skos:altLabel "stinkhoer"@en ;
+  skos:altLabel "stop talking immediately"@en ;
+  skos:altLabel "stupid ugly person"@en ;
+  skos:altLabel "stupid"@en ;
+  skos:altLabel "suck my dick"@en ;
+  skos:altLabel "suck my richard"@en ;
+  skos:altLabel "sucking cocks"@en ;
+  skos:altLabel "sumbitch"@en ;
+  skos:altLabel "super gay man"@en ;
+  skos:altLabel "swelling cunt"@en ;
+  skos:altLabel "takes a walk down chocolate boulevard"@en ;
+  skos:altLabel "tamil fucker"@en ;
+  skos:altLabel "tamilan who fuck his mother"@en ;
+  skos:altLabel "tampon"@en ;
+  skos:altLabel "tarey ami ney puddy"@en ;
+  skos:altLabel "teabagger"@en ;
+  skos:altLabel "telhas tizi"@en ;
+  skos:altLabel "teri behan ki bur mein aandhi"@en ;
+  skos:altLabel "teringteef"@en ;
+  skos:altLabel "testicles"@en ;
+  skos:altLabel "thada make a pekingese break a log n' chain"@en ;
+  skos:altLabel "thagari"@en ;
+  skos:altLabel "this is self evident"@en ;
+  skos:altLabel "titties"@en ;
+  skos:altLabel "to have sexual intercourse"@en ;
+  skos:altLabel "to masturbate"@en ;
+  skos:altLabel "to screw, to fuck"@en ;
+  skos:altLabel "toki dudha"@en ;
+  skos:altLabel "tornedo in sisters pussy"@en ;
+  skos:altLabel "total tool"@en ;
+  skos:altLabel "tuberculosis bitch"@en ;
+  skos:altLabel "turd burgular"@en ;
+  skos:altLabel "turd"@en ;
+  skos:altLabel "turtle scuttler"@en ;
+  skos:altLabel "unattractive person"@en ;
+  skos:altLabel "unclean woman"@en ;
+  skos:altLabel "up hill gardener"@en ;
+  skos:altLabel "up ya ronson"@en ;
+  skos:altLabel "vagina"@en ;
+  skos:altLabel "vedi puku"@en ;
+  skos:altLabel "veiny bang stick"@en ;
+  skos:altLabel "very bad person"@en ;
+  skos:altLabel "vymrdany"@en ;
+  skos:altLabel "wack off"@en ;
+  skos:altLabel "wank off"@en ;
+  skos:altLabel "wank"@en ;
+  skos:altLabel "wankbox"@en ;
+  skos:altLabel "wanker"@en ;
+  skos:altLabel "wanna fuck"@en ;
+  skos:altLabel "what the fuck"@en ;
+  skos:altLabel "whore"@en ;
+  skos:altLabel "whore's ass"@en ;
+  skos:altLabel "wimp"@en ;
+  skos:altLabel "wtf"@en ;
+  skos:altLabel "ya blasted bugga"@en ;
+  skos:altLabel "you are a cock face"@en ;
+  skos:altLabel "you are annoying"@en ;
+  skos:altLabel "you are the cheese on someones cock"@en ;
+  skos:altLabel "you dick"@en ;
+  skos:altLabel "you father is a dickhead"@en ;
+  skos:altLabel "you fucking pisstaker"@en ;
+  skos:altLabel "you have lost your mind"@en ;
+  skos:altLabel "you knobcheese"@en ;
+  skos:altLabel "you look like a dick"@en ;
+  skos:altLabel "you look like a richard"@en ;
+  skos:altLabel "you re annoying"@en ;
+  skos:altLabel "you richard"@en ;
+  skos:altLabel "you wanna party"@en ;
+  skos:altLabel "you weak piece of shit"@en ;
+  skos:altLabel "you weedle"@en ;
+  skos:altLabel "you're a cunt"@en ;
+  skos:altLabel "your annoying"@en ;
+  skos:altLabel "your buttocks have fattened"@en ;
+  skos:altLabel "your heads lit"@en ;
+  skos:altLabel "your mum is an animal"@en ;
+  skos:altLabel "your mums vagina"@en ;
+  skos:altLabel "zattya"@en ;
+  skos:altLabel "zho bayek"@en ;
+.
+:sentimentPos
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Sentimentpos"@en ;
+  skos:altLabel "bravo"@en ;
+  skos:altLabel "congratulations"@en ;
+  skos:altLabel "darling"@en ;
+  skos:altLabel "exactly the correct answer"@en ;
+  skos:altLabel "excellent"@en ;
+  skos:altLabel "fabulous"@en ;
+  skos:altLabel "fantastic"@en ;
+  skos:altLabel "give me five"@en ;
+  skos:altLabel "give yourself a pat on the back"@en ;
+  skos:altLabel "good answer"@en ;
+  skos:altLabel "good idea"@en ;
+  skos:altLabel "good job"@en ;
+  skos:altLabel "good"@en ;
+  skos:altLabel "gr8 job"@en ;
+  skos:altLabel "gr8"@en ;
+  skos:altLabel "great answer"@en ;
+  skos:altLabel "great idea"@en ;
+  skos:altLabel "great job"@en ;
+  skos:altLabel "great"@en ;
+  skos:altLabel "helpful"@en ;
+  skos:altLabel "honey"@en ;
+  skos:altLabel "hooray"@en ;
+  skos:altLabel "i am impressed"@en ;
+  skos:altLabel "i like that very much"@en ;
+  skos:altLabel "i like that"@en ;
+  skos:altLabel "i like this"@en ;
+  skos:altLabel "impressive"@en ;
+  skos:altLabel "i’ll give that a gold star"@en ;
+  skos:altLabel "i’m impressed"@en ;
+  skos:altLabel "let me shake your hand"@en ;
+  skos:altLabel "love"@en ;
+  skos:altLabel "magnificent"@en ;
+  skos:altLabel "marvellous"@en ;
+  skos:altLabel "nice work"@en ;
+  skos:altLabel "not bad at all"@en ;
+  skos:altLabel "not bad"@en ;
+  skos:altLabel "not too bad"@en ;
+  skos:altLabel "pat on the back"@en ;
+  skos:altLabel "perfect"@en ;
+  skos:altLabel "points for that"@en ;
+  skos:altLabel "really good"@en ;
+  skos:altLabel "superb"@en ;
+  skos:altLabel "sweetheart"@en ;
+  skos:altLabel "sweetie"@en ;
+  skos:altLabel "ten out of ten"@en ;
+  skos:altLabel "that is a correct answer"@en ;
+  skos:altLabel "that is right"@en ;
+  skos:altLabel "that is so good"@en ;
+  skos:altLabel "that is very good"@en ;
+  skos:altLabel "that was as good as your last answer"@en ;
+  skos:altLabel "that was quick"@en ;
+  skos:altLabel "that was twice as good as your last answer"@en ;
+  skos:altLabel "that's a lot better"@en ;
+  skos:altLabel "that's accurate"@en ;
+  skos:altLabel "that's good"@en ;
+  skos:altLabel "that's gr8"@en ;
+  skos:altLabel "that's great"@en ;
+  skos:altLabel "that's impressive"@en ;
+  skos:altLabel "that's intelligent"@en ;
+  skos:altLabel "that's more like it"@en ;
+  skos:altLabel "that's much better"@en ;
+  skos:altLabel "that's really good"@en ;
+  skos:altLabel "that's really impressive"@en ;
+  skos:altLabel "that's right"@en ;
+  skos:altLabel "that's so good"@en ;
+  skos:altLabel "that's the best this week"@en ;
+  skos:altLabel "that's the best today"@en ;
+  skos:altLabel "that's the correct answer"@en ;
+  skos:altLabel "that's very good"@en ;
+  skos:altLabel "that's very impressive"@en ;
+  skos:altLabel "that's very neat"@en ;
+  skos:altLabel "the best today"@en ;
+  skos:altLabel "this is excellent"@en ;
+  skos:altLabel "this is impressive"@en ;
+  skos:altLabel "very good"@en ;
+  skos:altLabel "well done"@en ;
+  skos:altLabel "wonderful"@en ;
+  skos:altLabel "you are a great help"@en ;
+  skos:altLabel "you did a good job"@en ;
+  skos:altLabel "you did a great job"@en ;
+  skos:altLabel "you did it on your first attempt"@en ;
+  skos:altLabel "you did very well"@en ;
+  skos:altLabel "you didn't make a single mistake"@en ;
+  skos:altLabel "you didn’t make any mistakes at all"@en ;
+  skos:altLabel "you got it first time"@en ;
+  skos:altLabel "you have been a great help"@en ;
+  skos:altLabel "you have improved"@en ;
+  skos:altLabel "you have made a good progress"@en ;
+  skos:altLabel "you have made a lot of progress"@en ;
+  skos:altLabel "you have made an excellent progress"@en ;
+  skos:altLabel "you've been a great help"@en ;
+  skos:altLabel "you've improved"@en ;
+#  skos:altLabel "poor"@en ;
+#  skos:altLabel "bad"@en ;
+.
+:shop
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Shop"@en ;
+  skos:altLabel "atelier"@en ;
+  skos:altLabel "bazaar"@en ;
+  skos:altLabel "bazar"@en ;
+  skos:altLabel "boutique"@en ;
+  skos:altLabel "business"@en ;
+  skos:altLabel "company"@en ;
+  skos:altLabel "co"@en ;
+  skos:altLabel "establishment"@en ;
+  skos:altLabel "shop house"@en ;
+  skos:altLabel "shop"@en ;
+  skos:altLabel "shophouse"@en ;
+  skos:altLabel "store"@en ;
+  skos:altLabel "outlet"@en ;
+  skos:altLabel "firm"@en ;
+  skos:altLabel "premise"@en ;
+.
+:trade
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Trade"@en ;
+.
+:poor
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Poor"@en ;
+  skos:altLabel "bad"@en ;
+  skos:altLabel "unsatisfactory"@en ;
+  skos:altLabel "unsatisfied"@en ;
+  skos:altLabel "unsatisfy"@en ;
+.
+:show
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Show"@en ;
+  skos:altLabel "display"@en ;
+  skos:altLabel "exhibit"@en ;
+  skos:altLabel "present"@en ;
+  skos:altLabel "reveal"@en ;
+  skos:altLabel "show"@en ;
+  skos:altLabel "reflect"@en ;
+  skos:altLabel "paste"@en ;
+  skos:altLabel "put"@en ;
+.
+:similar
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Similar"@en ;
+  skos:altLabel "identical"@en ;
+  skos:altLabel "same"@en ;
+  skos:altLabel "similar"@en ;
+.
+:singpass
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Singpass"@en ;
+  skos:altLabel "sing pass"@en ;
+  skos:altLabel "singpass"@en ;
+.
+:small
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Small"@en ;
+  skos:altLabel "little"@en ;
+  skos:altLabel "low"@en ;
+  skos:altLabel "lower"@en ;
+  skos:altLabel "short"@en ;
+  skos:altLabel "shorter"@en ;
+  skos:altLabel "small"@en ;
+  skos:altLabel "smaller"@en ;
+.
+:sms
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Sms"@en ;
+  skos:altLabel "sms"@en ;
+  skos:altLabel "text message"@en ;
+.
+:specific
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Specific"@en ;
+  skos:altLabel "concrete"@en ;
+  skos:altLabel "particular"@en ;
+  skos:altLabel "precise"@en ;
+  skos:altLabel "specific"@en ;
+  skos:altLabel "special"@en ;
+.
+:stagger
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Stagger"@en ;
+  skos:altLabel "stagger"@en ;
+  skos:altLabel "staggered"@en ;
+.
+:status
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Status"@en ;
+  skos:altLabel "situation"@en ;
+  skos:altLabel "stage"@en ;
+  skos:altLabel "state"@en ;
+  skos:altLabel "status"@en ;
+.
+:taken
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Taken"@en ;
+  skos:altLabel "allocated"@en ;
+  skos:altLabel "assigned"@en ;
+  skos:altLabel "chosen"@en ;
+  skos:altLabel "given"@en ;
+  skos:altLabel "granted"@en ;
+  skos:altLabel "selected"@en ;
+  skos:altLabel "taken"@en ;
+  skos:altLabel "taken up"@en ;
+  skos:altLabel "taken up"@en ;
+.
+#:temporarily
+#  a :Term ;
+#  a owl:NamedIndividual ;
+#  rdfs:label "Temporarily"@en ;
+#  skos:altLabel "briefly"@en ;
+#  skos:altLabel "few days"@en ;
+#  skos:altLabel "momentarily"@en ;
+#  skos:altLabel "short term"@en ;
+#  skos:altLabel "short-term"@en ;
+#  skos:altLabel "some days"@en ;
+#  skos:altLabel "temporarily"@en ;
+#.
+:temporary
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Temporary"@en ;
+  skos:altLabel "provisional"@en ;
+  skos:altLabel "temp"@en ;
+  skos:altLabel "temporal"@en ;
+  skos:altLabel "temporary"@en ;
+  skos:altLabel "briefly"@en ;
+  skos:altLabel "few days"@en ;
+  skos:altLabel "momentarily"@en ;
+  skos:altLabel "short term"@en ;
+  skos:altLabel "short-term"@en ;
+  skos:altLabel "some days"@en ;
+  skos:altLabel "temporarily"@en ;
+.
+:terminate
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Terminate"@en ;
+  skos:altLabel "cancel"@en ;
+  skos:altLabel "cancellation"@en ;
+  skos:altLabel "end"@en ;
+  skos:altLabel "give up"@en ;
+  skos:altLabel "interrupt"@en ;
+  skos:altLabel "interruption"@en ;
+  skos:altLabel "scrap"@en ;
+  skos:altLabel "stop"@en ;
+  skos:altLabel "suspend"@en ;
+  skos:altLabel "suspension"@en ;
+  skos:altLabel "terminate"@en ;
+  skos:altLabel "termination"@en ;
+  skos:altLabel "mature"@en ;
+  skos:altLabel "cease"@en ;
+  skos:altLabel "annul"@en ;
+  skos:altLabel "annulment"@en ;
+  skos:altLabel "cancelate"@en ;
+  skos:altLabel "cancelled"@en ;
+  skos:altLabel "cancelling"@en ;
+  skos:altLabel "delete"@en ;
+  skos:altLabel "eliminate"@en ;
+  skos:altLabel "elimination"@en ;
+  skos:altLabel "give up"@en ;
+  skos:altLabel "invalidate"@en ;
+  skos:altLabel "invalidation"@en ;
+  skos:altLabel "removal"@en ;
+  skos:altLabel "remove"@en ;
+  skos:altLabel "renounce"@en ;
+  skos:altLabel "renouncement"@en ;
+  skos:altLabel "rescind"@en ;
+  skos:altLabel "waiver"@en ;
+  skos:altLabel "withdraw"@en ;
+  skos:altLabel "removal"@en ;
+  skos:altLabel "expel"@en ;
+.
+:thank
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Thank"@en ;
+  skos:altLabel "t u"@en ;
+  skos:altLabel "t y"@en ;
+  skos:altLabel "thank you"@en ;
+  skos:altLabel "thank"@en ;
+  skos:altLabel "thanks"@en ;
+  skos:altLabel "thnx"@en ;
+  skos:altLabel "thx"@en ;
+  skos:altLabel "ty"@en ;
+.
+:ticket
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Ticket"@en ;
+  skos:altLabel "pass"@en ;
+  skos:altLabel "ticket"@en ;
+  skos:altLabel "ticketTemp"@en ;
+.
+:change
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "change"@en ;
+  skos:altLabel "alter"@en ;
+  skos:altLabel "transfer"@en ;
+  skos:altLabel "chg"@en ;
+  skos:altLabel "modify"@en ;
+  skos:altLabel "convert"@en ;
+  skos:altLabel "move"@en ;
+  skos:altLabel "re-select"@en ;
+  skos:altLabel "re-transfer"@en ;
+  skos:altLabel "reselect"@en ;
+  skos:altLabel "retransfer"@en ;
+  skos:altLabel "shift"@en ;
+  skos:altLabel "swap"@en ;
+  skos:altLabel "switch"@en ;
+  skos:altLabel "swop"@en ;
+  skos:altLabel "transferable"@en ;
+  skos:altLabel "trf"@en ;
+  skos:altLabel "revise"@en ;
+  skos:altLabel "revision"@en ;
+  skos:altLabel "increase"@en ;
+  skos:altLabel "ammend"@en ;
+  skos:altLabel "amend"@en ;
+  skos:altLabel "effect"@en ;
+  skos:altLabel "replace"@en ;
+  skos:altLabel "replacement"@en ;
+  skos:altLabel "substitute"@en ;
+  skos:altLabel "substitution"@en ;
+  skos:altLabel "modification"@en ;
+  skos:altLabel "take over"@en ;
+.
+:type
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Type"@en ;
+  skos:altLabel "category"@en ;
+  skos:altLabel "kind of"@en ;
+  skos:altLabel "kind"@en ;
+  skos:altLabel "type of"@en ;
+  skos:altLabel "type"@en ;
+.
+:unfinished
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Unfinished"@en ;
+  skos:altLabel "incomplete"@en ;
+  skos:altLabel "uncompleted"@en ;
+  skos:altLabel "under construction"@en ;
+  skos:altLabel "unfinish"@en ;
+  skos:altLabel "unfinished"@en ;
+.
+:unused
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Unused"@en ;
+  skos:altLabel "unused"@en ;
+.
+:use
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Use"@en ;
+  skos:altLabel "enjoy"@en ;
+  skos:altLabel "use"@en ;
+  skos:altLabel "utilize"@en ;
+.
+:continue
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Continue"@en ;
+  skos:altLabel "carry on"@en ;
+  skos:altLabel "use existing"@en ;
+  skos:altLabel "continue with existing"@en ;
+.
+:existing
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Existing"@en ;
+  skos:altLabel "current"@en ;
+  skos:altLabel "currently"@en ;
+.
+:signage
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Signage"@en ;
+  skos:altLabel "signboard"@en ;
+  skos:altLabel "signages"@en ;
+.
+:publicity
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Publicity"@en ;
+  skos:altLabel "advertise"@en ;
+  skos:altLabel "advertisement"@en ;
+  skos:altLabel "publicise"@en ;
+  skos:altLabel "marketing"@en ;
+  skos:altLabel "market"@en ;
+.
+:vacancy
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Vacancy"@en ;
+  skos:altLabel "vacancy"@en ;
+.
+:validity
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Validity"@en ;
+  skos:altLabel "expire"@en ;
+  skos:altLabel "expiry"@en ;
+  skos:altLabel "in force"@en ;
+  skos:altLabel "valid"@en ;
+  skos:altLabel "validity"@en ;
+  skos:altLabel "active"@en ;
+  skos:altLabel "activate"@en ;
+  skos:altLabel "expire"@en ;
+  skos:altLabel "expiration"@en ;
+  skos:altLabel "successful"@en ;
+  skos:altLabel "in effect"@en ;
+  skos:altLabel "effective"@en ;
+  skos:altLabel "remain in effect"@en ;
+  skos:altLabel "stay in effect"@en ;
+  skos:altLabel "acknowledgement"@en ;
+  skos:altLabel "acknowledge"@en ;
+.
+:vehicle
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Vehicle"@en ;
+  skos:altLabel "auto"@en ;
+  skos:altLabel "automobile"@en ;
+  skos:altLabel "bike"@en ;
+  skos:altLabel "bus"@en ;
+  skos:altLabel "cab"@en ;
+  skos:altLabel "car"@en ;
+  skos:altLabel "goods van"@en ;
+  skos:altLabel "lorry"@en ;
+  skos:altLabel "mini bus"@en ;
+  skos:altLabel "mini-bus"@en ;
+  skos:altLabel "motorbike"@en ;
+  skos:altLabel "motorcycle"@en ;
+  skos:altLabel "pickup"@en ;
+  skos:altLabel "recovery vehicle"@en ;
+  skos:altLabel "scooter"@en ;
+  skos:altLabel "taxi"@en ;
+  skos:altLabel "truck"@en ;
+  skos:altLabel "van"@en ;
+  skos:altLabel "vehicle"@en ;
+  skos:altLabel "vespa"@en ;
+  skos:altLabel "vespino"@en ;
+.
+:wait
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Wait"@en ;
+  skos:altLabel "wait"@en ;
+.
+:wish
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Wish"@en ;
+  skos:altLabel "d like"@en ;
+  skos:altLabel "want"@en ;
+  skos:altLabel "would like"@en ;
+  skos:altLabel "willing"@en ;
+  :entails :procedure ;
+.
+:weight
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Weight"@en ;
+  skos:altLabel "laden weigth"@en ;
+  skos:altLabel "ulw"@en ;
+  skos:altLabel "unladen weight"@en ;
+  skos:altLabel "weighs"@en ;
+  skos:altLabel "kg"@en ;
+.
+:what
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "What"@en ;
+  skos:altLabel "wat"@en ;
+  skos:altLabel "what"@en ;
+  skos:altLabel "which"@en ;
+  skos:altLabel "什么"@en ;
+.
+:where
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Where"@en ;
+  skos:altLabel "where"@en ;
+  skos:altLabel "whr"@en ;
+.
+:who
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Who"@en ;
+  skos:altLabel "anyone"@en ;
+  skos:altLabel "who"@en ;
+  skos:altLabel "whom"@en ;
+  skos:altLabel "whose"@en ;
+.
+:why
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Why"@en ;
+  skos:altLabel "why"@en ;
+.
+:work
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Work"@en ;
+  skos:altLabel "work"@en ;
+  skos:altLabel "order"@en ;
+  skos:altLabel "workmanship"@en ;
+.
+:yes
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Yes"@en ;
+  skos:altLabel "y"@en ;
+  skos:altLabel "absolutely"@en ;
+  skos:altLabel "awesome"@en ;
+  skos:altLabel "clear"@en ;
+  skos:altLabel "clearly"@en ;
+  skos:altLabel "cool"@en ;
+  skos:altLabel "evident"@en ;
+  skos:altLabel "evidently"@en ;
+  skos:altLabel "fine"@en ;
+  skos:altLabel "great"@en ;
+  skos:altLabel "indeed"@en ;
+  skos:altLabel "k"@en ;
+  skos:altLabel "obvious"@en ;
+  skos:altLabel "obviously"@en ;
+  skos:altLabel "of course"@en ;
+  skos:altLabel "ok"@en ;
+  skos:altLabel "okay"@en ;
+  skos:altLabel "perfect"@en ;
+  skos:altLabel "perfectly"@en ;
+  skos:altLabel "please"@en ;
+  skos:altLabel "pleasure"@en ;
+  skos:altLabel "sure"@en ;
+  skos:altLabel "totally"@en ;
+  skos:altLabel "very well"@en ;
+  skos:altLabel "welcome"@en ;
+  skos:altLabel "well"@en ;
+  skos:altLabel "why not"@en ;
+  skos:altLabel "yea"@en ;
+  skos:altLabel "yeah"@en ;
+  skos:altLabel "yep"@en ;
+  skos:altLabel "yes"@en ;
+.
+skos:altLabel
+  a owl:AnnotationProperty ;
+.
+skos:definition
+  a owl:AnnotationProperty ;
+.
+:damage
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Damage"@en ;
+  skos:altLabel "Break"@en ;
+  skos:altLabel "Harm"@en ;
+  skos:altLabel "Hurt"@en ;
+  skos:altLabel "Cripple"@en ;
+  skos:altLabel "Impair"@en ;
+  skos:altLabel "Mangle"@en ;
+  skos:altLabel "Fracture"@en ;
+  skos:altLabel "Wound"@en ;
+  skos:altLabel "Injure"@en ;
+  skos:altLabel "batter"@en ;
+  skos:altLabel "injury"@en ;
+  skos:altLabel "faulty"@en ;
+  skos:altLabel "danger"@en ;
+  skos:altLabel "unhealthy"@en ;
+  skos:altLabel "harmful"@en ;
+  skos:altLabel "dangerous"@en ;
+.
+:bodyPart
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Body part"@en ;
+  skos:altLabel "Head"@en ;
+  skos:altLabel "Arm"@en ;
+  skos:altLabel "Leg"@en ;
+  skos:altLabel "Knee"@en ;
+  skos:altLabel "Elbow"@en ;
+  skos:altLabel "Foot"@en ;
+  skos:altLabel "Feet"@en ;
+  skos:altLabel "Hand"@en ;
+  skos:altLabel "Finger"@en ;
+  skos:altLabel "Nail"@en ;
+  skos:altLabel "Shoulder"@en ;
+  skos:altLabel "Neck"@en ;
+  skos:altLabel "Hip"@en ;
+  skos:altLabel "Eye"@en ;
+  skos:altLabel "Ear"@en ;
+  skos:altLabel "Nose"@en ;
+  skos:altLabel "Mouth"@en ;
+  skos:altLabel "Tooth"@en ;
+.
+:when
+  a :Term ;
+  rdfs:label "when" ;
+.
+:point
+  a :Term ;
+  rdfs:label "point" ;
+.
+:reward
+  a :Term ;
+  rdfs:label "reward" ;
+  skos:altLabel "bonification"@en ;
+  skos:altLabel "prize"@en ;
+  skos:altLabel "award"@en ;
+  skos:altLabel "benefit"@en ;
+  skos:altLabel "bonus"@en ;
+  skos:altLabel "compensation"@en ;
+.
+:update
+  a :Term ;
+  rdfs:label "update" ;
+  skos:altLabel "up to date"@en ;
+  skos:altLabel "up-to-date"@en ;
+.
+:reach
+  a :Term ;
+  rdfs:label "reach" ;
+.
+:accurate
+  a :Term ;
+  rdfs:label "accurate" ;
+  skos:altLabel "accuracy"@en ;
+  skos:altLabel "precise"@en ;
+  skos:altLabel "correct"@en ;
+.
+:card
+  a :Term ;
+  rdfs:label "card" ;
+.
+:hotline
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Hotline"@en ;
+  skos:altLabel "hotline number"@en ;
+  skos:altLabel "hotline no"@en ;
+.
+:resale
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Resale"@en ;
+.
+:redeem
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Redeem"@en ;
+  skos:altLabel "redemption"@en ;
+  skos:altLabel "reclaim"@en ;
+  skos:altLabel "regain"@en ;
+.
+:statement
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Statement"@en ;
+.
+:account
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Account"@en ;
+.
+:declare
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Declare"@en ;
+  skos:altLabel "declaration"@en ;
+.
+:rpcc
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "RPCC"@en ;
+  skos:altLabel "recurring payment by credit card"@en ;
+  skos:altLabel "recurring payment credit card"@en ;
+.
+:lumpSum
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Lump Sum"@en ;
+  skos:altLabel "lump sum"@en ;
+  skos:altLabel "lump sum payment"@en ;
+  skos:altLabel "lump sum capital payment"@en ;
+  skos:altLabel "partial capital repayment"@en ;
+  skos:altLabel "partial capital payment"@en ;
+  skos:altLabel "partial payment"@en ;
+  skos:altLabel "partial repayment"@en ;
+  skos:altLabel "bit of payment"@en ;
+  skos:altLabel "piece of payment"@en ;
+  skos:altLabel "fraction of payment"@en ;
+  skos:altLabel "payment bit"@en ;
+  skos:altLabel "payment piece"@en ;
+  skos:altLabel "payment fraction"@en ;
+  skos:altLabel "payment part"@en ;
+.
+:upgrade
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Upgrade"@en ;
+  skos:altLabel "upgrading"@en ;
+  skos:altLabel "promote"@en ;
+  skos:altLabel "boost"@en ;
+  skos:altLabel "improve"@en ;
+  skos:altLabel "enhance"@en ;
+  skos:altLabel "upgradation"@en ;
+  skos:altLabel "improvement"@en ;
+.
+:balance
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Balance"@en ;
+  skos:altLabel "money"@en ;
+.
+:arrear
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "arrear"@en ;
+  skos:altLabel "arrear"@en ;
+  skos:altLabel "arrears"@en ;
+  skos:altLabel "arrearage"@en ;
+.
+:atm
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "atm"@en ;
+  skos:altLabel "atm"@en ;
+.
+:axs
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "axs"@en ;
+  skos:altLabel "axs"@en ;
+.
+:bankrupt
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "bankrupt"@en ;
+  skos:altLabel "bankrupt"@en ;
+.
+:buildings
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "buildings"@en ;
+  skos:altLabel "buangkok edgeview"@en ;
+  skos:altLabel "bendemeer light"@en ;
+.
+:cause
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "cause"@en ;
+  skos:altLabel "causation"@en ;
+  skos:altLabel "motive"@en ;
+  skos:altLabel "motivation"@en ;
+  skos:altLabel "justification"@en ;
+  skos:altLabel "rationale"@en ;
+.
+:consent
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "consent"@en ;
+  skos:altLabel "permission"@en ;
+  skos:altLabel "authorization"@en ;
+.
+:dds
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "dds"@en ;
+  skos:altLabel "deferred downpayment scheme"@en ;
+  skos:altLabel "defer downpayment scheme"@en ;
+  skos:altLabel "dds"@en ;
+.
+:enets
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "enets"@en ;
+  skos:altLabel "enets"@en ;
+.
+:fiance
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "fiance"@en ;
+  skos:altLabel "fiance"@en ;
+  skos:altLabel "fiancee"@en ;
+  skos:altLabel "fiancé"@en ;
+  skos:altLabel "fiancée"@en ;
+.
+:inspect
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "inspect"@en ;
+  skos:altLabel "inspect"@en ;
+.
+:lawyer
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "lawyer"@en ;
+  skos:altLabel "solicitor"@en ;
+  skos:altLabel "lawyer"@en ;
+.
+:legalfee
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "legalfee"@en ;
+  skos:altLabel "legal fee"@en ;
+  skos:altLabel "conveyancing fee"@en ;
+.
+:loanbalance
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "loanbalance"@en ;
+  skos:altLabel "loan balance"@en ;
+  skos:altLabel "balance loan"@en ;
+  skos:altLabel "balance of loan"@en ;
+  skos:altLabel "outstanding loan"@en ;
+  skos:altLabel "outstanding loan balance"@en ;
+  skos:altLabel "remaining loan"@en ;
+  skos:altLabel "balance loan payment"@en ;
+.
+:lumpsum
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "lumpsum"@en ;
+  skos:altLabel "lump sum"@en ;
+  skos:altLabel "lump sum payment"@en ;
+  skos:altLabel "lump sum capital payment"@en ;
+  skos:altLabel "partial capital repayment"@en ;
+  skos:altLabel "partial capital payment"@en ;
+  skos:altLabel "partial payment"@en ;
+  skos:altLabel "partial repayment"@en ;
+  skos:altLabel "bit of payment"@en ;
+  skos:altLabel "piece of payment"@en ;
+  skos:altLabel "fraction of payment"@en ;
+  skos:altLabel "payment bit"@en ;
+  skos:altLabel "payment piece"@en ;
+  skos:altLabel "payment fraction"@en ;
+  skos:altLabel "payment part"@en ;
+.
+:lup
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "lup"@en ;
+  skos:altLabel "LUP"@en ;
+  skos:altLabel "Lift Upgrading Programme"@en ;
+  skos:altLabel "Lift Upgrading"@en ;
+  skos:altLabel "Lift Upgrading Cost"@en ;
+.
+:nets
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "nets"@en ;
+  skos:altLabel "nets"@en ;
+.
+:onhold
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "onhold"@en ;
+  skos:altLabel "pause"@en ;
+  skos:altLabel "reinstate"@en ;
+  skos:altLabel "reinstatement"@en ;
+  skos:altLabel "on hold"@en ;
+  skos:altLabel "hold onto"@en ;
+.
+:online
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "online"@en ;
+  skos:altLabel "online"@en ;
+  skos:altLabel "on-line"@en ;
+.
+:ontology_lists
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "ontology_lists"@en ;
+  skos:altLabel "ontology.lst::Ontology"@en ;
+.
+:otp
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "otp"@en ;
+  skos:altLabel "option to purchase"@en ;
+  skos:altLabel "otp"@en ;
+.
+:pps
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "pps"@en ;
+  skos:altLabel "pps"@en ;
+  skos:altLabel "parenthood priority scheme"@en ;
+.
+:receipt
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "receipt"@en ;
+  skos:altLabel "receipt"@en ;
+  skos:altLabel "invoice"@en ;
+  skos:altLabel "invoicing"@en ;
+  skos:altLabel "bill"@en ;
+  skos:altLabel "billing"@en ;
+.
+:reduce
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "reduce"@en ;
+  skos:altLabel "reduce"@en ;
+  skos:altLabel "shorten"@en ;
+  skos:altLabel "shrink"@en ;
+  skos:altLabel "minimise"@en ;
+  skos:altLabel "minimize"@en ;
+  skos:altLabel "minimising"@en ;
+.
+:renovation
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "renovation"@en ;
+  skos:altLabel "rennovation"@en ;
+  skos:altLabel "renovate"@en ;
+  skos:altLabel "rennovate"@en ;
+.
+:requestforvalue
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "requestforvalue"@en ;
+  skos:altLabel "valuation request"@en ;
+  skos:altLabel "the request for value"@en ;
+  skos:altLabel "a request for value"@en ;
+  skos:altLabel "request for value"@en ;
+  skos:altLabel "value request"@en ;
+  skos:altLabel "request of value"@en ;
+  skos:altLabel "a request of value"@en ;
+  skos:altLabel "the request of value"@en ;
+.
+:resaleportal
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "resaleportal"@en ;
+  skos:altLabel "resale portal"@en ;
+  skos:altLabel "resale website"@en ;
+.
+#:revise
+#  a :Term ;
+#  a owl:NamedIndividual ;
+#  rdfs:label "revise"@en ;
+#  skos:altLabel "revise"@en ;
+#  skos:altLabel "revision"@en ;
+#  skos:altLabel "change"@en ;
+#  skos:altLabel "increase"@en ;
+#  skos:altLabel "ammend"@en ;
+#  skos:altLabel "amend"@en ;
+#  skos:altLabel "effect"@en ;
+#.
+:salesperson
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "salesperson"@en ;
+  skos:altLabel "salesperson"@en ;
+  skos:altLabel "salesman"@en ;
+  skos:altLabel "saleswoman"@en ;
+  skos:altLabel "salespeople"@en ;
+  skos:altLabel "agent"@en ;
+.
+:sers
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "sers"@en ;
+  skos:altLabel "sers"@en ;
+  skos:altLabel "Selective En bloc Redevelopment Scheme"@en ;
+.
+:spc
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "spc"@en ;
+  skos:altLabel "SPC"@en ;
+.
+:sps
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "sps"@en ;
+  skos:altLabel "sps"@en ;
+  skos:altLabel "senior priority scheme"@en ;
+.
+:start
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "start"@en ;
+  skos:altLabel "start"@en ;
+  skos:altLabel "commence"@en ;
+  skos:altLabel "begin"@en ;
+  skos:altLabel "initiate"@en ;
+  skos:altLabel "register"@en ;
+  skos:altLabel "registration"@en ;
+  skos:altLabel "carry out"@en ;
+  skos:altLabel "run"@en ;
+  skos:altLabel "running"@en ;
+  skos:altLabel "conduct"@en ;
+  skos:altLabel "set up"@en ;
+  skos:altLabel "setting up"@en ;
+  skos:altLabel "commencement"@en ;
+.
+:tls
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "tls"@en ;
+  skos:altLabel "temporary loan scheme"@en ;
+  skos:altLabel "tls"@en ;
+.
+:tpmd
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "tpmd"@en ;
+  skos:altLabel "tpmd"@en ;
+.
+:transact
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "transact"@en ;
+  skos:altLabel "transact"@en ;
+  skos:altLabel "transaction"@en ;
+  skos:altLabel "transacted"@en ;
+.
+:print
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "print"@en ;
+  skos:altLabel "print out"@en ;
+  skos:altLabel "printout"@en ;
+  skos:altLabel "reprint"@en ;
+  skos:altLabel "re-print"@en ;
+  skos:altLabel "copy"@en ;
+.
+:history
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "history"@en ;
+  skos:altLabel "timeline"@en ;
+  skos:altLabel "chronology"@en ;
+.
+:records
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Records"@en ;
+  skos:altLabel "record"@en ;
+  skos:altLabel "records"@en ;
+
+.
+:outstanding
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Outstanding"@en ;
+  skos:altLabel "outstanding"@en ;
+  skos:altLabel "remaining"@en ;
+  skos:altLabel "pending"@en ;
+  skos:altLabel "overdue"@en ;
+  skos:altLabel "unresolved"@en ;
+  skos:altLabel "excellent"@en ;
+.
+:ability
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Ability"@en ;
+  skos:altLabel "able"@en ;
+  skos:altLabel "allow"@en ;
+  skos:altLabel "entitle"@en ;
+  skos:altLabel "permit"@en ;
+  skos:altLabel "entitle"@en ;
+  skos:altLabel "permissible"@en ;
+  :entails :wish ;
+.
+:eligibility
+  a :aspect ;
+  a owl:NamedIndividual ;
+  rdfs:label "Eligibility"@en ;
+  skos:altLabel "eligible"@en ;
+  skos:altLabel "qualify"@en ;
+  skos:altLabel "elig"@en ;
+  skos:altLabel "condition"@en ;
+  skos:altLabel "criteria"@en ;
+.
+:be
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Be"@en ;
+  skos:altLabel "am"@en ;
+  skos:altLabel "are"@en ;
+  skos:altLabel "is"@en ;
+  skos:altLabel "was"@en ;
+  skos:altLabel "were"@en ;
+.
+:sb
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Somebody"@en ;
+  skos:altLabel "i"@en ;
+  skos:altLabel "me"@en ;
+  skos:altLabel "you"@en ;
+  skos:altLabel "he"@en ;
+  skos:altLabel "him"@en ;
+  skos:altLabel "she"@en ;
+  skos:altLabel "her"@en ;
+  skos:altLabel "we"@en ;
+  skos:altLabel "us"@en ;
+  skos:altLabel "they"@en ;
+  skos:altLabel "them"@en ;
+  skos:altLabel "someone"@en ;
+  skos:altLabel "someone else"@en ;
+  skos:altLabel "other person"@en ;
+.
+:do
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Do"@en ;
+  skos:altLabel "done"@en ;
+.
+:if
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "If"@en ;
+  skos:altLabel "whether"@en ;
+.
+:about
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "About"@en ;
+.
+:get
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Get"@en ;
+.
+:have
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Have"@en ;
+.
+:go
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Go"@en ;
+.
+:you
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "You"@en ;
+  skos:altLabel "u"@en ;
+  skos:altLabel "you"@en ;
+.
+:to
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "To"@en ;
+.
+:much
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "much"@en ;
+  skos:altLabel "many"@en ;
+.
+:time
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "time"@en ;
+  skos:altLabel "hour"@en ;
+  skos:altLabel "schedule"@en ;
+  skos:altLabel "timing"@en ;
+.
+:place
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "lot"@en ;
+  skos:altLabel "spacea"@en ;
+  skos:altLabel "spot"@en ;
+  skos:altLabel "slot"@en ;
+  skos:altLabel "place"@en ;
+.
+:amount
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "amount"@en ;
+  skos:altLabel "how much"@en ;
+  skos:altLabel "how many"@en ;
+  skos:altLabel "quantity"@en ;
+  :entails :charge ;
+.
+:parkat
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "park at"@en ;
+  skos:altLabel "parking at"@en ;
+.
+
+:generalitems
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "generalitems"@en ;
+  skos:altLabel "item"@en ;
+  skos:altLabel "thing"@en ;
+  skos:altLabel "household item"@en ;
+  skos:altLabel "equipment"@en ;
+  skos:altLabel "object"@en ;
+  skos:altLabel "gym equipment"@en ;
+  skos:altLabel "punching bag"@en ;
+  skos:altLabel "part"@en ;
+  skos:altLabel "machine"@en ;
+  skos:altLabel "locker"@en ;
+  skos:altLabel "safe"@en ;
+.
+:rent
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Rent"@en ;
+  skos:altLabel "renting"@en ;
+  skos:altLabel "lease"@en ;
+  skos:altLabel "rental"@en ;
+  skos:altLabel "renting out"@en ;
+  skos:altLabel "rented out"@en ;
+  skos:altLabel "tenancy"@en ;
+.
+:tenant
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Tenant"@en ;
+.
+:subtenant
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "subtenant"@en ;
+.
+:owner
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Owner"@en ;
+  skos:altLabel "homeowner"@en ;
+  skos:altLabel "party"@en ;
+.
+:firesafety
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "FireSafety"@en ;
+  skos:altLabel "fire extinguisher"@en ;
+  skos:altLabel "smoke detector"@en ;
+  skos:altLabel "fire detector"@en ;
+.
+:ACRA
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "ACRA"@en ;
+  skos:altLabel "Accounting and Corporate Regulatory Authority"@en ;
+  skos:altLabel "Accounting & Corporate Regulatory Authority"@en ;
+.
+:tiles
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Tile"@en ;
+  skos:altLabel "floor tile"@en ;
+  skos:altLabel "wall tile"@en ;
+  skos:altLabel "floor and wall tile"@en ;
+  skos:altLabel "floor or wall tile"@en ;
+  skos:altLabel "wall finishes"@en ;
+.
+:washroom
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Washroom"@en ;
+  skos:altLabel "bathroom"@en ;
+  skos:altLabel "toilet"@en ;
+.
+:contractor
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Contractor"@en ;
+  skos:altLabel "worker"@en ;
+  skos:altLabel "installer"@en ;
+.
+:qp
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "QP"@en ;
+  skos:altLabel "qualified person"@en ;
+.
+:pe
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "PE"@en ;
+  skos:altLabel "professional engineer"@en ;
+.
+:responsible
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Responsible"@en ;
+  skos:altLabel "responsibility"@en ;
+  skos:altLabel "answerable"@en ;
+  skos:altLabel "liable"@en ;
+.
+:ceiling
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Ceiling"@en ;
+  skos:altLabel "roof"@en ;
+  skos:altLabel "roof top"@en ;
+.
+:hang
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "Hang"@en ;
+  skos:altLabel "pin"@en ;
+.
+:engage
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "Engage"@en ;
+   skos:altLabel "involve"@en ;
+   skos:altLabel "hire"@en ;
+   skos:altLabel "involvement"@en ;
+   skos:altLabel "role"@en ;
+   skos:altLabel "supervision"@en ;
+   skos:altLabel "supervise"@en ;
+   skos:altLabel "supervisor"@en ;
+.
+:certify
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "certify"@en ;
+   skos:altLabel "endorse"@en ;
+.
+:window
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "window"@en ;
+.
+:demolishwall
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "demolish wall"@en ;
+   skos:altLabel "demolishing wall"@en ;
+   skos:altLabel "demolition of wall"@en ;
+   skos:altLabel "demolition of internal wall"@en ;
+   skos:altLabel "demolition in internal wall"@en ;
+   skos:altLabel "internal wall demolition"@en ;
+   skos:altLabel "wall demolition"@en ;
+   skos:altLabel "hacking of wall"@en ;
+   skos:altLabel "hacking wall"@en ;
+.
+:squatpan
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "squat pan"@en ;
+.
+:pedestal
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "pedestal"@en ;
+   skos:altLabel "sitting toilet"@en ;
+   skos:altLabel "pedestal toilet"@en ;
+   skos:altLabel "pedestal pan"@en ;
+   skos:altLabel "toilet bowl"@en ;
+.
+:outside
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "outside"@en ;
+   skos:altLabel "unregistered"@en ;
+.
+:unauthorised
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "unauthorised"@en ;
+   skos:altLabel "unauthorized"@en ;
+   skos:altLabel "unapproved"@en ;
+   skos:altLabel "unapprove"@en ;
+   skos:altLabel "non approve"@en ;
+   skos:altLabel "not approve"@en ;
+   skos:altLabel "no approve"@en ;
+.
+:resolve
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "resolve"@en ;
+   skos:altLabel "fix"@en ;
+.
+:interiordesign
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "interior design"@en ;
+   skos:altLabel "interior designing"@en ;
+.
+:interiordesigner
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "interior designer"@en ;
+.
+:prevent
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "prevent"@en ;
+   skos:altLabel "stop"@en ;
+   skos:altLabel "avoid"@en ;
+   skos:altLabel "prevention"@en ;
+.
+:fall
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "fall"@en ;
+   skos:altLabel "fallen"@en ;
+.
+:maintenance
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "maintenance"@en ;
+   skos:altLabel "maintain"@en ;
+.
+:safe
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "safe"@en ;
+   skos:altLabel "safety"@en ;
+   skos:altLabel "safely"@en ;
+   skos:altLabel "functional"@en ;
+.
+:rivet
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "aluminium rivet"@en ;
+   skos:altLabel "rivet"@en ;
+.
+:retrofit
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "retrofit"@en ;
+   skos:altLabel "retrofitting"@en ;
+   skos:altLabel "retrofitment"@en ;
+.
+:certified
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "certified"@en ;
+   skos:altLabel "trained"@en ;
+   skos:altLabel "experienced"@en ;
+   skos:altLabel "endorsed"@en ;
+   skos:altLabel "qualified"@en ;
+   skos:altLabel "license"@en ;
+   skos:altLabel "licence"@en ;
+   skos:altLabel "licensed"@en ;
+   skos:altLabel "verified"@en ;
+   skos:altLabel "work experience"@en ;
+   skos:altLabel "working experience"@en ;
+.
+:leakage
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "leakage"@en ;
+   skos:altLabel "leak"@en ;
+   skos:altLabel "drip"@en ;
+   skos:altLabel "dripping"@en ;
+.
+:repair
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "repair"@en ;
+.
+:fixturefitting
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "fixture and fitting"@en ;
+   skos:altLabel "fixture"@en ;
+   skos:altLabel "fitting"@en ;
+   skos:altLabel "fixtures and fitting"@en ;
+   skos:altLabel "fixture / fitting"@en ;
+.
+:waterproofmembrane
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "waterproof membrane"@en ;
+   skos:altLabel "water proof membrane"@en ;
+   skos:altLabel "waterproof membrane layer"@en ;
+   skos:altLabel "water proof membrane"@en ;
+.
+:water
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "water"@en ;
+.
+:floor
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "floor"@en ;
+   skos:altLabel "flooring"@en ;
+.
+:warranty
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "warranty"@en ;
+   skos:altLabel "warranty period"@en ;
+.
+:spallingconcrete
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "spalling concrete"@en ;
+.
+:structure
+   a :aspect ;
+   a owl:NamedIndividual ;
+   rdfs:label "Structure"@en ;
+   skos:altLabel "structural"@en ;
+   skos:altLabel "shape"@en ;
+   skos:altLabel "architecture"@en ;
+.
+:aircon
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "aircon"@en ;
+   skos:altLabel "air conditioner"@en ;
+   skos:altLabel "aircons"@en ;
+   skos:altLabel "air-con"@en ;
+   skos:altLabel "air - con"@en ;
+   skos:altLabel "air-conditioner"@en ;
+   skos:altLabel "air conditioner"@en ;
+   skos:altLabel "air - conditioner"@en ;
+   skos:altLabel "air-conditioning"@en ;
+   skos:altLabel "air con"@en ;
+   skos:altLabel "air-cond"@en ;
+   skos:altLabel "air - cond"@en ;
+   skos:altLabel "air cond"@en ;
+   skos:altLabel "ac"@en ;
+.
+:mainpower
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "power current"@en ;
+   skos:altLabel "power"@en ;
+   skos:altLabel "main switch"@en ;
+   skos:altLabel "flat power"@en ;
+   skos:altLabel "flat 's power"@en ;
+   skos:altLabel "main power"@en ;
+   skos:altLabel "power current"@en ;
+   skos:altLabel "flat current"@en ;
+   skos:altLabel "electric current"@en ;
+   skos:altLabel "electric"@en ;
+   skos:altLabel "electrical"@en ;
+   skos:altLabel "amps"@en ;
+   skos:altLabel "electric load"@en ;
+   skos:altLabel "electrical load"@en ;
+.
+:appliance
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "appliance"@en ;
+   skos:altLabel "extensions"@en ;
+.
+:discharge
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "discharge"@en ;
+.
+:pipeline
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "pipeline"@en ;
+   skos:altLabel "pipe"@en ;
+.
+:condense
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "condense"@en ;
+   skos:altLabel "condensate"@en ;
+.
+:minor
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "minor"@en ;
+   skos:altLabel "basic"@en ;
+.
+:major
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "major"@en ;
+.
+:enhancedeasepackage
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "enhanced ease package"@en ;
+   skos:altLabel "enhanced package"@en ;
+.
+:channelbroadcasting
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "channel broadcasting"@en ;
+   skos:altLabel "tv channel broadcasting"@en ;
+   skos:altLabel "tv channel"@en ;
+   skos:altLabel "broadcasting"@en ;
+   skos:altLabel "tv"@en ;
+   skos:altLabel "television"@en ;
+.
+:hdformat
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "hd format"@en ;
+   skos:altLabel "high definition"@en ;
+   skos:altLabel "hd"@en ;
+   skos:altLabel "digital format"@en ;
+   skos:altLabel "digital"@en ;
+   skos:altLabel "hd digital"@en ;
+.
+:name
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "name"@en ;
+   skos:altLabel "nickname"@en ;
+.
+:rename
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "rename"@en ;
+.
+:partner
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "partner"@en ;
+   skos:altLabel "shareholder"@en ;
+   skos:altLabel "team partner"@en ;
+   skos:altLabel "partnership"@en ;
+.
+:sublease
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "sublease"@en ;
+   skos:altLabel "sublet"@en ;
+   skos:altLabel "rent out"@en ;
+.
+:partial
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "partial"@en ;
+   skos:altLabel "part of"@en ;
+   skos:altLabel "percent"@en ;
+   skos:altLabel "percentage"@en ;
+   skos:altLabel "half"@en ;
+   skos:altLabel "quarter"@en ;
+   skos:altLabel "not complete"@en ;
+   skos:altLabel "not completely"@en ;
+   skos:altLabel "partially"@en ;
+   skos:altLabel "not fully"@en ;
+.
+:kichenexhaust
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "kitchen exhaust duct"@en ;
+   skos:altLabel "kitchen exhaust duct system"@en ;
+   skos:altLabel "kitchen exhaust"@en ;
+   skos:altLabel "kitchen exhaust system"@en ;
+.
+:aircleaner
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "air cleaner"@en ;
+   skos:altLabel "air cleaning"@en ;
+   skos:altLabel "air-cleaner"@en ;
+   skos:altLabel "air-cleaning"@en ;
+.
+:internalmasonrywalls
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "internal masonry wall"@en ;
+   skos:altLabel "internal masonry walls"@en ;
+   skos:altLabel "internal walls"@en ;
+.
+:dapohslab
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "dapoh slab"@en ;
+.
+:ceilingfan
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "ceiling fan"@en ;
+   skos:altLabel "wall fan"@en ;
+.
+:railing
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "demarcation railing"@en ;
+   skos:altLabel "railing"@en ;
+.
+:shelves
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "shelf"@en ;
+   skos:altLabel "rack"@en ;
+.
+:foldingdoor
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "folding door"@en ;
+   skos:altLabel "steel folding door"@en ;
+   skos:altLabel "aluminium shutter"@en ;
+.
+:glasspanel
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "glass panel"@en ;
+.
+:door
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "door"@en ;
+   skos:altLabel "gate"@en ;
+.
+:entranceexit
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "entranceexit"@en ;
+   skos:altLabel "front entrance"@en ;
+   skos:altLabel "back entrance"@en ;
+   skos:altLabel "rear entrance"@en ;
+   skos:altLabel "rear entrance"@en ;
+   skos:altLabel "rear exit"@en ;
+   skos:altLabel "exit"@en ;
+   skos:altLabel "entrance"@en ;
+   skos:altLabel "entrance or exit"@en ;
+   skos:altLabel "entrance and exit"@en ;
+.
+:glasspanel
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "glass panel"@en ;
+.
+:metalgate
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "metal gate"@en ;
+.
+:sanitarypipe
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "sanitary piping"@en ;
+   skos:altLabel "sanitary pipe"@en ;
+.
+:sanitaryitems
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "sanitary item"@en ;
+   skos:altLabel "basin and tap"@en ;
+   skos:altLabel "tap and basin"@en ;
+   skos:altLabel "basin"@en ;
+   skos:altLabel "tap"@en ;
+   skos:altLabel "wash basin"@en ;
+   skos:altLabel "sink"@en ;
+.
+:relocate
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "relocate"@en ;
+   skos:altLabel "relocation"@en ;
+.
+:gypsumboard
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "gypsum board"@en ;
+   skos:altLabel "partition board"@en ;
+.
+:structuraldrawing
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "structural drawing"@en ;
+.
+:outrightpayment
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "outright payment"@en ;
+  skos:altLabel "full payment"@en ;
+.
+:there
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "there"@en ;
+.
+:existence
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "existence"@en ;
+.
+:parkinglot
+  a :Term ;
+  a owl:NamedIndividual ;
+	rdfs:label "Parking Lot"@en ;
+	skos:altLabel "Parking Space"@en ;
+	skos:altLabel "Parking location"@en ;
+	skos:altLabel "Parking place"@en ;
+	skos:definition "A physical space, contained in a Car Park, where vehicles can be parked."@en ;
+.
+:normal
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "normal"@en ;
+  skos:altLabel "ordinary"@en ;
+  skos:altLabel "standard"@en ;
+.
+:feedback
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "feedback"@en ;
+.
+:foreign
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "foreign"@en ;
+   skos:altLabel "foreigner"@en ;
+   skos:altLabel "overseas"@en ;
+   skos:altLabel "oversea"@en ;
+.
+:behalf
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "behalf"@en ;
+.
+:identification
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "identification"@en ;
+   skos:altLabel "identification"@en ;
+   skos:altLabel "number"@en ;
+.
+:plate
+   a :Term ;
+   a owl:NamedIndividual ;
+   rdfs:label "plate"@en ;
+.
+:recognition
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "recognition"@en ;
+  skos:altLabel "recognize"@en ;
+  skos:altLabel "recognise"@en ;
+  skos:altLabel "recognized"@en ;
+  skos:altLabel "recognised"@en ;
+  skos:altLabel "reputed"@en ;
+  skos:altLabel "reputation"@en ;
+  skos:altLabel "affiliate"@en ;
+  skos:altLabel "accredit"@en ;
+  skos:altLabel "accreditation"@en ;
+.
+:teacher
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "teacher"@en ;
+  skos:altLabel "teaching"@en ;
+  skos:altLabel "professor"@en ;
+  skos:altLabel "instructor"@en ;
+.
+:training
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "training"@en ;
+  skos:altLabel "train"@en ;
+  skos:altLabel "trainee"@en ;
+  skos:altLabel "trainer"@en ;
+.
+:module
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "module"@en ;
+.
+:graduate
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "graduate"@en ;
+  skos:altLabel "graduation"@en ;
+.
+:open
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "open"@en ;
+  skos:altLabel "available"@en ;
+.
+:worker
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "worker"@en ;
+  skos:altLabel "professional"@en ;
+.
+:education
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "education"@en ;
+.
+:qualification
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "qualification"@en ;
+.
+:university
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "university"@en ;
+  skos:altLabel "college"@en ;
+  skos:altLabel "polytechnic"@en ;
+  skos:altLabel "institute"@en ;
+.
+:local
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "local"@en ;
+.
+:career
+  a :aspect ;
+  a owl:NamedIndividual ;
+  rdfs:label "Career"@en ;
+  skos:altLabel "job option"@en ;
+  skos:altLabel "career prospects"@en ;
+  skos:altLabel "career prospect"@en ;
+  skos:altLabel "job option"@en ;
+  skos:altLabel "job option"@en ;
+  skos:altLabel "job"@en ;
+.
+:opportunity
+  a :aspect ;
+  a owl:NamedIndividual ;
+  rdfs:label "Opportunity"@en ;
+  skos:altLabel "chance"@en ;
+.
+:practicum
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "practicum"@en ;
+  skos:altLabel "practical session"@en ;
+  skos:altLabel "practical assignment"@en ;
+  skos:altLabel "practical work"@en ;
+.
+:comprise
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "comprise"@en ;
+  skos:altLabel "contain"@en ;
+.
+:semester
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "semester"@en ;
+.
+:fail
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "fail"@en ;
+  skos:altLabel "failure"@en ;
+.
+:pass
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "pass"@en ;
+  skos:altLabel "passing"@en ;
+  skos:altLabel "clear"@en ;
+.
+:performance
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "performance"@en ;
+.
+:interview
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "interview"@en ;
+.
+:sponsor
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "sponsor"@en ;
+  skos:altLabel "sponsorship"@en ;
+  skos:altLabel "funding"@en ;
+  skos:altLabel "sponsoring"@en ;
+  skos:altLabel "scholarship"@en ;
+.
+:singaporean
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "singaporean"@en ;
+  skos:altLabel "singapore citizen"@en ;
+  skos:altLabel "singaporeans"@en ;
+  skos:altLabel "singapore resident"@en ;
+  skos:altLabel "singapore residency"@en ;
+.
+:salary
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "salary"@en ;
+  skos:altLabel "wage"@en ;
+.
+:support
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "support"@en ;
+.
+:employer
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "employer"@en ;
+.
+:employee
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "employee"@en ;
+.
+:bond
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "bond"@en ;
+.
+:material
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "material"@en ;
+.
+:develop
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "develop"@en ;
+  skos:altLabel "development"@en ;
+.
+:self
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "self"@en ;
+.
+:PR
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "PR"@en ;
+  skos:altLabel "permanent resident"@en ;
+  skos:altLabel "permanent residency"@en ;
+.
+:degree
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "degree"@en ;
+  skos:altLabel "degree certificate"@en ;
+.
+:applicant
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "applicant"@en ;
+  skos:altLabel "candidate"@en ;
+.
+:citizenship
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "citizenship"@en ;
+  skos:altLabel "nationality"@en ;
+  skos:altLabel "citizen ship"@en ;
+.
+:cet
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "CET"@en ;
+  skos:altLabel "CET Academy"@en ;
+  skos:altLabel "Lifelong Learning"@en ;
+  skos:altLabel "Continuing Education & Training"@en ;
+.
+:academy
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "academy"@en ;
+.
+:ngeeann
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "ngee ann"@en ;
+  rdfs:label "ngeeann"@en ;
+.
+:AskAnnie
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "annie"@en ;
+  rdfs:label "ask annie"@en ;
+  rdfs:label "askannie"@en ;
+.
+:audience
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "audience"@en ;
+  skos:altLabel "public"@en ;
+.
+:study
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "study"@en ;
+  skos:altLabel "learn"@en ;
+  skos:altLabel "learning"@en ;
+.
+:overview
+  a :aspect ;
+  a owl:NamedIndividual ;
+  rdfs:label "Overview"@en ;
+  skos:altLabel "introduction"@en ;
+.
+:requirement
+  a :aspect ;
+  a owl:NamedIndividual ;
+  rdfs:label "Requirement"@en ;
+  skos:altLabel ""@en ;
+.
+:human
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "human"@en ;
+  skos:altLabel "human being"@en ;
+  skos:altLabel "person"@en ;
+.
+:weather
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "weather"@en ;
+  skos:altLabel "climate"@en ;
+  skos:altLabel "temperature"@en ;
+.
+:sorry
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "sorry"@en ;
+  skos:altLabel "apologize"@en ;
+  skos:altLabel "regret"@en ;
+  skos:altLabel "sry"@en ;
+.
+:appearance
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "appearance"@en ;
+  skos:altLabel "look"@en ;
+.
+:interest
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "interest"@en ;
+  skos:altLabel "interesting"@en ;
+  skos:altLabel "amuse"@en ;
+  skos:altLabel "fascinate"@en ;
+.
+:howareyou
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "how are you"@en ;
+  skos:altLabel "how are you doing"@en ;
+  skos:altLabel "how do u do"@en ;
+  skos:altLabel "how do you do"@en ;
+  skos:altLabel "how is it going"@en ;
+  skos:altLabel "how r u"@en ;
+  skos:altLabel "how's it going"@en ;
+  skos:altLabel "how're u"@en ;
+.
+:idontunderstand
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "i dont understand"@en ;
+  skos:altLabel "i don't get it"@en ;
+  skos:altLabel "i don't understand"@en ;
+.
+:whatdoyoumean
+  a :Term ;
+  a owl:NamedIndividual ;
+  rdfs:label "what do you mean"@en ;
+  skos:altLabel "wat u mean"@en ;
+  skos:altLabel "what do you mean"@en ;
+  skos:altLabel "what you mean"@en ;
+.
+
+:Fruits
+  a owl:Class ;
+  rdfs:label "Fruits"@en ;
+.
+:Apple
+  a :Fruits ;
+  a owl:NamedIndividual ;
+  rdfs:label "Apple"@en ;
+.
+:Apricot
+  a :Fruits ;
+  a owl:NamedIndividual ;
+  rdfs:label "Apricot"@en ;
+.
+:Avocado
+  a :Fruits ;
+  a owl:NamedIndividual ;
+  rdfs:label "Avocado"@en ;
+.
+:Banana
+  a :Fruits ;
+  a owl:NamedIndividual ;
+  rdfs:label "Banana"@en ;
+.
+:Bilberry
+  a :Fruits ;
+  a owl:NamedIndividual ;
+  rdfs:label "Bilberry"@en ;
+.
+:Blackberry
+  a :Fruits ;
+  a owl:NamedIndividual ;
+  rdfs:label "Blackberry"@en ;
+.
+:Blackcurrant
+  a :Fruits ;
+  a owl:NamedIndividual ;
+  rdfs:label "Blackcurrant"@en ;
+.
+:Blueberry
+  a :Fruits ;
+  a owl:NamedIndividual ;
+  rdfs:label "Blueberry"@en ;
+.

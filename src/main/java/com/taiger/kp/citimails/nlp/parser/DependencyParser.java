@@ -62,9 +62,11 @@ public class DependencyParser implements SyntaxParser {
 				DependencyNode node = graph.getDependencyNode(i);
 				Edge edge = edges.get(i-1);
 				int head = node.getHead().getIndex();
-				String label = edge.toString().split(" ")[1].split(":")[1];
-				sentence.getS().get(i-1).setDepTag(label);
 				sentence.getS().get(i-1).setFather(head);
+				if (edge.toString().contains(":")) {
+					String label = edge.toString().split(" ")[1].split(":")[1];
+					sentence.getS().get(i-1).setDepTag(label);
+				}
 			}
 		} catch (MaltChainedException e) {
 			// TODO Auto-generated catch block
