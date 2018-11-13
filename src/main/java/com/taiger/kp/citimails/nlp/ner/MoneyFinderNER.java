@@ -52,23 +52,25 @@ public class MoneyFinderNER implements NER {
 	@Override
 	public Sentence annotate(Sentence sentence) {
 		Assert.notNull(sentence, "sentence shouldn't be null");
-		Assert.notNull(sentence.getS(), "sentence content shouldn't be null");
+		Assert.notNull(sentence.getWords(), "sentence content shouldn't be null");
 		
 		//* searching in english
-		String[] tokens = new String[sentence.getS().size()];
-		for (int i = 0; i < sentence.getS().size(); i++) {
-			tokens[i] = sentence.getS().get(i).getW();
+		String[] tokens = new String[sentence.getWords().size()];
+		for (int i = 0; i < sentence.getWords().size(); i++) {
+			tokens[i] = sentence.getWords().get(i).getW();
 		}
 
 		Span[] spansEn = nameFinderEn.find(tokens);
 		
 		for (Span span : spansEn) {
-			sentence.getS().get(span.getStart()).setNerTag(Constants.B + Constants.MONEY);
-			sentence.getS().get(span.getStart()).setNerProb(nameFinderEn.probs()[span.getStart()]);
+			sentence.getWords().get(span.getStart()).setNerTag(Constants.B + Constants.MONEY);
+			sentence.getWords().get(span.getStart()).getPrevTags().add(Constants.MONEY);
+			sentence.getWords().get(span.getStart()).setNerProb(nameFinderEn.probs()[span.getStart()]);
 			
 			for (int i = span.getStart() + 1; i < span.getEnd(); i++) {
-				sentence.getS().get(i).setNerTag(Constants.I + Constants.MONEY);
-				sentence.getS().get(i).setNerProb(nameFinderEn.probs()[i]);
+				sentence.getWords().get(i).setNerTag(Constants.I + Constants.MONEY);
+				sentence.getWords().get(i).getPrevTags().add(Constants.MONEY);
+				sentence.getWords().get(i).setNerProb(nameFinderEn.probs()[i]);
 			}
 			
 		} //*/
@@ -81,20 +83,22 @@ public class MoneyFinderNER implements NER {
 	private Sentence extractMoneyRegEx (Sentence sentence) {
 		Assert.notNull(sentence, "sentence shouldn't be null");
 		
-		for (Word w : sentence.getS()) {
+		for (Word w : sentence.getWords()) {
 			Matcher matcher = AMOUNT_PATTERN.matcher(w.getW());
 			if (matcher.matches()) {
-				log.info(matcher.toString());
+				//log.info(matcher.toString());
 				w.setNerTag(Constants.B + Constants.AMOUNT);
+				w.getPrevTags().add(Constants.AMOUNT);
 			}
 			if (CURRENCY_PATTERN.matcher(w.getW().toLowerCase()).matches()) {
 				w.setNerTag(Constants.B + Constants.CURRENCY);
+				w.getPrevTags().add(Constants.CURRENCY);
 			}
 		}
 		
-		for (int i = 0; i < sentence.getS().size() - 1; i++) {
-			Word current = sentence.getS().get(i);
-			Word next = sentence.getS().get(i+1);
+		for (int i = 0; i < sentence.getWords().size() - 1; i++) {
+			Word current = sentence.getWords().get(i);
+			Word next = sentence.getWords().get(i+1);
 			
 			if ((current.getNerTag().equals(Constants.B + Constants.AMOUNT) && next.getNerTag().equals(Constants.B + Constants.AMOUNT))
 					|| (current.getNerTag().equals(Constants.I + Constants.AMOUNT) && next.getNerTag().equals(Constants.B + Constants.AMOUNT))) {
@@ -104,32 +108,23 @@ public class MoneyFinderNER implements NER {
 					|| (current.getNerTag().equals(Constants.B + Constants.CURRENCY) && next.getNerTag().equals(Constants.B + Constants.AMOUNT))) {
 				current.setNerTag(Constants.B + Constants.MONEY);
 				next.setNerTag(Constants.I + Constants.MONEY);
+				current.getPrevTags().add(Constants.MONEY);
+				next.getPrevTags().add(Constants.MONEY);
 			}	
 			if ((current.getNerTag().equals(Constants.I + Constants.AMOUNT) && next.getNerTag().equals(Constants.B + Constants.CURRENCY))
 					|| (current.getNerTag().contains(Constants.AMOUNT) && next.getNerTag().equals(Constants.B + Constants.MONEY))) {
-				for (int j = i; j >= 0 && sentence.getS().get(j).getNerTag().contains(Constants.AMOUNT); j--) {
-					sentence.getS().get(j).setNerTag(sentence.getS().get(j).getNerTag().replace(Constants.AMOUNT, Constants.MONEY));
+				for (int j = i; j >= 0 && sentence.getWords().get(j).getNerTag().contains(Constants.AMOUNT); j--) {
+					sentence.getWords().get(j).setNerTag(sentence.getWords().get(j).getNerTag().replace(Constants.AMOUNT, Constants.MONEY));
 				}
 				next.setNerTag(Constants.I + Constants.MONEY);
+				next.getPrevTags().add(Constants.MONEY);
 			}	
 			if ((current.getNerTag().equals(Constants.B + Constants.MONEY) && next.getNerTag().equals(Constants.B + Constants.AMOUNT))
 					|| (current.getNerTag().equals(Constants.I + Constants.MONEY) && next.getNerTag().equals(Constants.B + Constants.AMOUNT))) {
 				next.setNerTag(Constants.I + Constants.MONEY);
+				next.getPrevTags().add(Constants.MONEY);
 			}
 		}
-		
-		/*for (int i = 0; i < sentence.getS().size() - 1; i++) {
-			Word current = sentence.getS().get(i);
-			Word next = sentence.getS().get(i+1);
-			
-				
-			if ((current.getNerTag().contains(Constants.AMOUNT) && next.getNerTag().equals(Constants.B + Constants.MONEY))) {
-				for (int j = i; j >= 0 && sentence.getS().get(j).getNerTag().contains(Constants.AMOUNT); j--) {
-					sentence.getS().get(j).setNerTag(sentence.getS().get(j).getNerTag().replace(Constants.AMOUNT, Constants.MONEY));
-				}
-				next.setNerTag(Constants.I + Constants.MONEY);
-			}
-		}*/
 		
 		return sentence;
 	}

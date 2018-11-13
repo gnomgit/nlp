@@ -46,7 +46,7 @@ public class DependencyParser implements SyntaxParser {
 	@Override
 	public Sentence annotate(Sentence sentence) {
 		Assert.notNull(sentence, "sentence shouldn't be null");
-		Assert.notNull(sentence.getS(), "sentence content shouldn't be null");
+		Assert.notNull(sentence.getWords(), "sentence content shouldn't be null");
 		
 		String[] tokens = StringTools.sentence2conllFormat(sentence);
 		DependencyStructure graph = null;
@@ -58,14 +58,14 @@ public class DependencyParser implements SyntaxParser {
 		log.info(graph);
 		try {
 			List<Edge> edges = new ArrayList<>(graph.getEdges());
-			for (int i = 1; i <= sentence.getS().size(); i++) {
+			for (int i = 1; i <= sentence.getWords().size(); i++) {
 				DependencyNode node = graph.getDependencyNode(i);
 				Edge edge = edges.get(i-1);
 				int head = node.getHead().getIndex();
-				sentence.getS().get(i-1).setFather(head);
+				sentence.getWords().get(i-1).setFather(head);
 				if (edge.toString().contains(":")) {
 					String label = edge.toString().split(" ")[1].split(":")[1];
-					sentence.getS().get(i-1).setDepTag(label);
+					sentence.getWords().get(i-1).setDepTag(label);
 				}
 			}
 		} catch (MaltChainedException e) {

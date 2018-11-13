@@ -1,5 +1,8 @@
 package com.taiger.kp.citimails.model;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,6 +20,7 @@ public class Word {
 	@Setter(AccessLevel.NONE)
 	private String posTag;
 	private String posUTag;
+	@Setter(AccessLevel.NONE)
 	private String nerTag;
 	private String oerTag;
 	private String depTag;
@@ -25,6 +29,8 @@ public class Word {
 	private int position;
 	private int offset;
 	private int father;
+	private Set<String> prevTags;
+	private Set<String> datapoints;
 	
 	public Word (String w, String nerTag, Double tokenProb, int position, int offset) {
 		this.w = w;
@@ -38,6 +44,8 @@ public class Word {
 		this.posTag = "";
 		this.nerProb = 0.0;
 		this.father = -1;
+		this.prevTags = new LinkedHashSet<>();
+		this.datapoints = new LinkedHashSet<>();
 	}
 	
 	public Word () {
@@ -52,11 +60,23 @@ public class Word {
 		this.nerProb = 0.0;
 		this.offset = 0;
 		this.father = -1;
+		this.prevTags = new LinkedHashSet<>();
+		this.datapoints = new LinkedHashSet<>();
 	}
 	
 	public void setPosTag (String posTag) {
+		if (posTag == null) return;
 		this.posTag = posTag;
 		translatePOS (posTag);
+	}
+	
+	public void setNerTag (String nerTag) {
+		if (nerTag == null) return;
+		if (!nerTag.isEmpty() && !nerTag.equals(Constants.O)) {
+			String prev = nerTag.replace(Constants.B, "").replace(Constants.I, "");
+			this.prevTags.add(prev);
+		}
+		this.nerTag = nerTag;
 	}
 
 	private void translatePOS (String posTag) {

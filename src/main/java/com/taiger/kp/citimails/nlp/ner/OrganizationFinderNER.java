@@ -41,23 +41,23 @@ public class OrganizationFinderNER implements NER {
 	@Override
 	public Sentence annotate(Sentence sentence) {
 		Assert.notNull(sentence, "sentence shouldn't be null");
-		Assert.notNull(sentence.getS(), "sentence content shouldn't be null");
+		Assert.notNull(sentence.getWords(), "sentence content shouldn't be null");
 		
 		//* searching in english
-		String[] tokens = new String[sentence.getS().size()];
-		for (int i = 0; i < sentence.getS().size(); i++) {
-			tokens[i] = sentence.getS().get(i).getW();
+		String[] tokens = new String[sentence.getWords().size()];
+		for (int i = 0; i < sentence.getWords().size(); i++) {
+			tokens[i] = sentence.getWords().get(i).getW();
 		}
 
 		Span[] spansEn = nameFinderEn.find(tokens);
 		
 		for (Span span : spansEn) {
-			sentence.getS().get(span.getStart()).setNerTag(Constants.B + Constants.ORGANIZATION);
-			sentence.getS().get(span.getStart()).setNerProb(nameFinderEn.probs()[span.getStart()]);
+			sentence.getWords().get(span.getStart()).setNerTag(Constants.B + Constants.ORGANIZATION);
+			sentence.getWords().get(span.getStart()).setNerProb(nameFinderEn.probs()[span.getStart()]);
 			
 			for (int i = span.getStart() + 1; i < span.getEnd(); i++) {
-				sentence.getS().get(i).setNerTag(Constants.I + Constants.ORGANIZATION);
-				sentence.getS().get(i).setNerProb(nameFinderEn.probs()[i]);
+				sentence.getWords().get(i).setNerTag(Constants.I + Constants.ORGANIZATION);
+				sentence.getWords().get(i).setNerProb(nameFinderEn.probs()[i]);
 			}
 			
 		} //*/

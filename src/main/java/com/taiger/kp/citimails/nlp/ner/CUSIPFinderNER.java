@@ -28,10 +28,10 @@ public class CUSIPFinderNER implements NER {
 	@Override
 	public Sentence annotate(Sentence sentence) {
 		Assert.notNull(sentence, "sentence shouldn't be null");
-		Assert.notNull(sentence.getS(), "sentence content shouldn't be null");
+		Assert.notNull(sentence.getWords(), "sentence content shouldn't be null");
 		
 		//* 
-		for (Word w : sentence.getS()) {
+		for (Word w : sentence.getWords()) {
 			if (isCusip(w.getW())) {
 				w.setNerTag(Constants.B + Constants.CUSIP);
 				w.setNerProb(1.0);

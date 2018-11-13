@@ -75,22 +75,25 @@ public class DateFinderNER implements NER {
 	@Override
 	public Sentence annotate (Sentence sentence) {
 		Assert.notNull(sentence, "sentence shouldn't be null");
-		Assert.notNull(sentence.getS(), "sentence content shouldn't be null");
-		String[] tokens = new String[sentence.getS().size()];
-		for (int i = 0; i < sentence.getS().size(); i++) {
-			tokens[i] = sentence.getS().get(i).getW();
+		Assert.notNull(sentence.getWords(), "sentence content shouldn't be null");
+		
+		/*String[] tokens = new String[sentence.getWords().size()];
+		for (int i = 0; i < sentence.getWords().size(); i++) {
+			tokens[i] = sentence.getWords().get(i).getW();
 		}
  
 		Span spans[] = nameFinder.find(tokens);
 		for (Span span : spans) {
-			sentence.getS().get(span.getStart()).setNerTag(Constants.B + Constants.DATE);
-			sentence.getS().get(span.getStart()).setNerProb(nameFinder.probs()[span.getStart()]);
+			sentence.getWords().get(span.getStart()).setNerTag(Constants.B + Constants.DATE);
+			sentence.getWords().get(span.getStart()).getPrevTags().add(Constants.DATE);
+			sentence.getWords().get(span.getStart()).setNerProb(nameFinder.probs()[span.getStart()]);
 			
 			for (int i = span.getStart() + 1; i < span.getEnd(); i++) {
-				sentence.getS().get(i).setNerTag(Constants.I + Constants.DATE);
-				sentence.getS().get(i).setNerProb(nameFinder.probs()[i]);
+				sentence.getWords().get(i).setNerTag(Constants.I + Constants.DATE);
+				sentence.getWords().get(i).getPrevTags().add(Constants.DATE);
+				sentence.getWords().get(i).setNerProb(nameFinder.probs()[i]);
 			}
-		}
+		}*/
 		
 		//extractDatesNatty (sentence);
 		//extractDatesChrono (sentence);
@@ -114,7 +117,7 @@ public class DateFinderNER implements NER {
 			int offset = column - 1;
 			int end = offset + matchingValue.length();
 			
-			for (Word w : sentence.getS()) {
+			for (Word w : sentence.getWords()) {
 				if (w.getOffset() <= offset && w.getOffset() + w.getW().length() >= offset) {
 					w.setNerTag(Constants.B + Constants.DATE);
 				}	else if (w.getOffset() > offset && w.getOffset() < end) {
@@ -136,7 +139,7 @@ public class DateFinderNER implements NER {
 			int offset = pr.index;
 			int end = offset + pr.text.length();
 			
-			for (Word w : sentence.getS()) {
+			for (Word w : sentence.getWords()) {
 				if (w.getOffset() <= offset && w.getOffset() + w.getW().length() >= offset) {
 					w.setNerTag(Constants.B + Constants.DATE);
 				}	else if (w.getOffset() > offset && w.getOffset() < end) {
@@ -159,7 +162,7 @@ public class DateFinderNER implements NER {
 			int offset = dg.getPosition();
 			int end = offset + dg.getText().length();
 			
-			for (Word w : sentence.getS()) {
+			for (Word w : sentence.getWords()) {
 				if (w.getOffset() <= offset && w.getOffset() + w.getW().length() >= offset) {
 					w.setNerTag(Constants.B + Constants.DATE);
 				}	else if (w.getOffset() > offset && w.getOffset() < end) {
@@ -174,7 +177,7 @@ public class DateFinderNER implements NER {
 	private Sentence extractDatesRegEx (Sentence sentence) {
 		Assert.notNull(sentence, "sentence shouldn't be null");
 		
-		for (Word w : sentence.getS()) {
+		for (Word w : sentence.getWords()) {
 			if (DATE_PATTERN.matcher(w.getW()).matches() && w.getNerTag().contains(Constants.O)) {
 				w.setNerTag(Constants.B + Constants.DATE);
 			}

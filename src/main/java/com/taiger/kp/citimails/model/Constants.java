@@ -44,13 +44,15 @@ public class Constants {
 	
 	// ontologies
 	public static final String CITI_ONTOLOGY_TTL = "CitibankOnto.ttl";   
-	public static final String CITI_ONTOLOGY_TTL_new = "CitiBankOnto_1031.ttl";
+	public static final String CITI_ONTOLOGY_TTL_new = "CitiBankOnto_1108.ttl";
 	public static final String LEXIS_ONTOLOGY_TTL = "lexis.ttl";
 	public static final String CITI_ONTOLOGY_OBDA = "CitibankOnto.obda";
 	public static final String CITI_ONTOLOGY_JSON = "CitibankOnto1.obda";
 	public static final String CITI_ONTOLOGY_OWL = "citibankNew.owl";
 	public static final String CITI_ONTOLOGY_OWL_old = "CitibankOnto3.owl";
 	public static final String BIRRA_ONTOLOGY_OWL = "birra.owl";
+	public static final String TIME_ONTOLOGY_OWL = "time";
+	public static final String GREGORIAN_ONTOLOGY_OWL = "gregorian";
 	
 	// dbpedia
 	public static final String DBPEDIA_EN_URL = "https://api.dbpedia-spotlight.org/en/annotate?";
@@ -60,6 +62,8 @@ public class Constants {
 	public static final String TYPES_PARAM = "types=";
 	
 	public static final int MAXINT = 999999;
+	public static final char SPACE = 32;
+	public static final char WEIRD_SPACE = 160;
 	
 	@Getter
 	public static enum RESOURCE {
@@ -186,15 +190,24 @@ public class Constants {
 	public static final String uintj = "INTJ";
 	
 	// Datapoints
-	public static final String AGREEMENT_ID = "AGREEMENT_ID";
-	public static final String COUNTER_PARTY_NAME = "COUNTER_PARTY_NAME";
-	public static final String LEGAL_ENTITY = "LEGAL_ENTITY";
-	public static final String SUBJECT_FROM = "SUBJECT_FROM";
-	public static final String SUBJECT_TO = "SUBJECT_TO";
-	public static final String SUBJECT_REASON = "SUBJECT_REASON";
-	public static final String OTHER = "OTHER";
-	public static final String FROM = "FROM";
-	public static final String TO = "TO";
+	public static final String DP_AGREEMENT_ID = "AGREEMENT_ID";
+	public static final String DP_COUNTER_PARTY_NAME = "COUNTER_PARTY_NAME";
+	public static final String DP_LEGAL_ENTITY = "LEGAL_ENTITY";
+	public static final String DP_SUBJECT_FROM = "SUBJECT_FROM";
+	public static final String DP_SUBJECT_TO = "SUBJECT_TO";
+	public static final String DP_SUBJECT_REASON = "SUBJECT_REASON";
+	public static final String DP_OTHER = "OTHER";
+	public static final String DP_FROM = "FROM";
+	public static final String DP_TO = "TO";
+	public static final String DP_CURRENCY = "CURRENCY";
+	public static final String DP_CALL_AMOUNT = "CALL_AMOUNT";
+	public static final String DP_VALUE_DATE = "VALUE_DATE";
+	public static final String DP_COLLATERAL_BALANCE = "COLLATERAL_BALANCE";
+	public static final String DP_ISIN = "ISIN";
+	public static final String DP_ISIN_NOTION = "ISIN_NOTION";
+	public static final String DP_CUSIP = "CUSIP";
+	public static final String DP_DISPUTE_TEXT = "DISPUTE_TEXT";
+	
 	
 	
 	

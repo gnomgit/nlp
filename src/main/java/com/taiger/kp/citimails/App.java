@@ -15,6 +15,7 @@ import com.taiger.kp.citimails.model.Document;
 import com.taiger.kp.citimails.model.Mail;
 import com.taiger.kp.citimails.model.Sentence;
 import com.taiger.kp.citimails.nlp.ner.CUSIPFinderNER;
+import com.taiger.kp.citimails.nlp.ner.CorrectorNER;
 import com.taiger.kp.citimails.nlp.ner.DateFinderNER;
 import com.taiger.kp.citimails.nlp.ner.ISINFinderNER;
 import com.taiger.kp.citimails.nlp.ner.LocationFinderNER;
@@ -25,16 +26,14 @@ import com.taiger.kp.citimails.nlp.ner.PercentageFinderNER;
 import com.taiger.kp.citimails.nlp.ner.PersonFinderNER;
 import com.taiger.kp.citimails.nlp.ner.TimeFinderNER;
 import com.taiger.kp.citimails.nlp.oer.CitiWordsFinderOER;
+import com.taiger.kp.citimails.nlp.oer.DateOER;
+import com.taiger.kp.citimails.nlp.oer.OER;
 import com.taiger.kp.citimails.nlp.parser.DeepParser;
-import com.taiger.kp.citimails.nlp.parser.DependencyParser;
 import com.taiger.kp.citimails.nlp.parser.SyntaxParser;
-import com.taiger.kp.citimails.nlp.splitter.MESplitter;
 import com.taiger.kp.citimails.nlp.splitter.SentenceSplitter;
 import com.taiger.kp.citimails.nlp.splitter.SmileSentenceSplitter;
 import com.taiger.kp.citimails.nlp.tagger.METagger;
 import com.taiger.kp.citimails.nlp.tagger.POSTagger;
-import com.taiger.kp.citimails.nlp.tagger.PerceptronTagger;
-import com.taiger.kp.citimails.nlp.tokenizer.METokenizer;
 import com.taiger.kp.citimails.nlp.tokenizer.SmileSimpleTokenizer;
 import com.taiger.kp.citimails.nlp.tokenizer.Tokenizer;
 import com.taiger.kp.citimails.utils.FileTools;
@@ -58,10 +57,13 @@ public class App {
 		//POSTagger tagger = new PerceptronTagger();
 		POSTagger tagger = new METagger();
 		SyntaxParser parser = new DeepParser();
-		CitiWordsFinderOER oer = new CitiWordsFinderOER();
+		//OER doer = new DateOER();
+		OER oer = new CitiWordsFinderOER();
 		
-		boolean outy = true;
-		//if (outy) return;
+		/* exit
+		boolean exit = true;
+		if (exit) return;
+		//*/
 		
 		String path = "/Users/jorge.rios/eclipse-workspace/citimails/docs/";
 		String i_name = "Notification of Margin Call 2.msg";
@@ -116,13 +118,25 @@ public class App {
 			doc.setPath(fullpath);
 			List<String> text = null;
 			
+			
+			//* tokenizer
+			List<Sentence> sentences = new ArrayList<>();
+			sentences.add(tokenizer.tokenize(mail.getSubject()));
+			doc.setSubject(sentences); //*/
+			
+			
 			SubjectExtractor.extract(doc);
-			MailDataExtractor.extract(doc);
-			log.info("{} - {} ", doc.getDatapoints().keySet(), doc.getDatapoints().values());
+			
+			/* exit
+			boolean exit = true;
+			if (exit) return;
+			//*/
+			
+			//log.info("{} - {} ", doc.getDatapoints().keySet(), doc.getDatapoints().values());
 			//log.info("doc {}", doc);
 			
 			//mail.setContent("Jorge Rios and Stephen Hawkings from IBM owe me 120.00 euros at 3:00pm the 30% and also 30.00 dollars at 2:59 every monday on 2000/september/28 or maybe 10/09/18 or maybe 05 September 2018 and can be today or even can try on september 30th.");
-			mail.setContent("I pay 123 123.00 USD and see.");
+			mail.setContent("We partyally agreed to deliver EUR 370,000 value July 3 Phone ");
 			//mail.setAttachments(new ArrayList<>());
 			
 			//* splitter
@@ -135,96 +149,104 @@ public class App {
 			
 			
 			//* tokenizer
-			List<Sentence> sentences = new ArrayList<>();
+			sentences = new ArrayList<>();
 			for (String s : text) {
 				sentences.add(tokenizer.tokenize(s));
 			}
-			doc.getText().setSentences(sentences); //*/
+			doc.setContent(sentences); //*/
 			
 			
 			//* pos tagger
 			sentences = new ArrayList<>();
-			for (Sentence s : doc.getText().getSentences()) {
+			for (Sentence s : doc.getContent()) {
 				sentences.add(tagger.annotate(s));
 			}
-			doc.getText().setSentences(sentences); //*/
+			doc.setContent(sentences); //*/
 			
 			
 			//* ner org
 			sentences = new ArrayList<>();
 			ner = new OrganizationFinderNER();
-			for (Sentence s : doc.getText().getSentences()) {
+			for (Sentence s : doc.getContent()) {
 				sentences.add(ner.annotate(s));
 			}
-			doc.getText().setSentences(sentences); //*/
+			doc.setContent(sentences); //*/
 			
 			
 			//* ner per
 			sentences = new ArrayList<>();
 			ner = new PersonFinderNER();
-			for (Sentence s : doc.getText().getSentences()) {
+			for (Sentence s : doc.getContent()) {
 				sentences.add(ner.annotate(s));
 			}
-			doc.getText().setSentences(sentences); //*/
+			doc.setContent(sentences); //*/
 			
 			
 			//* ner date
 			sentences = new ArrayList<>();
 			ner = new DateFinderNER();
-			for (Sentence s : doc.getText().getSentences()) {
+			for (Sentence s : doc.getContent()) {
 				sentences.add(ner.annotate(s));
 			}
-			doc.getText().setSentences(sentences); //*/
+			doc.setContent(sentences); //*/
 			
 			
 			//* ner time
 			sentences = new ArrayList<>();
 			ner = new TimeFinderNER();
-			for (Sentence s : doc.getText().getSentences()) {
+			for (Sentence s : doc.getContent()) {
 				sentences.add(ner.annotate(s));
 			}
-			doc.getText().setSentences(sentences); //*/
+			doc.setContent(sentences); //*/
 			
 			
 			//* ner perc
 			sentences = new ArrayList<>();
 			ner = new PercentageFinderNER();
-			for (Sentence s : doc.getText().getSentences()) {
+			for (Sentence s : doc.getContent()) {
 				sentences.add(ner.annotate(s));
 			}
-			doc.getText().setSentences(sentences); //*/
+			doc.setContent(sentences); //*/
 			
 			
 			//* ner money
 			sentences = new ArrayList<>();
 			ner = new MoneyFinderNER();
-			for (Sentence s : doc.getText().getSentences()) {
+			for (Sentence s : doc.getContent()) {
 				sentences.add(ner.annotate(s));
 			}
-			doc.getText().setSentences(sentences); //*/
+			doc.setContent(sentences); //*/
 			
 			//* ner isin
 			sentences = new ArrayList<>();
 			ner = new ISINFinderNER();
-			for (Sentence s : doc.getText().getSentences()) {
+			for (Sentence s : doc.getContent()) {
 				sentences.add(ner.annotate(s));
 			}
-			doc.getText().setSentences(sentences); //*/
+			doc.setContent(sentences); //*/
 			
 			//* ner cusip
 			sentences = new ArrayList<>();
 			ner = new CUSIPFinderNER();
-			for (Sentence s : doc.getText().getSentences()) {
+			for (Sentence s : doc.getContent()) {
 				sentences.add(ner.annotate(s));
 			}
-			doc.getText().setSentences(sentences); //*/
+			doc.setContent(sentences); //*/
+			
+			//* ner corrector
+			sentences = new ArrayList<>();
+			ner = new CorrectorNER();
+			for (Sentence s : doc.getContent()) {
+				sentences.add(ner.annotate(s));
+			}
+			doc.setContent(sentences); //*/
 			
 			//* oer
 			sentences = new ArrayList<>();
-			for (Sentence s : doc.getText().getSentences()) {
+			for (Sentence s : doc.getContent()) {
 				sentences.add(oer.annotate(s));
 			}
-			doc.getText().setSentences(sentences); //*/
+			doc.setContent(sentences); //*/
 			
 			
 			/* parser
@@ -244,10 +266,11 @@ public class App {
 			}
 			doc.getText().setSentences(sentences); //*/
 			
+			MailDataExtractor.extract(doc);
 			
 			//*
-			doc.getText().getSentences().forEach(s -> {
-				s.getS().forEach(log::info);
+			doc.getContent().forEach(s -> {
+				s.getWords().forEach(log::info);
 				System.out.println();
 			});
 			//*/
@@ -280,11 +303,11 @@ public class App {
 	}
 
 	private static void fillList(List<String> list) {
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  MC from Dealer 4 to CITIBKLDN.msg");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/RE  MC from Dealer 4 to CITIBKLDN.msg");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ [EXTERN] 19687-Bank 6 Vs. CBNA.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ [External] 148705-Bank 3 Vs. CGML.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 14107- BANK 1  Vs. CGML.eml");
-//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104009- BANK 10 Vs. CITIBKLDN.eml");
+		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104009- BANK 10 Vs. CITIBKLDN.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104606-Broker 8 Vs. CBNA.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104607-Broker 9 Vs. CBNA.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 118684-Dealer 5 Vs. CGML.eml");

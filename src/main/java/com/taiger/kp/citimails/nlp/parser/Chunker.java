@@ -34,15 +34,15 @@ public class Chunker implements SyntaxParser {
 	@Override
 	public Sentence annotate(Sentence sentence) {
 		Assert.notNull(sentence, "sentence shouldn't be null");
-		Assert.notNull(sentence.getS(), "sentence content shouldn't be null");
-		String[] tokens = new String[sentence.getS().size()];
-		for (int i = 0; i < sentence.getS().size(); i++) {
-			tokens[i] = sentence.getS().get(i).getW();
+		Assert.notNull(sentence.getWords(), "sentence content shouldn't be null");
+		String[] tokens = new String[sentence.getWords().size()];
+		for (int i = 0; i < sentence.getWords().size(); i++) {
+			tokens[i] = sentence.getWords().get(i).getW();
 		}
 		
 		String[] tags = tagger.tag(tokens);
         for (int i = 0; i < tokens.length; i++) {
-        	sentence.getS().get(i).setPosTag(tags[i]);
+        	sentence.getWords().get(i).setPosTag(tags[i]);
         }
 		
 		return sentence;

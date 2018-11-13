@@ -39,13 +39,13 @@ public class DeepParser implements SyntaxParser {
 	@Override
 	public Sentence annotate(Sentence sentence) {
 		Assert.notNull(sentence, "sentence shouldn't be null");
-		Assert.notNull(sentence.getS(), "sentence content shouldn't be null");
-		String[] tokens = new String[sentence.getS().size()];
+		Assert.notNull(sentence.getWords(), "sentence content shouldn't be null");
+		String[] tokens = new String[sentence.getWords().size()];
 		StringBuilder original = new StringBuilder();
 		
-		for (int i = 0; i < sentence.getS().size(); i++) {
-			tokens[i] = sentence.getS().get(i).getW();
-			original.append(sentence.getS().get(i).getW() + " ");
+		for (int i = 0; i < sentence.getWords().size(); i++) {
+			tokens[i] = sentence.getWords().get(i).getW();
+			original.append(sentence.getWords().get(i).getW() + " ");
 		}
 
 		Parse[] tags = ParserTool.parseLine(sentence.getOriginal(), this.parser, (Tokenizer)(new METokenizer()).getTokenizer(), 1);

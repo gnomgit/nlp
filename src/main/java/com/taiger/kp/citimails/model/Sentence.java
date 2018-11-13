@@ -17,15 +17,15 @@ import lombok.ToString;
 public class Sentence {
 
 	private String original;
-	private List<Word> s;
+	private List<Word> words;
 	
 	public Sentence () {
-		s = new ArrayList<>();
-		original = "";
+		this.words = new ArrayList<>();
+		this.original = "";
 	}
 	
 	public void addWord (Word word) {
 		Assert.notNull(word, "word should not be null");
-		s.add(word);
+		this.words.add(word);
 	}
 }

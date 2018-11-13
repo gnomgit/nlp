@@ -28,10 +28,10 @@ public class ISINFinderNER implements NER {
 	@Override
 	public Sentence annotate(Sentence sentence) {
 		Assert.notNull(sentence, "sentence shouldn't be null");
-		Assert.notNull(sentence.getS(), "sentence content shouldn't be null");
+		Assert.notNull(sentence.getWords(), "sentence content shouldn't be null");
 		
 		//* 
-		for (Word w : sentence.getS()) {
+		for (Word w : sentence.getWords()) {
 			if (ISINtest(w.getW())) {
 				w.setNerTag(Constants.B + Constants.ISIN);
 				w.setNerProb(1.0);
