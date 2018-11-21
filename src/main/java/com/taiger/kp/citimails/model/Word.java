@@ -31,6 +31,7 @@ public class Word {
 	private int father;
 	private Set<String> prevTags;
 	private Set<String> datapoints;
+	private Location location;
 	
 	public Word (String w, String nerTag, Double tokenProb, int position, int offset) {
 		this.w = w;
@@ -46,6 +47,7 @@ public class Word {
 		this.father = -1;
 		this.prevTags = new LinkedHashSet<>();
 		this.datapoints = new LinkedHashSet<>();
+		this.location = new Location();
 	}
 	
 	public Word () {
@@ -62,6 +64,7 @@ public class Word {
 		this.father = -1;
 		this.prevTags = new LinkedHashSet<>();
 		this.datapoints = new LinkedHashSet<>();
+		this.location = new Location();
 	}
 	
 	public void setPosTag (String posTag) {
@@ -174,6 +177,13 @@ public class Word {
 		}	else {
 			this.posUTag = "";
 		}
+	}
+	
+	public void updateLocation (int pos, int line, int npage) {
+		this.location.setX(pos - 3);
+		this.location.setY(line - 3);
+		this.location.setWidth(this.w.length() * Constants.NHINC + 6);
+		this.location.setHeight(Constants.NVINC);
 	}
 }
 

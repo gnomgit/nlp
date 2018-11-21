@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
 
+import com.taiger.kp.citimails.model.Constants;
 import com.taiger.kp.citimails.model.Sentence;
 import com.taiger.kp.citimails.model.Word;
 
@@ -69,7 +71,10 @@ public class StringTools {
         return a == b ? 0 : 1;
     }
 	
-	public static int calculateLevenshtein (String x, String y) {
+	public static int calculateLevenshtein (String a, String b) {
+		if (a == null || b == null) return -1;
+		String x = a.toLowerCase();
+		String y = b.toLowerCase();
 	    int[][] dp = new int[x.length() + 1][y.length() + 1];
 	 
 	    for (int i = 0; i <= x.length(); i++) {
@@ -91,4 +96,26 @@ public class StringTools {
 		return Math.min(a, Math.min(b, c));
 	}
 	
+	public static boolean isMyNumber (String token) {
+		if (token == null || token.isEmpty()) return false;
+		if (token.length() == 1 && !Character.isDigit(token.charAt(0))) return false;
+		if (StringUtils.countOccurrencesOf(token, "-") > 1) return false;
+		for (Character ch : token.toCharArray()) {
+			if (Character.isLetter(ch)) return false;
+			if (ch == '?' || ch == '!' || ch == '/' || ch == ':') return false;
+		}
+		
+		return true;
+	}
+	
+	public static boolean isStopWord (String token) {
+		if (token == null) return true;
+		if (token.equals(Constants.colon)) return true;
+		
+		return false;
+	}
+	
+	public static int countOccurrences (String str, String substr) {
+		return str.length() - str.replace(substr, "").length();
+	}
 }

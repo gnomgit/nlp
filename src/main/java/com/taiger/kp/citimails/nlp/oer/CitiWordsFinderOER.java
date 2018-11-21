@@ -46,7 +46,6 @@ public class CitiWordsFinderOER implements OER {
 		initialize();
 	}
 
-	@SuppressWarnings("deprecation")
 	public CitiWordsFinderOER initialize() {
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		OWLOntology ontology;
@@ -225,7 +224,7 @@ public class CitiWordsFinderOER implements OER {
     			found = true;
     			int j = 1;
     			for (; j < Y.size() && i + j < X.getWords().size() && found; j++) {
-    				found = compare2(X.getWords().get(i+j), Y.get(j));
+    				found = compare(X.getWords().get(i+j), Y.get(j));
     				end = begin + j;
     			}
     			if (found && j == Y.size()) {
@@ -233,7 +232,7 @@ public class CitiWordsFinderOER implements OER {
     					String oerTag = Y.get(j - 1);
     					//String tag = X.getWords().get(end).getNerTag().replace(Constants.B, "").replace(Constants.I, "");
     					for (j = end + 1; j < X.getWords().size() && found; j++) {
-    						found = compare2(X.getWords().get(j), oerTag);
+    						found = compare(X.getWords().get(j), oerTag);
     						end++;
     					}
     				}
@@ -248,7 +247,8 @@ public class CitiWordsFinderOER implements OER {
     private boolean compare (Word w, String s) {
     	
     	if (w.getNerTag().isEmpty() || w.getNerTag().equals(Constants.O)) {
-    		return w.getW().equalsIgnoreCase(s);
+    		//return w.getW().equalsIgnoreCase(s);
+    		return StringTools.calculateLevenshtein(w.getW().toLowerCase(), s.toLowerCase()) <= 1;
     	}
     	if (!s.contains(Constants.AT)) {
     		return false;
@@ -256,17 +256,18 @@ public class CitiWordsFinderOER implements OER {
     	return w.getNerTag().toLowerCase().contains(s.toLowerCase().replace(Constants.AT, ""));
     }
     
-    private boolean compare2 (Word w, String s) {
+    /*private boolean compare (Word w, String s) {
     	
     	if (w.getNerTag().isEmpty() || w.getNerTag().equals(Constants.O)) {
     		log.info("{}|{} ? {} = {}", w.getW(), w.getNerTag(), s, StringTools.calculateLevenshtein(w.getW().toLowerCase(), s.toLowerCase()));
-    		return w.getW().equalsIgnoreCase(s);
+    		//return w.getW().equalsIgnoreCase(s);
+    		return StringTools.calculateLevenshtein(w.getW().toLowerCase(), s.toLowerCase()) <= 1;
     	}
     	if (!s.contains(Constants.AT)) {
     		return false;
     	}
     	log.info("{}|{} ? {} = {}", w.getW(), w.getNerTag(), s, StringTools.calculateLevenshtein(w.getNerTag().toLowerCase(), s.toLowerCase().replace(Constants.AT, "")));
     	return w.getNerTag().toLowerCase().contains(s.toLowerCase().replace(Constants.AT, ""));
-    }
+    }*/
 
 }

@@ -54,7 +54,7 @@ public class MoneyFinderNER implements NER {
 		Assert.notNull(sentence, "sentence shouldn't be null");
 		Assert.notNull(sentence.getWords(), "sentence content shouldn't be null");
 		
-		//* searching in english
+		//* searching 
 		String[] tokens = new String[sentence.getWords().size()];
 		for (int i = 0; i < sentence.getWords().size(); i++) {
 			tokens[i] = sentence.getWords().get(i).getW();

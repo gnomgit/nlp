@@ -5,11 +5,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.taiger.kp.citimails.controller.extractors.MailDataExtractor;
-import com.taiger.kp.citimails.controller.extractors.SubjectExtractor;
-import com.taiger.kp.citimails.controller.parsers.SimpleEmlParser;
-import com.taiger.kp.citimails.controller.parsers.SimpleMsgParser;
-import com.taiger.kp.citimails.controller.parsers.SimpleParser;
+import com.taiger.kp.citimails.controller.annotators.ContentAnnotator;
+import com.taiger.kp.citimails.controller.annotators.NERAnnotator;
+import com.taiger.kp.citimails.controller.annotators.SubjectAnnotator;
+import com.taiger.kp.citimails.controller.extractors.SimpleEmlParser;
+import com.taiger.kp.citimails.controller.extractors.SimpleMsgParser;
+import com.taiger.kp.citimails.controller.extractors.SimpleParser;
+import com.taiger.kp.citimails.controller.generators.PDFGenerator;
 import com.taiger.kp.citimails.model.Attachment;
 import com.taiger.kp.citimails.model.Document;
 import com.taiger.kp.citimails.model.Mail;
@@ -26,7 +28,6 @@ import com.taiger.kp.citimails.nlp.ner.PercentageFinderNER;
 import com.taiger.kp.citimails.nlp.ner.PersonFinderNER;
 import com.taiger.kp.citimails.nlp.ner.TimeFinderNER;
 import com.taiger.kp.citimails.nlp.oer.CitiWordsFinderOER;
-import com.taiger.kp.citimails.nlp.oer.DateOER;
 import com.taiger.kp.citimails.nlp.oer.OER;
 import com.taiger.kp.citimails.nlp.parser.DeepParser;
 import com.taiger.kp.citimails.nlp.parser.SyntaxParser;
@@ -34,7 +35,7 @@ import com.taiger.kp.citimails.nlp.splitter.SentenceSplitter;
 import com.taiger.kp.citimails.nlp.splitter.SmileSentenceSplitter;
 import com.taiger.kp.citimails.nlp.tagger.METagger;
 import com.taiger.kp.citimails.nlp.tagger.POSTagger;
-import com.taiger.kp.citimails.nlp.tokenizer.SmileSimpleTokenizer;
+import com.taiger.kp.citimails.nlp.tokenizer.SimpleSpaceTokenizer;
 import com.taiger.kp.citimails.nlp.tokenizer.Tokenizer;
 import com.taiger.kp.citimails.utils.FileTools;
 
@@ -49,16 +50,18 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		NER ner = new LocationFinderNER();
+		//NER ner = new LocationFinderNER();
 		//SentenceSplitter splitter = new MESplitter();
 		SentenceSplitter splitter = new SmileSentenceSplitter();
 		//Tokenizer tokenizer = new METokenizer();
-		Tokenizer tokenizer = new SmileSimpleTokenizer();
+		//Tokenizer tokenizer = new SmileSimpleTokenizer();
+		Tokenizer tokenizer = new SimpleSpaceTokenizer();
 		//POSTagger tagger = new PerceptronTagger();
 		POSTagger tagger = new METagger();
 		SyntaxParser parser = new DeepParser();
 		//OER doer = new DateOER();
 		OER oer = new CitiWordsFinderOER();
+		
 		
 		/* exit
 		boolean exit = true;
@@ -119,13 +122,13 @@ public class App {
 			List<String> text = null;
 			
 			
-			//* tokenizer
+			/* tokenizer
 			List<Sentence> sentences = new ArrayList<>();
 			sentences.add(tokenizer.tokenize(mail.getSubject()));
 			doc.setSubject(sentences); //*/
 			
 			
-			SubjectExtractor.extract(doc);
+			//SubjectAnnotator.extract(doc);
 			
 			/* exit
 			boolean exit = true;
@@ -136,10 +139,12 @@ public class App {
 			//log.info("doc {}", doc);
 			
 			//mail.setContent("Jorge Rios and Stephen Hawkings from IBM owe me 120.00 euros at 3:00pm the 30% and also 30.00 dollars at 2:59 every monday on 2000/september/28 or maybe 10/09/18 or maybe 05 September 2018 and can be today or even can try on september 30th.");
-			mail.setContent("We partyally agreed to deliver EUR 370,000 value July 3 Phone ");
+			//mail.setContent("Verzonden: woensdag 5 september 2018 11:32 Aan: xxxxxxx.xxxxxxx@xxxx.xxx;");
 			//mail.setAttachments(new ArrayList<>());
 			
-			//* splitter
+			System.out.println(mail.getContent());
+			
+			/* splitter
 			text = splitter.detect(mail.getContent());
 			for (Attachment a : mail.getAttachments()) {
 				for (String s : splitter.detect(a.getTextcontent())) {
@@ -148,7 +153,7 @@ public class App {
 			} //*/
 			
 			
-			//* tokenizer
+			/* tokenizer
 			sentences = new ArrayList<>();
 			for (String s : text) {
 				sentences.add(tokenizer.tokenize(s));
@@ -164,7 +169,10 @@ public class App {
 			doc.setContent(sentences); //*/
 			
 			
-			//* ner org
+			NERAnnotator ner = new NERAnnotator();
+			ner.annotate(doc);
+			
+			/* ner org
 			sentences = new ArrayList<>();
 			ner = new OrganizationFinderNER();
 			for (Sentence s : doc.getContent()) {
@@ -173,7 +181,7 @@ public class App {
 			doc.setContent(sentences); //*/
 			
 			
-			//* ner per
+			/* ner per
 			sentences = new ArrayList<>();
 			ner = new PersonFinderNER();
 			for (Sentence s : doc.getContent()) {
@@ -182,7 +190,7 @@ public class App {
 			doc.setContent(sentences); //*/
 			
 			
-			//* ner date
+			/* ner date
 			sentences = new ArrayList<>();
 			ner = new DateFinderNER();
 			for (Sentence s : doc.getContent()) {
@@ -191,7 +199,7 @@ public class App {
 			doc.setContent(sentences); //*/
 			
 			
-			//* ner time
+			/* ner time
 			sentences = new ArrayList<>();
 			ner = new TimeFinderNER();
 			for (Sentence s : doc.getContent()) {
@@ -200,7 +208,7 @@ public class App {
 			doc.setContent(sentences); //*/
 			
 			
-			//* ner perc
+			/* ner perc
 			sentences = new ArrayList<>();
 			ner = new PercentageFinderNER();
 			for (Sentence s : doc.getContent()) {
@@ -209,7 +217,7 @@ public class App {
 			doc.setContent(sentences); //*/
 			
 			
-			//* ner money
+			/* ner money
 			sentences = new ArrayList<>();
 			ner = new MoneyFinderNER();
 			for (Sentence s : doc.getContent()) {
@@ -217,7 +225,8 @@ public class App {
 			}
 			doc.setContent(sentences); //*/
 			
-			//* ner isin
+			
+			/* ner isin
 			sentences = new ArrayList<>();
 			ner = new ISINFinderNER();
 			for (Sentence s : doc.getContent()) {
@@ -225,7 +234,8 @@ public class App {
 			}
 			doc.setContent(sentences); //*/
 			
-			//* ner cusip
+			
+			/* ner cusip
 			sentences = new ArrayList<>();
 			ner = new CUSIPFinderNER();
 			for (Sentence s : doc.getContent()) {
@@ -233,7 +243,8 @@ public class App {
 			}
 			doc.setContent(sentences); //*/
 			
-			//* ner corrector
+			
+			/* ner corrector
 			sentences = new ArrayList<>();
 			ner = new CorrectorNER();
 			for (Sentence s : doc.getContent()) {
@@ -241,7 +252,7 @@ public class App {
 			}
 			doc.setContent(sentences); //*/
 			
-			//* oer
+			/* oer
 			sentences = new ArrayList<>();
 			for (Sentence s : doc.getContent()) {
 				sentences.add(oer.annotate(s));
@@ -266,10 +277,13 @@ public class App {
 			}
 			doc.getText().setSentences(sentences); //*/
 			
-			MailDataExtractor.extract(doc);
+			//ContentAnnotator.extract(doc);
+			
+			PDFGenerator.generate(doc);
 			
 			//*
 			doc.getContent().forEach(s -> {
+				log.info(s.getOriginal());
 				s.getWords().forEach(log::info);
 				System.out.println();
 			});
@@ -307,7 +321,7 @@ public class App {
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ [EXTERN] 19687-Bank 6 Vs. CBNA.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ [External] 148705-Bank 3 Vs. CGML.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 14107- BANK 1  Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104009- BANK 10 Vs. CITIBKLDN.eml");
+		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104009- BANK 10 Vs. CITIBKLDN.eml"); 
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104606-Broker 8 Vs. CBNA.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104607-Broker 9 Vs. CBNA.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 118684-Dealer 5 Vs. CGML.eml");

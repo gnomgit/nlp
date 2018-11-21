@@ -1,19 +1,21 @@
-package com.taiger.kp.citimails.controller.extractors;
+package com.taiger.kp.citimails.controller.annotators;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.springframework.data.util.Pair;
 import org.springframework.util.Assert;
 
 import com.taiger.kp.citimails.model.Constants;
 import com.taiger.kp.citimails.model.Document;
+import com.taiger.kp.citimails.model.Location;
 import com.taiger.kp.citimails.model.Sentence;
 import com.taiger.kp.citimails.model.Word;
 
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
-public class SubjectExtractor {
+public class SubjectAnnotator {
 	
 	private static Pattern SUBJECT_PATTERN = Pattern.compile(
 			Constants.subject
@@ -32,8 +34,8 @@ public class SubjectExtractor {
 		Assert.notNull(doc.getMail(), "mail null");
 		Assert.hasText(doc.getMail().getSubject(), "subject null or empty");
 		
-		String subject = doc.getSubject().get(0).getOriginal();
-		Sentence s = doc.getSubject().get(0);
+		String subject = doc.getSubject().getOriginal();
+		Sentence s = doc.getSubject();
 		
 		//for (Sentence s : doc.getSubject()) {
 		/*if (doc.getSubject().size() >= 1) {
@@ -104,7 +106,7 @@ public class SubjectExtractor {
 		}
 		
 
-		for (Word w : doc.getSubject().get(0).getWords()) {
+		for (Word w : doc.getSubject().getWords()) {
 			log.info(w);
 		}
 	}

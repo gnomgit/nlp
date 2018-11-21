@@ -109,7 +109,7 @@ public class Constants {
 	public static final String amount = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9])?)?$";
 	public static final String amount2 = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9]|(\\.-))?)?$";
 	public static final String amount3 = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3}\\.([0-9]{3}\\.)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9]|(\\.-))?)?$";
-	public static final String amount4 = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3}( |,|\\.)([0-9]{3}( |,|\\.))*[0-9]{3}|[0-9]+)((\\.|,)[0-9][0-9]|((\\.|,)-))?)?$";
+	public static final String amount4 = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3}( |,|\\.|’)([0-9]{3}( |,|\\.|'))*[0-9]{3}|[0-9]+)((\\.|,)[0-9][0-9]|((\\.|,)-))?)?$";
 	public static final String amount5 = "^$";
 	public static final String currency = "^(euro(s)?|eur|dollar(s)?|pound(s)?|\\$|\\€|\\£|\\¥|yen(s)?|yuan(s)?|usd|cad|gbp|jpy|cny|hkd)$";
 	
@@ -121,6 +121,9 @@ public class Constants {
 	
 	// ISIN regexp
 	public static final String isin_regexp = "^[A-Z]{2}[A-Z0-9]{9}\\d$";
+	
+	// time regexp
+	public static final String time = "^(1[012]|[1-9]):[0-5][0-9](\\\\s)?(?i)(am|pm)$";
 	
 	// penntreebanck POS tags
 	public static final String hash = "#";
@@ -209,6 +212,14 @@ public class Constants {
 	public static final String DP_DISPUTE_TEXT = "DISPUTE_TEXT";
 	
 	
+	// PDF 
+	public static final int NCHARS = 70;
+	public static final int YTOP = 700;
+	public static final int X0 = 50;
+	public static final int Y0 = 50;
+	public static final int NVINC = 15;
+	public static final int NHINC = 7;
+	public static final int FONTSIZE = 12;
 	
 	
 }

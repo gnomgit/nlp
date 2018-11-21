@@ -97,7 +97,7 @@ public class DateFinderNER implements NER {
 		
 		//extractDatesNatty (sentence);
 		//extractDatesChrono (sentence);
-		extractDatesPrettydate (sentence);
+		//extractDatesPrettydate (sentence);
 		extractDatesRegEx (sentence);
 		
 		return sentence;

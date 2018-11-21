@@ -1,4 +1,4 @@
-package com.taiger.kp.citimails.controller.parsers;
+package com.taiger.kp.citimails.controller.extractors;
 
 import com.taiger.kp.citimails.model.Mail;
 

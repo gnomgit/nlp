@@ -16,13 +16,13 @@ public class Document {
 	
 	private String path;
 	private Mail mail;
-	private List<Sentence> subject;
+	private Sentence subject;
 	private List<Sentence> content;
 	
 	public Document () {
 		this.path = "";
 		this.mail = new Mail();
-		this.subject = new ArrayList<>();
+		this.subject = new Sentence();
 		this.content = new ArrayList<>();
 	}
 	

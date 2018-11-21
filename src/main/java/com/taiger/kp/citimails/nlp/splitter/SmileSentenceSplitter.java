@@ -28,13 +28,13 @@ public class SmileSentenceSplitter implements SentenceSplitter {
 		return this;
 	}
 	
+	/*
 	@Override
 	public List<String> detect (String text) {
 		Assert.hasText(text, "text shouldn't be null or empty");
 		List<String> result = new ArrayList<>();
-		List<String> tmp = new ArrayList<>();
-		
-		text = text.replace(Constants.WEIRD_SPACE, Constants.SPACE);
+
+		text = formatter(text);
 		//text = text.replace("\t", "\t\n");
 		//text = text.replace("  ", "  \n");
 		String []splitted = text.split("\n");
@@ -42,7 +42,46 @@ public class SmileSentenceSplitter implements SentenceSplitter {
 			if (!line.trim().isEmpty()) {
 				String[] sentences = detector.split(line);
 				for (String sentence : sentences) {
-					tmp.add(sentence);
+					result.add(sentence);
+				}
+			}
+		}
+		
+		return result;
+	} //*/
+	
+	private String formatter (String text) {
+		if (text == null) return "";
+		String result = text;
+		
+		result = result.replace(Constants.WEIRD_SPACE + "", "");
+		result = result.replace(": ", " : ");
+		result = result.replace(", ", " , ");
+		result = result.replace(". ", " . ");
+		result = result.replace("; ", " ; ");
+		result = result.replace("! ", " ! ");
+		result = result.replace("? ", " ? ");
+		
+		return result;
+	}
+	
+	//*
+	@Override
+	public List<String> detect (String text) {
+		Assert.hasText(text, "text shouldn't be null or empty");
+		List<String> result = new ArrayList<>();
+		List<String> tmp = new ArrayList<>();
+		
+		text = formatter(text);
+		
+		String []splitted = text.split("\n");
+		for (String line : splitted) {
+			if (!line.trim().isEmpty()) {
+				String[] sentences = detector.split(line);
+				for (String sentence : sentences) {
+					if (!sentence.trim().isEmpty()) {
+						tmp.add(sentence);
+					}
 				}
 			}
 		}
@@ -50,10 +89,10 @@ public class SmileSentenceSplitter implements SentenceSplitter {
 		StringBuilder before = new StringBuilder();
 		for (String sentence : tmp) {
 			if (sentence.endsWith(Constants.colon)) {
-				before.append(sentence);
+				before.append(" " + sentence.substring(0, sentence.length() - 1) + " " + Constants.colon);
 			}	else {
 				if (before.length() > 0) {
-					result.add(before.toString() + sentence);
+					result.add(before.toString().trim() + " " + sentence);
 					before = new StringBuilder();
 				}	else {
 					result.add(sentence);
@@ -62,7 +101,7 @@ public class SmileSentenceSplitter implements SentenceSplitter {
 		}
 		
 		return result;
-	}
+	} //*/
 	
 	
 	

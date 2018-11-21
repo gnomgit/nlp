@@ -1,4 +1,4 @@
-package com.taiger.kp.citimails.controller.parsers;
+package com.taiger.kp.citimails.controller.extractors;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -68,7 +68,7 @@ public class SimpleEmlParser implements SimpleParser {
                       //And am writing some logic to put the stream as BLOB in DB
              }
         }*/
-        
+        /*
         try {
         	MimeMultipart multipart = (MimeMultipart) mime.getContent();
         	for (int i = 0; i < multipart.getCount(); i++) {
@@ -77,7 +77,7 @@ public class SimpleEmlParser implements SimpleParser {
         			System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------");
         	}
         } catch (Exception ex) {
-        }
+        }*/
     }
 	
 	public String parseHtml (String html) {
@@ -85,9 +85,6 @@ public class SimpleEmlParser implements SimpleParser {
         Document doc = Jsoup.parse(html);
         String title = doc.title();
         String body = doc.body().text();
-
-//        System.out.println("Title: " + title);
-//        System.out.println("Body: " + body);
         
         return title + "\n" + body;
     }

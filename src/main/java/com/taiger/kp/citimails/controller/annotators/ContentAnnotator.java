@@ -1,4 +1,4 @@
-package com.taiger.kp.citimails.controller.extractors;
+package com.taiger.kp.citimails.controller.annotators;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import com.taiger.kp.citimails.model.Word;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
-public class MailDataExtractor {
+public class ContentAnnotator {
 	
 	public static void extract (Document doc) {
 		Assert.notNull(doc, "document null");
@@ -29,7 +29,13 @@ public class MailDataExtractor {
 					if (oClass != null && oClass.contains("/")) {
 						oClass = oClass.substring(oClass.lastIndexOf('/') + 1).toUpperCase().trim();
 						w.getDatapoints().add(Constants.AT + oClass);
-						w.getPrevTags().forEach(w.getDatapoints()::add);
+						w.getPrevTags().forEach(t -> w.getDatapoints().add(t));
+					}
+				}
+				for (String tag : w.getPrevTags()) {
+					if (tag.equals(Constants.DATE)) {
+						w.getDatapoints().add(tag);
+						break;
 					}
 				}
 			}

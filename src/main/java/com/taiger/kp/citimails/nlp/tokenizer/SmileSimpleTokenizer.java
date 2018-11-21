@@ -1,7 +1,5 @@
 package com.taiger.kp.citimails.nlp.tokenizer;
 
-import org.springframework.util.Assert;
-
 import com.taiger.kp.citimails.model.Constants;
 import com.taiger.kp.citimails.model.Sentence;
 import com.taiger.kp.citimails.model.Word;
