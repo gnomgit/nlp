@@ -21,15 +21,18 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class PDFGenerator {
 	
-	private static PDFont font = PDType1Font.COURIER;
-	private static int index;
+	private PDFont font;
+	private int index;
 	
-	private PDFGenerator () {}
+	public PDFGenerator () {
+		font = PDType1Font.COURIER;
+		index = 0;
+	}
 
-	public static void generate (Document mail) {
+	public void generate (Document mail) {
 		Assert.notNull(mail, "null doc");
 	 
-		String filename = mail.getPath() + ".pdf";
+		String filename = mail.getPath() + "_.pdf";
 		List<Word> msgLine = null;
 	    index = 0;
 	    int npage = 0;
@@ -105,7 +108,7 @@ public class PDFGenerator {
 		}
 	}
 	
-	public static void generate2 (Document mail) {
+	public void generate2 (Document mail) {
 		Assert.notNull(mail, "null doc");
 	 
 		String filename = mail.getPath() + ".pdf";
@@ -114,6 +117,7 @@ public class PDFGenerator {
 	    int npage = 0;
 	    int line = Constants.YTOP;
 	    List<Word> words = bagOfWords(mail);
+	    String current = "";
 	    
 	    try (PDDocument doc = new PDDocument()){
 	        PDPage page = new PDPage();
@@ -155,7 +159,6 @@ public class PDFGenerator {
 		                contents.newLineAtOffset(pos, line);
 		                pos += ((w.getW().length() + 1) * Constants.NHINC);
 		                
-		               
 		                if (!bann(w.getW())) {
 		                	contents.showText(w.getW());
 		                }
@@ -171,11 +174,11 @@ public class PDFGenerator {
             doc.save(filename);
 	
 	    } 	catch (IOException e) {
-	    	log.error(e.getMessage());
+	    	log.error("{} caused:\n{}", current, e.getMessage());
 		}
 	}
 
-	private static List<Word> getLine (List<Word> words) {
+	private List<Word> getLine (List<Word> words) {
 		List<Word> result = new ArrayList<>();
 		
 		int cumul = 0;
@@ -187,7 +190,7 @@ public class PDFGenerator {
 		return result;
 	}
 	
-	private static List<Word> bagOfWords (Document mail) {
+	private List<Word> bagOfWords (Document mail) {
 		Assert.notNull(mail.getSubject(), "null subject");
 		Assert.notNull(mail.getContent(), "null content");
 		List<Word> result = new ArrayList<>();
@@ -205,7 +208,7 @@ public class PDFGenerator {
 		return result;
 	}
 	
-	private static Color getColor (Word word) {
+	private Color getColor (Word word) {
 		
 		if (!word.getDatapoints().isEmpty()) {
 			for (String dp : word.getDatapoints()) {
@@ -217,9 +220,14 @@ public class PDFGenerator {
 		return Color.BLACK;
 	}
 	
-	private static boolean bann (String word) {
-		for(int i = 0; i < word.length(); i++) {
-		    if(Character.UnicodeBlock.of(word.charAt(i)).equals(Character.UnicodeBlock.CYRILLIC)) {
+	private boolean bann (String word) {
+		//log.info(word);
+		for (int i = 0; i < word.length(); i++) {
+			//System.out.println(Character.UnicodeBlock.of(word.charAt(i)));
+		    if (Character.UnicodeBlock.of(word.charAt(i)).equals(Character.UnicodeBlock.CYRILLIC)) {
+		        return true;
+		    }
+		    if (Character.UnicodeBlock.of(word.charAt(i)).equals(Character.UnicodeBlock.BOX_DRAWING)) {
 		        return true;
 		    }
 		}

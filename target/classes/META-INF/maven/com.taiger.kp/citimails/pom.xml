@@ -13,6 +13,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
 	</properties>
 	
 	<repositories>
@@ -49,6 +52,12 @@
 			<version>1.16.20</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		<dependency>
+            <groupId>com.auxilii.msgparser</groupId>
+            <artifactId>msgparser</artifactId>
+            <version>1.1.15</version>
+        </dependency>
 
 		<dependency>
 			<groupId>org.apache.opennlp</groupId>

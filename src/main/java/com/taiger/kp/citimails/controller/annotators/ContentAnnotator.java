@@ -11,10 +11,9 @@ import com.taiger.kp.citimails.model.Word;
 
 import lombok.extern.log4j.Log4j2;
 
-@Log4j2
 public class ContentAnnotator {
 	
-	public static void extract (Document doc) {
+	public static void annotate (Document doc) {
 		Assert.notNull(doc, "document null");
 		Assert.notNull(doc.getMail(), "mail null");
 		Assert.notNull(doc.getMail().getFrom(), "'from' null");

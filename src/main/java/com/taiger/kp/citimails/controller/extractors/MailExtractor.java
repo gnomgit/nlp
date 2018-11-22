@@ -12,8 +12,11 @@ import com.taiger.kp.citimails.model.Attachment;
 import com.taiger.kp.citimails.model.Document;
 import com.taiger.kp.citimails.model.Mail;
 import com.taiger.kp.citimails.model.Sentence;
+import com.taiger.kp.citimails.nlp.spellchecker.LuceneSpellChecker;
+import com.taiger.kp.citimails.nlp.spellchecker.SpellChecker;
 import com.taiger.kp.citimails.nlp.splitter.SentenceSplitter;
 import com.taiger.kp.citimails.nlp.splitter.SmileSentenceSplitter;
+import com.taiger.kp.citimails.nlp.tokenizer.METokenizer;
 import com.taiger.kp.citimails.nlp.tokenizer.SimpleSpaceTokenizer;
 import com.taiger.kp.citimails.nlp.tokenizer.Tokenizer;
 import com.taiger.kp.citimails.utils.FileTools;
@@ -28,6 +31,8 @@ public class MailExtractor {
 	SimpleParser msg;
 	SimpleParser eml;
 	Mail mail;
+	PDFGenerator pdf;
+	//SpellChecker spell;
 	
 	public MailExtractor () {
 		
@@ -37,7 +42,8 @@ public class MailExtractor {
 		tokenizer = new SimpleSpaceTokenizer();
 		msg = new SimpleMsgParser();
 		eml = new SimpleEmlParser();
-		
+		pdf = new PDFGenerator();
+		//spell = new LuceneSpellChecker();
 	}
 	
 	public Document extract (String fullpath) {
@@ -84,6 +90,9 @@ public class MailExtractor {
 		subject = tokenizer.tokenize(mail.getSubject());
 		doc.setSubject(subject); //*/
 		
+		//mail.setContent("Please advise on attached margin call 04-Sep-18 Regards ");
+		//mail.setContent("Please advise on attached margin call");
+		
 		//* splitter
 		List<String> text = null;
 		text = splitter.detect(mail.getContent());
@@ -100,7 +109,9 @@ public class MailExtractor {
 		}
 		doc.setContent(sentences); //*/
 		
-		PDFGenerator.generate2(doc);
+		//sentences.forEach(spell::checkSentence);
+		
+		pdf.generate2(doc);
 		
 		return doc;
 	}

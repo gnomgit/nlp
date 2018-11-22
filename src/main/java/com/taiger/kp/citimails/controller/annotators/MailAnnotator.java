@@ -4,18 +4,33 @@ import com.taiger.kp.citimails.model.Document;
 
 public class MailAnnotator {
 	
+	private NLPAnnotator nlp;
+	
+	private NERAnnotator ner;
+	
+	private OERAnnotator oer;
+	
 	public MailAnnotator () {
 		
+		this.nlp = new NLPAnnotator();
+		this.ner = new NERAnnotator();
+		this.oer = new OERAnnotator();
 		
 	}
 	
 	public Document annotate (Document document) {
 		
+		document = nlp.annotateTagger(document);
 		
+		document = ner.annotate(document);
 		
-		SubjectAnnotator.extract(document);
+		// document = nlp.annotateParser(document);
 		
-		ContentAnnotator.extract(document);
+		document = oer.annotate(document);
+		
+		SubjectAnnotator.annotate(document);
+		
+		ContentAnnotator.annotate(document);
 		
 		return document;
 	}

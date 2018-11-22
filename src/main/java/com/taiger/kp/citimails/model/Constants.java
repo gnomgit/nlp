@@ -1,10 +1,11 @@
 package com.taiger.kp.citimails.model;
 
 import lombok.Getter;
-import opennlp.tools.util.Span;
+import opennlp.tools.util.Span;;
+
 
 public class Constants {
-
+	
 	// BIO tags prefixes
 	public static final String B = "B-";
 	public static final String I = "I-";
@@ -53,6 +54,10 @@ public class Constants {
 	public static final String BIRRA_ONTOLOGY_OWL = "birra.owl";
 	public static final String TIME_ONTOLOGY_OWL = "time";
 	public static final String GREGORIAN_ONTOLOGY_OWL = "gregorian";
+	
+	// dictionary
+	public static final String EN_US = "en_US.dic";
+	public static final String EN_GB = "en_GB.dic";
 	
 	// dbpedia
 	public static final String DBPEDIA_EN_URL = "https://api.dbpedia-spotlight.org/en/annotate?";

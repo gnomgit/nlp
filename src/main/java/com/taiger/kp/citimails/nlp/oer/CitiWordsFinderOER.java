@@ -221,6 +221,7 @@ public class CitiWordsFinderOER implements OER {
     		begin = i;
     		end = begin;
     		if (compare(X.getWords().get(i), Y.get(0))) {
+    			if (Y.size() == 1) return Pair.of(begin, begin);
     			found = true;
     			int j = 1;
     			for (; j < Y.size() && i + j < X.getWords().size() && found; j++) {

@@ -1,9 +1,16 @@
 package com.taiger.kp.citimails.utils;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.stream.Collectors;
 
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.util.Assert;
+
+import com.taiger.kp.citimails.model.Constants;
+import com.taiger.kp.citimails.nlp.ner.LocationFinderNER;
 
 public class FileTools {
 	
@@ -34,6 +41,18 @@ public class FileTools {
 	        // If you require it to make the entire directory path including parents,
 	        // use directory.mkdirs(); here instead, ioc use directory.mkdir();
 	    }
+	}
+	
+	/**/
+	
+	public static StringBuilder loadTextFile (String path) {
+		StringBuilder result = new StringBuilder();
+		try {
+			Files.lines(Paths.get(path)).collect(Collectors.toList()).forEach(s -> result.append(s + "\n"));
+		} 	catch (IOException e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 	
 }

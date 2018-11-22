@@ -1,6 +1,5 @@
 package com.taiger.kp.citimails.controller.annotators;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.taiger.kp.citimails.model.Document;
