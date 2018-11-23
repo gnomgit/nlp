@@ -179,11 +179,14 @@ public class Word {
 		}
 	}
 	
-	public void updateLocation (int pos, int line, int npage) {
+	public void updateLocation (int pos, int line, int npage, int pageW, int pageH) {
 		this.location.setX(pos - 3);
 		this.location.setY(line - 3);
 		this.location.setWidth(this.w.length() * Constants.NHINC + 6);
 		this.location.setHeight(Constants.NVINC);
+		this.location.setPage(npage);
+		this.location.setPageH(pageH);
+		this.location.setPageW(pageW);
 	}
 }
 

@@ -234,7 +234,9 @@ public class CitiWordsFinderOER implements OER {
     					//String tag = X.getWords().get(end).getNerTag().replace(Constants.B, "").replace(Constants.I, "");
     					for (j = end + 1; j < X.getWords().size() && found; j++) {
     						found = compare(X.getWords().get(j), oerTag);
-    						end++;
+    						if (found) {
+    							end++;
+    						}
     					}
     				}
     				return Pair.of(begin, end);

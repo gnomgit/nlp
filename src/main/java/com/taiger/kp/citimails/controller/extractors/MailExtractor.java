@@ -18,6 +18,7 @@ import com.taiger.kp.citimails.nlp.splitter.SentenceSplitter;
 import com.taiger.kp.citimails.nlp.splitter.SmileSentenceSplitter;
 import com.taiger.kp.citimails.nlp.tokenizer.METokenizer;
 import com.taiger.kp.citimails.nlp.tokenizer.SimpleSpaceTokenizer;
+import com.taiger.kp.citimails.nlp.tokenizer.SmileSimpleTokenizer;
 import com.taiger.kp.citimails.nlp.tokenizer.Tokenizer;
 import com.taiger.kp.citimails.utils.FileTools;
 
@@ -28,6 +29,7 @@ public class MailExtractor {
 		
 	SentenceSplitter splitter;
 	Tokenizer tokenizer;
+	Tokenizer subjectTokenizer;
 	SimpleParser msg;
 	SimpleParser eml;
 	Mail mail;
@@ -40,6 +42,7 @@ public class MailExtractor {
 		// tokenizer = new METokenizer();
 		// tokenizer = new SmileSimpleTokenizer();
 		tokenizer = new SimpleSpaceTokenizer();
+		subjectTokenizer = new METokenizer();
 		msg = new SimpleMsgParser();
 		eml = new SimpleEmlParser();
 		pdf = new PDFGenerator();
@@ -84,14 +87,16 @@ public class MailExtractor {
 		doc.setMail(mail);
 		doc.setPath(fullpath);
 		
+		//mail.setSubject("RE: 104607-Broker 9 Vs. CBNA".replace("-", " - "));
 		
 		//* tokenizer
+		mail.setSubject(mail.getSubject().replace("-", " - "));
 		Sentence subject = new Sentence();
-		subject = tokenizer.tokenize(mail.getSubject());
+		subject = subjectTokenizer.tokenize(mail.getSubject());
 		doc.setSubject(subject); //*/
 		
 		//mail.setContent("Please advise on attached margin call 04-Sep-18 Regards ");
-		//mail.setContent("Please advise on attached margin call");
+		//mail.setContent("Make payment VD 12-02-2018 .");
 		
 		//* splitter
 		List<String> text = null;

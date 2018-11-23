@@ -72,7 +72,7 @@ public class PDFGenerator {
 	        			
 	        		}	else {
 	        			Color color = getColor(w);
-	        			w.updateLocation(pos, line, npage);
+	        			w.updateLocation(pos, line, npage+1, (int)page.getMediaBox().getWidth(), (int)page.getMediaBox().getHeight());
 	        			
 	        			if (color != Color.BLACK) {
 	        				contents.setNonStrokingColor(Color.LIGHT_GRAY);
@@ -151,7 +151,8 @@ public class PDFGenerator {
 	        			pos = Constants.X0;
 	        			
 	        		}	else {
-	        			w.updateLocation(pos, line, npage);
+	        			
+	        			w.updateLocation(pos, line, npage+1, (int)page.getMediaBox().getWidth(), (int)page.getMediaBox().getHeight());
 	        			
 		        		contents.beginText();
 		        		contents.setFont(font, Constants.FONTSIZE);
@@ -221,13 +222,16 @@ public class PDFGenerator {
 	}
 	
 	private boolean bann (String word) {
-		//log.info(word);
+		//log.info("{} - ({})", word, word.length());
 		for (int i = 0; i < word.length(); i++) {
 			//System.out.println(Character.UnicodeBlock.of(word.charAt(i)));
 		    if (Character.UnicodeBlock.of(word.charAt(i)).equals(Character.UnicodeBlock.CYRILLIC)) {
 		        return true;
 		    }
 		    if (Character.UnicodeBlock.of(word.charAt(i)).equals(Character.UnicodeBlock.BOX_DRAWING)) {
+		        return true;
+		    }
+		    if (Character.UnicodeBlock.of(word.charAt(i)).equals(Character.UnicodeBlock.GENERAL_PUNCTUATION)) {
 		        return true;
 		    }
 		}

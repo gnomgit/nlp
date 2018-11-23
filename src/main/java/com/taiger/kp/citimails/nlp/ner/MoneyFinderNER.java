@@ -30,6 +30,10 @@ public class MoneyFinderNER implements NER {
 			Constants.amount4
 	      );
 	
+	private Pattern MONEY_PATTERN = Pattern.compile(
+			Constants.amount5
+	      );
+	
 	private Pattern CURRENCY_PATTERN = Pattern.compile(
 			Constants.currency
 	      );
@@ -94,6 +98,10 @@ public class MoneyFinderNER implements NER {
 				w.setNerTag(Constants.B + Constants.CURRENCY);
 				w.getPrevTags().add(Constants.CURRENCY);
 			}
+			if (MONEY_PATTERN.matcher(w.getW().toLowerCase()).matches()) {
+				w.setNerTag(Constants.B + Constants.MONEY);
+				w.getPrevTags().add(Constants.MONEY);
+			}
 		}
 		
 		for (int i = 0; i < sentence.getWords().size() - 1; i++) {
@@ -105,7 +113,8 @@ public class MoneyFinderNER implements NER {
 				next.setNerTag(Constants.I + Constants.AMOUNT);
 			}
 			if ((current.getNerTag().equals(Constants.B + Constants.AMOUNT) && next.getNerTag().equals(Constants.B + Constants.CURRENCY))
-					|| (current.getNerTag().equals(Constants.B + Constants.CURRENCY) && next.getNerTag().equals(Constants.B + Constants.AMOUNT))) {
+					|| (current.getNerTag().equals(Constants.B + Constants.CURRENCY) && next.getNerTag().equals(Constants.B + Constants.AMOUNT))
+					|| (current.getNerTag().equals(Constants.B + Constants.CURRENCY) && next.getNerTag().equals(Constants.B + Constants.MONEY))) {
 				current.setNerTag(Constants.B + Constants.MONEY);
 				next.setNerTag(Constants.I + Constants.MONEY);
 				current.getPrevTags().add(Constants.MONEY);

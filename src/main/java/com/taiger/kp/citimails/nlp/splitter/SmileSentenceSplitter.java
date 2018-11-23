@@ -92,10 +92,10 @@ public class SmileSentenceSplitter implements SentenceSplitter {
 				before.append(" " + sentence.substring(0, sentence.length() - 1) + " " + Constants.colon);
 			}	else {
 				if (before.length() > 0) {
-					result.add(before.toString().trim() + " " + sentence);
+					result.add(separateEndingSymbol(before.toString().trim() + " " + sentence));
 					before = new StringBuilder();
 				}	else {
-					result.add(sentence);
+					result.add(separateEndingSymbol(sentence));
 				}
 			}
 		}
@@ -103,7 +103,13 @@ public class SmileSentenceSplitter implements SentenceSplitter {
 		return result;
 	} //*/
 	
-	
+	private String separateEndingSymbol (String sentence) {
+		String result = sentence;
+		if (sentence.endsWith(Constants.dot)) {
+			result = sentence.substring(0, sentence.length() - 1) + " " + Constants.dot;
+		}	
+		return result;
+	}
 	
 
 }

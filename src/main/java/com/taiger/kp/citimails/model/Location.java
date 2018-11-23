@@ -17,5 +17,8 @@ public class Location {
 	private int y;
 	private int width;
 	private int height;
+	private int page;
+	private int pageW;
+	private int pageH;
 	
 }

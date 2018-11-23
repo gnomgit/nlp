@@ -45,7 +45,7 @@ public class Constants {
 	
 	// ontologies
 	public static final String CITI_ONTOLOGY_TTL = "CitibankOnto.ttl";   
-	public static final String CITI_ONTOLOGY_TTL_new = "CitiBankOnto_1108.ttl";
+	public static final String CITI_ONTOLOGY_TTL_new = "CitiBankOnto_2311.ttl";
 	public static final String LEXIS_ONTOLOGY_TTL = "lexis.ttl";
 	public static final String CITI_ONTOLOGY_OBDA = "CitibankOnto.obda";
 	public static final String CITI_ONTOLOGY_JSON = "CitibankOnto1.obda";
@@ -115,11 +115,11 @@ public class Constants {
 	public static final String amount2 = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9]|(\\.-))?)?$";
 	public static final String amount3 = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3}\\.([0-9]{3}\\.)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9]|(\\.-))?)?$";
 	public static final String amount4 = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3}( |,|\\.|’)([0-9]{3}( |,|\\.|'))*[0-9]{3}|[0-9]+)((\\.|,)[0-9][0-9]|((\\.|,)-))?)?$";
-	public static final String amount5 = "^$";
+	public static final String amount5 = "^(\\$|€|£|¥)?(-)?(([0-9]{1,3}( |,|\\.|’)([0-9]{3}( |,|\\.|'))*[0-9]{3}|[0-9]+)(K|k|M|m)?((\\.|,)[0-9][0-9]|((\\.|,)-))?)?$";
 	public static final String currency = "^(euro(s)?|eur|dollar(s)?|pound(s)?|\\$|\\€|\\£|\\¥|yen(s)?|yuan(s)?|usd|cad|gbp|jpy|cny|hkd)$";
 	
 	// subject regexp
-	public static final String subject = "^((R|r)(E|e):?( )*(.*)( )+)([0-9]+)(( )*-( )*)(.*)(( )*(V|v)(S|s).( )*)(.*)$";
+	public static final String subject = "^((R|r)(E|e):?( )*(.*)( )+)?([0-9]+)(( )*-( )*)(.*)(( )*(V|v)(S|s).( )*)(.*)$";
 	//public static final String subject = "^((R|r)(E|e):?( )*(.*)( )+)([0-9]+)(( )*-( )*)(.*)(( )*(V|v)(S|s).( )*)(.*)((( )*:( )*)(.*))?$";
 	public static final String subject_extra = "^((R|r)(E|e):( )*)?(.*)(( )+(F|f)(R|r)(O|o)(M|m)( )+)(.*)(( )*(T|t)(O|o)( )*)(.*)$";
 	public static final String subject_from = "^((R|r)(E|e):( )*)?(.*)(( )*(F|f)(R|r)(O|o)(M|m)( )*)(.*)$";
