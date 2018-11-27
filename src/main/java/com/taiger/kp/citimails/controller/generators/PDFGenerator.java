@@ -224,15 +224,15 @@ public class PDFGenerator {
 	private boolean bann (String word) {
 		//log.info("{} - ({})", word, word.length());
 		for (int i = 0; i < word.length(); i++) {
-			//System.out.println(Character.UnicodeBlock.of(word.charAt(i)));
 		    if (Character.UnicodeBlock.of(word.charAt(i)).equals(Character.UnicodeBlock.CYRILLIC)) {
 		        return true;
 		    }
 		    if (Character.UnicodeBlock.of(word.charAt(i)).equals(Character.UnicodeBlock.BOX_DRAWING)) {
 		        return true;
 		    }
-		    if (Character.UnicodeBlock.of(word.charAt(i)).equals(Character.UnicodeBlock.GENERAL_PUNCTUATION)) {
-		        return true;
+		    if (Character.UnicodeBlock.of(word.charAt(i)).equals(Character.UnicodeBlock.GENERAL_PUNCTUATION)
+		    		&& (int) word.charAt(i) == 8203) {
+		    	return true;
 		    }
 		}
 		return false;

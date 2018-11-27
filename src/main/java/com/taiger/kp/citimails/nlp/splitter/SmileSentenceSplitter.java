@@ -99,6 +99,9 @@ public class SmileSentenceSplitter implements SentenceSplitter {
 				}
 			}
 		}
+		if (before.length() > 0) {
+			result.add(separateEndingSymbol(before.toString().trim()));
+		}
 		
 		return result;
 	} //*/

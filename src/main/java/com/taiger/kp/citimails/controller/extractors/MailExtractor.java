@@ -12,13 +12,11 @@ import com.taiger.kp.citimails.model.Attachment;
 import com.taiger.kp.citimails.model.Document;
 import com.taiger.kp.citimails.model.Mail;
 import com.taiger.kp.citimails.model.Sentence;
-import com.taiger.kp.citimails.nlp.spellchecker.LuceneSpellChecker;
-import com.taiger.kp.citimails.nlp.spellchecker.SpellChecker;
+import com.taiger.kp.citimails.model.Word;
 import com.taiger.kp.citimails.nlp.splitter.SentenceSplitter;
 import com.taiger.kp.citimails.nlp.splitter.SmileSentenceSplitter;
 import com.taiger.kp.citimails.nlp.tokenizer.METokenizer;
 import com.taiger.kp.citimails.nlp.tokenizer.SimpleSpaceTokenizer;
-import com.taiger.kp.citimails.nlp.tokenizer.SmileSimpleTokenizer;
 import com.taiger.kp.citimails.nlp.tokenizer.Tokenizer;
 import com.taiger.kp.citimails.utils.FileTools;
 
@@ -96,7 +94,7 @@ public class MailExtractor {
 		doc.setSubject(subject); //*/
 		
 		//mail.setContent("Please advise on attached margin call 04-Sep-18 Regards ");
-		//mail.setContent("Make payment VD 12-02-2018 .");
+		//mail.setContent("for Value 10.10.2018.");
 		
 		//* splitter
 		List<String> text = null;
@@ -108,13 +106,38 @@ public class MailExtractor {
 		} //*/
 		
 		//* tokenizer
-		List<Sentence> sentences = new ArrayList<>();
+		List<Sentence> sentencesTmp = new ArrayList<>();
 		for (String s : text) {
-			sentences.add(tokenizer.tokenize(s));
+			sentencesTmp.add(tokenizer.tokenize(s));
+		}
+		List<Sentence> sentences = new ArrayList<>();
+		Sentence prev = null;
+		for (int i = 0; i < sentencesTmp.size(); i++) {
+			Sentence curr = sentencesTmp.get(i);
+			if (prev == null) {
+				prev = curr;
+			}	else {
+				if (curr.getWords().size() == 1) {
+					prev.setOriginal(prev.getOriginal() + " " + curr.getOriginal());
+					Word toAdd = curr.getWords().get(0);
+					Word last = prev.getWords().get(prev.getWords().size() - 1);
+					toAdd.setPosition(last.getPosition() + 1);
+					toAdd.setOffset(last.getOffset() + last.getW().length() + 1);
+					prev.addWord(toAdd);
+				}	else {
+					sentences.add(prev);
+					prev = curr;
+				}
+			}
+		}
+		if (prev != null) {
+			sentences.add(prev);
 		}
 		doc.setContent(sentences); //*/
 		
 		//sentences.forEach(spell::checkSentence);
+		// @formatter:on
+
 		
 		pdf.generate2(doc);
 		

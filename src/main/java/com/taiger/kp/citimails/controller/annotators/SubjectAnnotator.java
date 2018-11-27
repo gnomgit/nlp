@@ -21,6 +21,11 @@ public class SubjectAnnotator {
 			Constants.subject
 	      );
 	
+	private static Pattern SUBJECT_VS = Pattern.compile(
+			Constants.subject_vs
+		  );
+			
+	
 	private static Pattern SUBJECT_EXTRA = Pattern.compile(
 			Constants.subject_extra
 	      );
@@ -77,11 +82,11 @@ public class SubjectAnnotator {
 			if (matcher.matches()) {
 				if (matcher.groupCount() >= 19 && matcher.group(19) != null) {
 					//log.info(Constants.DP_SUBJECT_TO + " {}", matcher.group(19).trim());
-					insertDataPoint (s, subject, matcher.group(19).trim(), Constants.DP_SUBJECT_TO);
+					insertDataPoint (s, subject, matcher.group(19).trim(), Constants.DP_LEGAL_ENTITY);
 				}
 				if (matcher.groupCount() >= 13 && matcher.group(13) != null) {
 					//log.info(Constants.DP_SUBJECT_FROM + " {}", matcher.group(13).trim());
-					insertDataPoint (s, subject, matcher.group(13).trim(), Constants.DP_SUBJECT_FROM);
+					insertDataPoint (s, subject, matcher.group(13).trim(), Constants.DP_COUNTER_PARTY_NAME);
 				}
 				if (matcher.groupCount() >= 5 && matcher.group(5) != null) {
 					//log.info(Constants.DP_SUBJECT_REASON + " {}", matcher.group(5).trim());
@@ -96,11 +101,24 @@ public class SubjectAnnotator {
 					}
 					if (matcher.groupCount() >= 13 && matcher.group(13) != null) {
 						//log.info(Constants.DP_SUBJECT_FROM + " {}", matcher.group(13).trim());
-						insertDataPoint (s, subject, matcher.group(13).trim(), Constants.DP_SUBJECT_FROM);
+						insertDataPoint (s, subject, matcher.group(13).trim(), Constants.DP_COUNTER_PARTY_NAME);
 					}
 				}	else {
-					//log.info(Constants.DP_SUBJECT_REASON + " {}", doc.getMail().getSubject());
-					insertDataPoint (s, subject, doc.getMail().getSubject().trim(), Constants.DP_SUBJECT_REASON);
+					matcher = SUBJECT_VS.matcher(subject);
+					if (matcher.matches()) {
+						if (matcher.groupCount() >= 1 && matcher.group(1) != null) {
+							insertDataPoint (s, subject, matcher.group(1).trim(), Constants.DP_COUNTER_PARTY_NAME);
+						}
+						if (matcher.groupCount() >= 8 && matcher.group(8) != null) {
+							String[] splitted = matcher.group(8).split(":");
+							insertDataPoint (s, subject, splitted[0].trim(), Constants.DP_LEGAL_ENTITY);
+							if (splitted.length >= 2) {
+								insertDataPoint (s, subject, splitted[1].trim(), Constants.DP_SUBJECT_REASON);
+							}
+						}
+					}	else {
+						insertDataPoint (s, subject, doc.getMail().getSubject().trim(), Constants.DP_SUBJECT_REASON);
+					}
 				}
 			}
 		}

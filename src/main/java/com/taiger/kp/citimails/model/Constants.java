@@ -45,7 +45,7 @@ public class Constants {
 	
 	// ontologies
 	public static final String CITI_ONTOLOGY_TTL = "CitibankOnto.ttl";   
-	public static final String CITI_ONTOLOGY_TTL_new = "CitiBankOnto_2311.ttl";
+	public static final String CITI_ONTOLOGY_TTL_new = "CitiBankOnto_2611b.ttl";
 	public static final String LEXIS_ONTOLOGY_TTL = "lexis.ttl";
 	public static final String CITI_ONTOLOGY_OBDA = "CitibankOnto.obda";
 	public static final String CITI_ONTOLOGY_JSON = "CitibankOnto1.obda";
@@ -106,20 +106,22 @@ public class Constants {
 	public static final String dd_nb = "(0[1-9]|1[0-9]|2[0-8]|[1-9])";
 	public static final String dd_31 = "(0[1-9]|[12][0-9]|3[01]|[1-9])";
 	public static final String dd_30 = "(0[1-9]|[12][0-9]|30|[1-9])";
-	public static final String date_sep = "(-|/)";
+	public static final String date_sep = "(-|/|.)";
 	public static final String days = "^((mon|tues|wed(nes)?|thur(s)?|fri|sat(ur)?|sun)(day)?)$";
+	public static final String rel_days = "^((T|t)oday|(Y|y)esterday|(T|t)omorrow)$";
 	
 	// money regexp
 	//public static final String amount = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9]))?$";
-	public static final String amount = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9])?)?$";
-	public static final String amount2 = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9]|(\\.-))?)?$";
-	public static final String amount3 = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3}\\.([0-9]{3}\\.)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9]|(\\.-))?)?$";
-	public static final String amount4 = "^(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3}( |,|\\.|’)([0-9]{3}( |,|\\.|'))*[0-9]{3}|[0-9]+)((\\.|,)[0-9][0-9]|((\\.|,)-))?)?$";
-	public static final String amount5 = "^(\\$|€|£|¥)?(-)?(([0-9]{1,3}( |,|\\.|’)([0-9]{3}( |,|\\.|'))*[0-9]{3}|[0-9]+)(K|k|M|m)?((\\.|,)[0-9][0-9]|((\\.|,)-))?)?$";
+	public static final String amount = "^(-)?(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9])?)?$";
+	public static final String amount2 = "^(-)?(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9]|(\\.-))?)?$";
+	public static final String amount3 = "^(-)?(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3}\\.([0-9]{3}\\.)*[0-9]{3}|[0-9]+)(\\.[0-9][0-9]|(\\.-))?)?$";
+	public static final String amount4 = "^(-)?(\\$|\\€|\\£|\\¥)?(-)?(([0-9]{1,3}( |,|\\.|’)([0-9]{3}( |,|\\.|'))*[0-9]{3}|[0-9]+)((\\.|,)[0-9][0-9]|((\\.|,)-))?)?$";
+	public static final String amount5 = "^(-)?(\\$|€|£|¥)?(-)?(([0-9]{1,3}( |,|\\.|’)([0-9]{3}( |,|\\.|'))*[0-9]{3}|[0-9]+)(K|k|M|m)?((\\.|,)[0-9][0-9]|((\\.|,)-))?)?$";
 	public static final String currency = "^(euro(s)?|eur|dollar(s)?|pound(s)?|\\$|\\€|\\£|\\¥|yen(s)?|yuan(s)?|usd|cad|gbp|jpy|cny|hkd)$";
 	
 	// subject regexp
 	public static final String subject = "^((R|r)(E|e):?( )*(.*)( )+)?([0-9]+)(( )*-( )*)(.*)(( )*(V|v)(S|s).( )*)(.*)$";
+	public static final String subject_vs = "^(.*)(( )*((V|v)(S|s).)( )*)(.*)$";
 	//public static final String subject = "^((R|r)(E|e):?( )*(.*)( )+)([0-9]+)(( )*-( )*)(.*)(( )*(V|v)(S|s).( )*)(.*)((( )*:( )*)(.*))?$";
 	public static final String subject_extra = "^((R|r)(E|e):( )*)?(.*)(( )+(F|f)(R|r)(O|o)(M|m)( )+)(.*)(( )*(T|t)(O|o)( )*)(.*)$";
 	public static final String subject_from = "^((R|r)(E|e):( )*)?(.*)(( )*(F|f)(R|r)(O|o)(M|m)( )*)(.*)$";

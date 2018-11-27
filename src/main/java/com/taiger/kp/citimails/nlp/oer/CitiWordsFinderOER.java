@@ -249,10 +249,18 @@ public class CitiWordsFinderOER implements OER {
     
     private boolean compare (Word w, String s) {
     	
-    	if (w.getNerTag().isEmpty() || w.getNerTag().equals(Constants.O)) {
+    	if (w.getNerTag().isEmpty() 
+    			|| w.getNerTag().equals(Constants.O) 
+    			|| w.getNerTag().contains(Constants.ORGANIZATION)
+    			|| w.getNerTag().contains(Constants.PERSON)
+    			|| w.getNerTag().contains(Constants.LOCATION)) {
     		//return w.getW().equalsIgnoreCase(s);
     		return StringTools.calculateLevenshtein(w.getW().toLowerCase(), s.toLowerCase()) <= 1;
     	}
+    	/*if (w.getNerTag().contains(s) || w.getNerTag().equals(Constants.O)) {
+    		//return w.getW().equalsIgnoreCase(s);
+    		return StringTools.calculateLevenshtein(w.getW().toLowerCase(), s.toLowerCase()) <= 1;
+    	}*/
     	if (!s.contains(Constants.AT)) {
     		return false;
     	}

@@ -46,7 +46,7 @@ public class App {
 			if (document != null) {
 				
 				annotator.annotate(document);
-				/*
+				//*
 				document.getContent().forEach(s -> {
 					log.info(s.getOriginal());
 					s.getWords().forEach(log::info);
@@ -78,7 +78,7 @@ public class App {
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104009- BANK 10 Vs. CITIBKLDN.eml"); 
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104606-Broker 8 Vs. CBNA.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104607-Broker 9 Vs. CBNA.eml");
-//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 118684-Dealer 5 Vs. CGML.eml");
+		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 118684-Dealer 5 Vs. CGML.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 132447-Fund 7. Vs. CBNA.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 134878-Dealer 6 Vs. CGML.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 135682- Fund 4 Vs. CIP.eml");
@@ -92,7 +92,7 @@ public class App {
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156463-Insurance 3 Vs. CGML.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156464-Dealer 9 Vs. CGML.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156464-Insurance 4 Vs. CGML.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156466-Dealer 10 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 156466-Dealer 10 Vs. CGML.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 172638-Bank 4 Vs. CGML.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 181449- HF 6 Vs. CGML.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/2018.eml");

@@ -26,7 +26,8 @@
 
 
 ###  http://www.taiger.com/ontology/Dispute_Action
-<http://www.taiger.com/ontology/Dispute_Action> rdf:type owl:Class .
+<http://www.taiger.com/ontology/Dispute_Action> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.taiger.com/ontology/Dispute_Object> .
 
 
 ###  http://www.taiger.com/ontology/Dispute_Object
@@ -81,37 +82,56 @@
                                                                   "booked to deliver @ISIN @amount"@en ,
                                                                   "booked to deliver @ISIN @money"@en ,
                                                                   "booked to return @ISIN @amount"@en ,
-                                                                  "booked to return @ISIN @money"@en .
+                                                                  "booked to return @ISIN @money"@en ,
+                                                                  "deliver @ISIN @amount"@en ,
+                                                                  "deliver @ISIN @money"@en ,
+                                                                  "to delilver  @ISIN @amount"@en ,
+                                                                  "to deliver @ISIN @money"@en .
 
 
 ###  http://www.taiger.com/ontology/citibank#booked_to_pay
 :booked_to_pay rdf:type owl:NamedIndividual ,
                         <http://www.taiger.com/ontology/Amount_Action> ;
                rdfs:label "booked to pay @money"@en ;
-               <http://www.w3.org/2004/02/skos/core#altLabel> "are calling @amount @currency"@en ,
+               <http://www.w3.org/2004/02/skos/core#altLabel> "are calling @amount"@en ,
+                                                              "are calling @amount @currency"@en ,
                                                               "are calling @currency @amount"@en ,
                                                               "are calling @money"@en ,
+                                                              "booked to pay @amount"@en ,
                                                               "booked to pay @amount @currency" ,
                                                               "booked to pay @currency @amount" ,
                                                               "deliver  @currency @amount"@en ,
+                                                              "deliver @amount"@en ,
                                                               "deliver @amount @currency"@en ,
                                                               "deliver @money"@en ,
                                                               "deliver amount to @currency @money"@en ,
                                                               "deliver amount to @money @currency"@en ,
+                                                              "make payment of @amount"@en ,
                                                               "make payment of @amount @currency"@en ,
-                                                              "make payment of @curancy @amount"@en ,
+                                                              "make payment of @currency @amount"@en ,
                                                               "make payment of @money"@en ,
+                                                              "pay @amount"@en ,
                                                               "pay @amount @currency"@en ,
                                                               "pay @currency @amount"@en ,
                                                               "pay @money"@en ,
+                                                              "please make payment of  @amount @currency"@en ,
+                                                              "please make payment of @amount"@en ,
+                                                              "please make payment of @currency @amount"@en ,
                                                               "please make payment of @money"@en ,
-                                                              "please make payment of @money @amount"@en ,
+                                                              "return @amount"@en ,
                                                               "return @amount @currency"@en ,
                                                               "return @currency @amount"@en ,
                                                               "return @money"@en ,
+                                                              "return/deliver amount to @amount"@en ,
+                                                              "return/deliver amount to @amount @currency"@en ,
+                                                              "return/deliver amount to @currency @amount"@en ,
                                                               "return/deliver amount to @currency @money"@en ,
                                                               "return/deliver amount to @money"@en ,
                                                               "return/deliver amount to @money @currency"@en ,
+                                                              "set up to receive @amount"@en ,
+                                                              "set up to receive @amount @currency"@en ,
+                                                              "set up to receive @currency @amount"@en ,
+                                                              "set up to receive @money"@en ,
                                                               "to deliver @amount @currency"@en ,
                                                               "to deliver @currency @amount"@en ,
                                                               "to deliver @money"@en ,
@@ -141,7 +161,6 @@
 ###  http://www.taiger.com/ontology/citibank#call
 :call rdf:type owl:NamedIndividual ,
                <http://www.taiger.com/ontology/Dispute_Object> ;
-      rdfs:label "call"@en ;
       <http://www.w3.org/2004/02/skos/core#altLabel> "margin call"@en ,
                                                      "margin call request"@en .
 
@@ -157,6 +176,19 @@
                                                      "today"@en ,
                                                      "tomorrow"@en ,
                                                      "yesterday"@en .
+
+
+###  http://www.taiger.com/ontology/citibank#disagree
+:disagree rdf:type owl:NamedIndividual ,
+                   <http://www.taiger.com/ontology/Dispute_Action> ;
+          rdfs:label "disagree"@en ;
+          <http://www.w3.org/2004/02/skos/core#altLabel> "disagreed"@en ,
+                                                         "disagrees"@en ,
+                                                         "fully disagree"@en ,
+                                                         "fully disagreed"@en ,
+                                                         "fully disagrees"@en ,
+                                                         "partially disagree"@en ,
+                                                         "partially disagrees"@en .
 
 
 ###  http://www.taiger.com/ontology/citibank#dispute
@@ -177,7 +209,6 @@
 ###  http://www.taiger.com/ontology/citibank#value
 :value rdf:type owl:NamedIndividual ,
                 <http://www.taiger.com/ontology/Value_Date> ;
-       rdfs:label "value"@en ;
        <http://www.w3.org/2004/02/skos/core#altLabel> "close of business @date"@en ,
                                                       "datum @date"@en ,
                                                       "for value @date"@en ,
@@ -189,7 +220,6 @@
                                                       "valuation as of close @date"@en ,
                                                       "value @date"@en ,
                                                       "value date @date"@en ,
-                                                      "VD @date"@en ,
                                                       "vd @date"@en .
 
 

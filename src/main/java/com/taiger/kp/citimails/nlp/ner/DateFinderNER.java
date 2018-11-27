@@ -55,6 +55,8 @@ public class DateFinderNER implements NER {
 			+ "|^(" + Constants.dd_nb + Constants.date_sep + Constants.MM_b + ")$"
 			+ "|^(" + Constants.dd_31 + Constants.date_sep + Constants.MM_31 + ")$"
 			+ "|^(" + Constants.dd_30 + Constants.date_sep + Constants.MM_30 + ")$"
+			
+			+ "|" + Constants.rel_days
 	      );
 	
 	public DateFinderNER () {

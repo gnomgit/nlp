@@ -27,8 +27,9 @@ public class ContentAnnotator {
 					String oClass = w.getOerTag().split("\\|")[0];
 					if (oClass != null && oClass.contains("/")) {
 						oClass = oClass.substring(oClass.lastIndexOf('/') + 1).toUpperCase().trim();
-						w.getDatapoints().add(Constants.AT + oClass);
-						w.getPrevTags().forEach(t -> w.getDatapoints().add(t));
+						/*w.getDatapoints().add(Constants.AT + oClass);
+						w.getPrevTags().forEach(t -> w.getDatapoints().add(t));*/
+						addDatapoint(w, oClass);
 					}
 				}
 				for (String tag : w.getPrevTags()) {
@@ -39,6 +40,20 @@ public class ContentAnnotator {
 				}
 			}
 		}
+	}
+	
+	private static void addDatapoint (Word word, String oClass) {
+		String tag = "";
+		if (word.getPrevTags().contains(Constants.DATE)) {
+			tag = Constants.DATE;
+		}	else if (word.getPrevTags().contains(Constants.CURRENCY)) {
+			tag = Constants.CURRENCY;
+		}	else if (word.getPrevTags().contains(Constants.AMOUNT)) {
+			tag = Constants.AMOUNT;
+		}
+		word.getDatapoints().add(Constants.AT + oClass + "_" + tag);
+		word.getPrevTags().forEach(t -> word.getDatapoints().add(t));
+		
 	}
 	
 }

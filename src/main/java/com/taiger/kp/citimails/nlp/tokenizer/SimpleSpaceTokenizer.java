@@ -79,6 +79,12 @@ public class SimpleSpaceTokenizer implements Tokenizer {
 			}
 		}
 		
+		if (before.length() > 0 && head != null) {
+			Word w = new Word (before.toString().trim(), Constants.O, 0.1, pos, head.getOffset());
+			w.setStem(porterStemmer.stem(before.toString().trim()).toLowerCase());
+			result.addWord(w);
+		}
+		
 		return result;
 	}
 
