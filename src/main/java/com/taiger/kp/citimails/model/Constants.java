@@ -1,5 +1,11 @@
 package com.taiger.kp.citimails.model;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import lombok.Getter;
 import opennlp.tools.util.Span;;
 
@@ -227,6 +233,8 @@ public class Constants {
 	public static final int NVINC = 15;
 	public static final int NHINC = 7;
 	public static final int FONTSIZE = 12;
+	
+	public static final Set<String> languages = Collections.unmodifiableList(Arrays.asList("en", "es", "de", "fr")).stream().collect(Collectors.toSet());
 	
 	
 }

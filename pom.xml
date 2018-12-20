@@ -197,6 +197,22 @@
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.9.4</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>com.optimaize.languagedetector</groupId>
+		    <artifactId>language-detector</artifactId>
+		    <version>0.6</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.tika</groupId>
+		    <artifactId>tika-core</artifactId>
+		    <version>1.19.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.tika</groupId>
+		    <artifactId>tika-langdetect</artifactId>
+		    <version>1.19.1</version>
+		</dependency>
 
 	</dependencies>
 </project>

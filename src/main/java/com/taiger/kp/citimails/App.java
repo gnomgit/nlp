@@ -48,7 +48,7 @@ public class App {
 				annotator.annotate(document);
 				//*
 				document.getContent().forEach(s -> {
-					log.info(s.getOriginal());
+					log.info("{} ({})", s.getOriginal(), s.getLanguage());
 					s.getWords().forEach(log::info);
 					System.out.println();
 				});
@@ -78,7 +78,7 @@ public class App {
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104009- BANK 10 Vs. CITIBKLDN.eml"); 
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104606-Broker 8 Vs. CBNA.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 104607-Broker 9 Vs. CBNA.eml");
-		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 118684-Dealer 5 Vs. CGML.eml");
+//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 118684-Dealer 5 Vs. CGML.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 132447-Fund 7. Vs. CBNA.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 134878-Dealer 6 Vs. CGML.eml");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/ 135682- Fund 4 Vs. CIP.eml");
@@ -139,7 +139,7 @@ public class App {
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/corpus2/Margin Call Fund T vs Citi 12-11-2018.msg");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/corpus2/Margin Call Notice Cash Collateral Client A.msg");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/corpus2/Margin Call Response from PLC A to CITIBANK N A .msg");
-//		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/corpus2/MC from PLC K to CITIBKLDN.msg");
+		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/corpus2/MC from PLC K to CITIBKLDN.msg");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/corpus2/PLC D margin notice to Citibank NA London.msg");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/corpus2/RE  123456- Client B Vs  CBNA.msg");
 //		list.add ("/Users/jorge.rios/eclipse-workspace/citimails/docs/corpus2/RE  147258 -  Type B  Bank C vs  CGML   Portfolio Statement  Margin Notice.msg");

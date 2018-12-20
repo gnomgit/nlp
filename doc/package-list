@@ -1,0 +1,4 @@
+com.taiger.kp.citimails.model
+com.taiger.kp.citimails.nlp.tagger
+com.taiger.kp.citimails.nlp.tokenizer
+com.taiger.kp.citimails.utils

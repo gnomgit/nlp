@@ -22,6 +22,8 @@ public class MailAnnotator {
 		
 		document = nlp.annotateTagger(document);
 		
+		document = nlp.annotateLanguage(document);
+		
 		document = ner.annotate(document);
 		
 		// document = nlp.annotateParser(document);

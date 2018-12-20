@@ -18,6 +18,7 @@ public class Sentence {
 
 	private String original;
 	private List<Word> words;
+	private String language;
 	
 	public Sentence () {
 		this.words = new ArrayList<>();

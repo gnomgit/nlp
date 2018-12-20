@@ -9,7 +9,8 @@ import com.taiger.kp.citimails.nlp.oer.CitiWordsFinderOER;
 import com.taiger.kp.citimails.nlp.oer.OER;
 
 public class OERAnnotator {
-private List<OER> oer;
+
+	private List<OER> oer;
 	
 	public OERAnnotator () {
 		
