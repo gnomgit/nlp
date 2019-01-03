@@ -6,14 +6,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.joestelmach.natty.DateGroup;
+import com.joestelmach.natty.Parser;
 import com.taiger.kp.citimails.controller.annotators.MailAnnotator;
 import com.taiger.kp.citimails.controller.extractors.MailExtractor;
 import com.taiger.kp.citimails.controller.extractors.SimpleEmlParser;
 import com.taiger.kp.citimails.controller.extractors.SimpleMsgParser;
 import com.taiger.kp.citimails.controller.extractors.SimpleParser;
 import com.taiger.kp.citimails.controller.generators.PDFGenerator;
+import com.taiger.kp.citimails.model.Constants;
 import com.taiger.kp.citimails.model.Document;
 import com.taiger.kp.citimails.model.Mail;
+import com.taiger.kp.citimails.model.Word;
+import com.wanasit.chrono.Chrono;
+import com.wanasit.chrono.ParsedResult;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -22,7 +28,17 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		/* exit
+		List<ParsedResult> result = Chrono.Parse("3 days ago");
+		
+		for (ParsedResult pr : result) {
+			
+			int offset = pr.index;
+			int end = offset + pr.text.length();
+			
+			System.out.println(pr.text);
+		}
+		
+		//* exit
 		boolean exit = true;
 		if (exit) return;
 		//*/
