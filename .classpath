@@ -8,6 +8,7 @@
 	</classpathentry>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
+			<attribute name="test" value="true"/>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
@@ -24,6 +25,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="models"/>
-	<classpathentry kind="lib" path="/Users/jorge.rios/eclipse-workspace/citimails/lib/msgparser-1.1.15.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
